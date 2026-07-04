@@ -8,6 +8,12 @@
   <meta name="description" content="Demo megastory: Một thế kỷ thất truyền và cuộc hồi sinh của tranh đỏ Kim Hoàng" />
   <title>Sắc đỏ trở về — Demo megastory Kim Hoàng</title>
   <style>
+    @font-face {
+      font-family: "LHanoienne";
+      src: url("LHanoienne-dfgth5.otf") format("opentype");
+      font-display: swap;
+    }
+
     /* SỬA FONT CHỮ VÀ MÀU CHỦ ĐẠO TẠI ĐÂY: thay các biến --red, --paper, --serif, --sans nếu cần. */
     :root {
       --red: #a52323;
@@ -19,8 +25,10 @@
       --muted: #7b7064;
       --white: #fffaf0;
       --shadow: 0 24px 70px rgba(25, 21, 18, .18);
-      --serif: Georgia, 'Times New Roman', serif;
-      --sans: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --title-font: "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
+      --serif: var(--title-font);
+      --sans: var(--body-font);
     }
 
     * {
@@ -6105,8 +6113,11 @@
     }
     /* ===== UI FIX PASS: typography, overlap and responsive spacing ===== */
     :root {
-      --vietnamese-ui: Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
-      --sans: var(--vietnamese-ui);
+      --title-font: "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
+      --vietnamese-ui: var(--body-font);
+      --sans: var(--body-font);
+      --serif: var(--title-font);
     }
 
     body,
@@ -6114,7 +6125,7 @@
     input,
     textarea,
     select {
-      font-family: var(--vietnamese-ui) !important;
+      font-family: var(--body-font) !important;
       text-rendering: auto;
       -webkit-font-smoothing: antialiased;
       font-kerning: normal;
@@ -6129,7 +6140,7 @@
     }
 
     body :where(h1, h2, h3, h4, p, blockquote, figcaption, span, em, strong, a, button, li, dt, dd, label, time) {
-      font-family: var(--vietnamese-ui) !important;
+      font-family: var(--body-font) !important;
       text-rendering: auto;
       font-kerning: normal;
     }
@@ -6165,30 +6176,52 @@
     }
 
     h1,
-    h2,
-    h3,
-    h4,
-    blockquote,
-    .deck,
-    .intro,
     .chapter-opener h2,
-    .photo-prologue h2,
-    .photo-prologue p,
-    .artist-copy h3,
-    .red-lab-copy h3,
-    .trial-copy h3,
-    .return-copy h3,
+    .hero h1,
+    .closing h2,
+    .revival-copy h2,
     .chapter-four .final-copy h2,
-    .chapter-four h3,
-    .chapter-four blockquote,
-    .chapter-four .future-counters strong,
-      .closing h2 {
-      font-family: var(--vietnamese-ui) !important;
+    .red-opener h2,
+    .flood-copy h2,
+    .final-opener h2 {
+      font-family: var(--title-font) !important;
       letter-spacing: 0 !important;
       font-kerning: normal;
       text-rendering: auto;
       overflow-wrap: normal;
       word-break: normal;
+    }
+
+    h2,
+    h3,
+    h4,
+    .photo-prologue h2,
+    .artist-copy h3,
+    .red-lab-copy h3,
+    .trial-copy h3,
+    .return-copy h3,
+    .chapter-four h3 {
+      font-family: var(--body-font) !important;
+      letter-spacing: 0 !important;
+      font-kerning: normal;
+      text-rendering: auto;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .chapter-opener h2,
+    .hero h1,
+    .closing h2 {
+      font-family: var(--title-font) !important;
+    }
+
+    .deck,
+    .intro,
+    blockquote,
+    .photo-prologue p,
+    .chapter-four blockquote,
+    .chapter-four .future-counters strong {
+      font-family: var(--body-font) !important;
     }
 
     .hero {
@@ -6884,12 +6917,12 @@
         <div class="final-copy article-wide">
           <span class="chapter-number">CHƯƠNG 4</span>
           <h2>Một di sản được đánh thức</h2>
-          <p>Từ căn nhà nhỏ ở làng Kim Hoàng, tranh đỏ bước ra khỏi tủ kính bảo tàng, gặp lại công chúng, đi vào những buổi học di sản và mở tiếp một hành trình cho người trẻ.</p>
+          <p>Cuộc trở về ấy không chỉ là sự hồi sinh của một dòng tranh, mà còn là sự trở lại của một phần ký ức văn hóa dân tộc.</p>
           <div class="final-tags" aria-label="Các nhịp chính của chương 4">
             <span>Không gian trải nghiệm</span>
-            <span>Triển lãm</span>
-            <span>Người trẻ</span>
-            <span>50+ mẫu phục dựng</span>
+            <span>Khi tranh bước ra khỏi bảo tàng</span>
+            <span>Người trẻ và những lần đầu biết đến Kim Hoàng</span>
+            <span>Hành trình vẫn tiếp tục</span>
           </div>
         </div>
       </header>
@@ -6898,43 +6931,42 @@
         <div class="experience-grid article-wide">
           <figure class="experience-photo">
             <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu không gian tranh đỏ Kim Hoàng của nghệ nhân Đào Đình Chung" loading="lazy" />
-            <figcaption>Ngôi nhà của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa của làng Kim Hoàng.</figcaption>
+            <figcaption>Không gian của nghệ nhân Đào Đình Chung không chỉ là nơi làm tranh mà còn trở thành một “lớp học di sản” đặc biệt.</figcaption>
           </figure>
           <div class="experience-copy">
             <span class="kicker">KHÔNG GIAN TRẢI NGHIỆM CỦA NGHỆ NHÂN</span>
-            <h3 id="experience-title">Một lớp học di sản trong căn nhà nhỏ.</h3>
-            <p>Có thể nói, chính ngôi nhà của nghệ nhân Đào Đình Chung tại làng Kim Hoàng là nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất. Sau nhiều năm phục dựng và quảng bá, căn nhà nhỏ của ông dần trở thành điểm đến quen thuộc đối với những người yêu di sản.</p>
-            <p>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường. Thay vì những hiện vật nằm sau lớp kính, du khách được trực tiếp cầm trên tay giấy gió, quan sát bản khắc mộc, tìm hiểu quy trình nhuộm giấy và trải nghiệm những công đoạn cơ bản trong quá trình làm tranh.</p>
-            <blockquote>Đằng sau mỗi bức tranh là cả một kho tàng tri thức dân gian và công sức lao động của người nghệ nhân.</blockquote>
-            <p>Mỗi tờ giấy đỏ đều phải trải qua quá trình pha màu, nhuộm, phơi và xử lý thủ công; mỗi bản in thành công là kết quả của nhiều lần thử nghiệm. Vì thế, ông Chung mong người trẻ không chỉ đến để trải nghiệm cho biết, mà còn hiểu được giá trị của sự kiên nhẫn, tỉ mỉ và tinh thần gìn giữ di sản văn hóa truyền thống.</p>
+            <h3 id="experience-title">Nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất.</h3>
+            <p>Căn nhà nhỏ của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa quen thuộc với người yêu di sản. Tại đây, khách tham quan được tận mắt xem quy trình làm tranh, nghe câu chuyện hồi sinh của tranh Kim Hoàng và trực tiếp chạm vào giấy gió, bản khắc mộc, màu nhuộm.</p>
+            <blockquote>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường, mà là một “lớp học di sản” sống động.</blockquote>
+            <p>Qua từng lần trải nghiệm, người xem hiểu hơn rằng sau mỗi bức tranh là tri thức dân gian, sự kiên nhẫn và công sức thủ công của người nghệ nhân.</p>
           </div>
         </div>
         <div class="workshop-collage article-wide" aria-label="Các chi tiết trong không gian trải nghiệm Kim Hoàng">
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Nghệ nhân tô màu trên tranh Kim Hoàng" loading="lazy" /><figcaption>Phóng bút tô màu</figcaption></figure>
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Người trẻ trải nghiệm in tranh trên giấy đỏ" loading="lazy" /><figcaption>Tự tay in tranh</figcaption></figure>
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 11.JPG" alt="Cọ vẽ và màu trong xưởng tranh Kim Hoàng" loading="lazy" /><figcaption>Giấy, mộc bản và màu</figcaption></figure>
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Nghệ nhân tô màu trên tranh Kim Hoàng" loading="lazy" /><figcaption>Màu, giấy và bản in đều đòi hỏi thời gian, kinh nghiệm và tâm huyết.</figcaption></figure>
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Người trẻ trải nghiệm in tranh trên giấy đỏ" loading="lazy" /><figcaption>Người trẻ được tự tay trải nghiệm công đoạn in tranh.</figcaption></figure>
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 11.JPG" alt="Cọ vẽ và màu trong xưởng tranh Kim Hoàng" loading="lazy" /><figcaption>Kỹ thuật từng thất truyền được truyền lại qua từng buổi trải nghiệm.</figcaption></figure>
         </div>
       </section>
 
       <section class="outreach-section reveal-on-scroll" aria-labelledby="outreach-title">
         <div class="outreach-intro article-narrow">
           <span class="kicker">KHI TRANH BƯỚC RA KHỎI BẢO TÀNG</span>
-          <h3 id="outreach-title">Hồi sinh không dừng ở việc làm ra một bức tranh.</h3>
-          <p>Sau hành trình phục dựng, thử thách tiếp theo là làm sao để công chúng biết đến sự tồn tại của một dòng tranh từng bị lãng quên. Với ông Chung, tranh Kim Hoàng chỉ thực sự hồi sinh khi đến gần hơn với đời sống cộng đồng.</p>
+          <h3 id="outreach-title">Tranh Kim Hoàng chỉ thực sự được hồi sinh.</h3>
+          <p>Sau phục dựng, thử thách tiếp theo là đưa tranh Kim Hoàng ra khỏi không gian lưu trữ, đến gần hơn với cộng đồng và được đón nhận trong đời sống hôm nay.</p>
         </div>
         <div class="outreach-grid article-wide">
           <div class="outreach-timeline">
-            <article class="timeline-card"><span>01</span><h4>Phục dựng thành công</h4><p>Các tác phẩm mới được phục dựng trở thành điểm khởi đầu cho câu chuyện trở về của tranh đỏ.</p></article>
-            <article class="timeline-card"><span>02</span><h4>Đi tặng, đi giới thiệu</h4><p>Tranh được đưa tới người trong làng, bảo tàng, hội chợ và các sự kiện quảng bá di sản.</p></article>
-            <article class="timeline-card"><span>03</span><h4>Kể lại một làng nghề</h4><p>Mỗi bức tranh trưng bày là một cách kể về làng nghề từng vang danh nhưng chìm trong quên lãng.</p></article>
-            <article class="timeline-card"><span>04</span><h4>Công chúng tìm về</h4><p>Nhiều nhà nghiên cứu, sinh viên và người yêu văn hóa dân gian tìm về tận làng Kim Hoàng.</p></article>
+            <article class="timeline-card"><span>01</span><h4>Triển lãm và hội chợ</h4><p>Ông Chung đưa tranh đến các không gian văn hóa, hội chợ và sự kiện quảng bá di sản.</p></article>
+            <article class="timeline-card"><span>02</span><h4>Kể lại lịch sử</h4><p>Mỗi tác phẩm trưng bày là một cách kể về làng nghề từng vang danh nơi đất Kinh Kỳ.</p></article>
+            <article class="timeline-card"><span>03</span><h4>Công chúng biết đến</h4><p>Cái tên Kim Hoàng dần vượt ra khỏi sách nghiên cứu và ký ức của một số nhà sưu tầm.</p></article>
+            <article class="timeline-card"><span>04</span><h4>Tìm về làng</h4><p>Nhiều người yêu văn hóa dân gian đã tìm về Kim Hoàng để hiểu nguồn gốc dòng tranh.</p></article>
           </div>
           <div class="outreach-visuals">
             <figure class="outreach-photo">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 6.JPG" alt="Chứng nhận tham gia triển lãm tranh dân gian Việt Nam của nghệ nhân Đào Đình Chung" loading="lazy" />
-              <figcaption>Những cuộc triển lãm và sự kiện văn hóa giúp cái tên Kim Hoàng được biết đến rộng rãi hơn.</figcaption>
+              <figcaption>Tranh Kim Hoàng nay đã hiện diện tại các không gian văn hóa, các sự kiện cộng đồng.</figcaption>
             </figure>
-            <blockquote>“Tôi cũng đi tặng một số người trong làng và cũng đi các bảo tàng và các hội chợ để quảng bá. Tôi cũng tham gia rất nhiều chương trình, sự kiện để nhiều người biết đến làng Kim Hoàng hơn.”</blockquote>
+            <blockquote>“Tôi cũng tham gia rất nhiều chương trình, sự kiện để nhiều người biết đến làng Kim Hoàng hơn.”</blockquote>
             <blockquote>“Người ta cũng tìm hiểu và về tận làng để khám phá, để biết rằng ngày xưa làng Kim Hoàng cũng nổi tiếng và có dòng tranh đỏ rất quý trong kho tàng tranh dân gian Việt Nam.”</blockquote>
           </div>
         </div>
@@ -6945,7 +6977,7 @@
           <div class="youth-visual">
             <figure class="youth-photo">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 7.JPG" alt="Người trẻ quan sát tranh Kim Hoàng trong không gian trưng bày" loading="lazy" />
-              <figcaption>Di sản trở nên gần gũi khi người trẻ được nhìn, chạm và tự tay thực hành.</figcaption>
+              <figcaption>Với nhiều bạn, đây là lần đầu tiên nhận ra rằng những di sản tưởng như xa xôi thực chất vẫn đang hiện diện rất gần trong cuộc sống hôm nay.</figcaption>
             </figure>
             <div class="youth-mini-gallery">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Trải nghiệm in tranh Kim Hoàng" loading="lazy" />
@@ -6955,11 +6987,10 @@
           </div>
           <div class="youth-copy">
             <span class="kicker">NGƯỜI TRẺ VÀ NHỮNG LẦN ĐẦU BIẾT ĐẾN KIM HOÀNG</span>
-            <h3 id="youth-title">Một di sản chỉ thực sự sống khi có người tiếp nhận nó.</h3>
-            <p>Trong nhiều năm qua, bên cạnh việc đón khách tham quan tại làng Kim Hoàng, ông Chung còn phối hợp với các trường học, trung tâm văn hóa và các đơn vị giáo dục để tổ chức những buổi trải nghiệm thực hành về tranh dân gian.</p>
-            <p>Mỗi lần đến trường học, ông lại mang theo bản khắc gỗ, giấy màu và các dụng cụ làm tranh quen thuộc. Dưới sự hướng dẫn của người nghệ nhân, học sinh được tận tay đặt giấy lên bản mộc, trải nghiệm công đoạn in tranh và tự tô màu cho những hình tượng như gà, lợn hay các linh vật dân gian.</p>
-            <blockquote>“Điểm đặc biệt của tranh Kim Hoàng là được in trên nền giấy đỏ điều, tạo nên hiệu ứng màu sắc rất nổi bật và bắt mắt. Các mảng màu khi thể hiện trên nền giấy đỏ đều trở nên rực rỡ hơn.”</blockquote>
-            <p>Chính những trải nghiệm trực tiếp ấy giúp tranh Kim Hoàng trở nên gần gũi hơn với thế hệ trẻ. Những khái niệm tưởng như khô khan trong sách giáo khoa bỗng được cảm nhận bằng đôi tay, bằng màu sắc và bằng niềm tò mò của người lần đầu gặp một di sản.</p>
+            <h3 id="youth-title">Một di sản chỉ thực sự sống khi có người biết đến, yêu thích và mong muốn gìn giữ nó.</h3>
+            <p>Đưa tranh đến với thế hệ trẻ là bước đi quan trọng để di sản có thể tiếp tục tồn tại. Trong các buổi trải nghiệm, học sinh, sinh viên được đặt giấy lên bản mộc, in tranh và tự tô màu cho những hình tượng quen thuộc như gà, lợn hay linh vật dân gian.</p>
+            <blockquote>“Điểm đặc biệt của tranh Kim Hoàng là được in trên nền giấy đỏ điều, tạo nên hiệu ứng màu sắc rất nổi bật và bắt mắt.”</blockquote>
+            <p>Từ trải nghiệm trực tiếp, nhiều bạn bắt đầu chủ động tìm hiểu thêm về tranh dân gian, lịch sử làng nghề và các giá trị văn hóa truyền thống.</p>
           </div>
         </div>
       </section>
@@ -6968,35 +6999,35 @@
         <div class="living-grid article-wide">
           <div class="living-copy">
             <span class="kicker">TRANH TRONG ĐỜI SỐNG MỚI</span>
-            <h3 id="living-title">Từ bức tranh treo tường đến cảm hứng thiết kế đương đại.</h3>
-            <p>Bên cạnh các hoạt động trải nghiệm và giáo dục di sản, tranh Kim Hoàng đang từng bước tìm được chỗ đứng trong đời sống đương đại. Những hình tượng quen thuộc như Thần Kê, lợn đàn hay các họa tiết dân gian không còn chỉ xuất hiện trên tranh treo tường.</p>
-            <p>Các hình ảnh ấy đã được đưa lên móc khóa, sổ tay, bưu thiếp, túi vải, áo thun, sản phẩm lưu niệm, bao bì và quà tặng văn hóa. Khi giá trị truyền thống được kết nối với nhu cầu và thẩm mỹ hôm nay, Kim Hoàng trở thành nguồn cảm hứng sáng tạo cho hiện tại và tương lai.</p>
+            <h3 id="living-title">Tranh Kim Hoàng không còn là ký ức của quá khứ.</h3>
+            <p>Các hình tượng như Thần Kê, lợn đàn và họa tiết dân gian không chỉ còn nằm trên tranh treo tường. Chúng xuất hiện trên móc khóa, sổ tay, bưu thiếp, túi vải, áo thun, sản phẩm lưu niệm, bao bì và quà tặng văn hóa.</p>
+            <p>Khi giá trị truyền thống kết nối với thẩm mỹ đương đại, tranh Kim Hoàng trở thành nguồn cảm hứng sáng tạo cho hiện tại và tương lai.</p>
             <div class="product-cards" aria-label="Các hướng ứng dụng tranh Kim Hoàng">
-              <article><strong>Bưu thiếp</strong><span>Đưa hình tượng dân gian vào vật phẩm nhỏ, dễ trao tặng.</span></article>
-              <article><strong>Sổ tay</strong><span>Biến họa tiết truyền thống thành chi tiết sử dụng hằng ngày.</span></article>
-              <article><strong>Túi vải, áo thun</strong><span>Giúp người trẻ bắt gặp tranh đỏ ngoài không gian triển lãm.</span></article>
-              <article><strong>Bao bì, quà tặng</strong><span>Mở rộng giá trị thẩm mỹ Kim Hoàng vào thiết kế văn hóa.</span></article>
+              <article><strong>Móc khóa</strong><span>sản phẩm phục vụ đời sống hàng ngày</span></article>
+              <article><strong>Sổ tay, bưu thiếp</strong><span>Sản phẩm lưu niệm dành cho du khách.</span></article>
+              <article><strong>Túi vải, áo thun</strong><span>các vật dụng quen thuộc</span></article>
+              <article><strong>Bao bì, quà tặng văn hóa</strong><span>Các sản phẩm thủ công mang đậm bản sắc Việt.</span></article>
             </div>
           </div>
           <figure class="product-photo">
             <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 9.JPG" alt="Sản phẩm ứng dụng họa tiết tranh Kim Hoàng trong hộp quà" loading="lazy" />
-            <figcaption>Họa tiết Kim Hoàng được đưa vào sản phẩm quà tặng, mở thêm đường sống cho di sản.</figcaption>
+            <figcaption>Không ít nhà thiết kế trẻ và các đơn vị sáng tạo văn hóa cũng bắt đầu khai thác các giá trị thẩm mỹ của tranh Kim Hoàng.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="future-section reveal-on-scroll" aria-labelledby="future-title">
         <div class="future-counters article-wide">
-          <div><strong>50+</strong><span>mẫu tranh Kim Hoàng đã được phục dựng</span></div>
-          <div class="outline"><strong>50+</strong><span>mẫu khác đang tiếp tục nghiên cứu và hoàn thiện</span></div>
+          <div><strong>50+</strong><span>hơn 50 mẫu tranh Kim Hoàng</span></div>
+          <div class="outline"><strong>50+</strong><span>hơn 50 mẫu khác đang tiếp tục được nghiên cứu và hoàn thiện</span></div>
         </div>
         <div class="future-copy article-narrow">
           <span class="kicker">HÀNH TRÌNH VẪN TIẾP TỤC</span>
-          <h3 id="future-title">Điều còn ở phía trước không chỉ là số lượng tranh, mà là câu chuyện về con người.</h3>
-          <p>Hơn một thập kỷ kể từ ngày bắt tay vào phục dựng, nghệ nhân Đào Đình Chung đã đưa một dòng tranh dân gian thất truyền trở lại với đời sống đương đại. Nhưng với ông, hành trình ấy vẫn chưa thể xem là hoàn thành.</p>
+          <h3 id="future-title">Hành trình ấy vẫn chưa thể xem là hoàn thành.</h3>
+          <p>Hơn một thập kỷ phục dựng đã đưa Kim Hoàng trở lại đời sống, nhưng kho tàng tranh vẫn còn nhiều khoảng trống. Ông Chung cho biết đã phục dựng hơn 50 mẫu, trong khi hơn 50 mẫu khác vẫn tiếp tục được nghiên cứu và hoàn thiện.</p>
+          <p>Điều khiến ông trăn trở hơn cả không chỉ là số lượng tranh, mà là câu chuyện truyền nghề và thế hệ kế cận.</p>
           <blockquote>“Trong làng cũng có rất nhiều người biết đến tôi là người đầu tiên khôi phục tranh Kim Hoàng, nên đã động viên và mong muốn mình giữ lại nghề để truyền lại cho lớp trẻ sau này, để không bị thất truyền về cái dòng tranh của làng nữa.”</blockquote>
-          <p>Ngày hôm nay, trong căn nhà nhỏ ở làng Kim Hoàng, người nghệ nhân vẫn đều đặn làm việc bên những bản khắc gỗ, những tờ giấy đỏ và những hộp màu thủ công. Công việc ấy diễn ra lặng lẽ, nhưng phía sau là khát vọng gìn giữ một phần di sản văn hóa dân tộc.</p>
-          <p class="chapter-transition">Vẫn còn những người yêu di sản, vẫn còn những người trẻ muốn tìm hiểu và tiếp nối, hành trình hồi sinh của tranh Kim Hoàng sẽ vẫn tiếp tục.</p>
+          <p class="chapter-transition">Hành trình phục dựng tranh Kim Hoàng vì thế không chỉ là khôi phục những bức tranh cũ, mà còn là nối lại sợi dây truyền thống và trao nó cho thế hệ tiếp theo.</p>
         </div>
       </section>
     </section>
