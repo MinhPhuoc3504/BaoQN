@@ -2527,6 +2527,7 @@
     .red-paper-lab {
       background: radial-gradient(circle at 12% 15%, rgba(255, 204, 83, .26), transparent 28%), linear-gradient(135deg, #9f1b21, #d94a2e 54%, #f3c24d);
       color: #fff8e7;
+      min-height: 150svh;
       padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
     }
 
@@ -2534,7 +2535,7 @@
       display: grid;
       grid-template-columns: minmax(320px, .78fr) minmax(0, 1.22fr);
       gap: clamp(2rem, 5vw, 5rem);
-      align-items: center;
+      align-items: start;
       margin: 0 auto;
     }
 
@@ -2558,12 +2559,22 @@
     }
 
     .paper-lab-stage {
-      position: relative;
-      min-height: clamp(420px, 62vw, 760px);
+      min-height: min(50svh, 480px);
+      height: min(50svh, 480px);
+      position: sticky;
+      top: 22svh;
       border: 1px solid rgba(255, 255, 255, .18);
       box-shadow: 0 35px 100px rgba(75, 8, 10, .26);
       overflow: hidden;
       background: #581011;
+    }
+
+    .paper-lab-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
     }
 
     .paper-lab-stage img {
@@ -2787,6 +2798,11 @@
       transform: translateY(0);
     }
 
+    .red-paper-lab.reveal-on-scroll {
+      opacity: 1;
+      transform: none;
+    }
+
     @media(max-width:900px) {
       .revival-opener { min-height: 92svh; padding: 6rem var(--page-pad) 4rem; }
       .artist-bridge,
@@ -2799,6 +2815,7 @@
       .paper-lab-stage img { width: 86%; }
       .paper-touch { right: 4%; bottom: 8%; }
       .trial-visual { position: relative; top: auto; }
+      .paper-lab-stage { position: relative; top: auto; height: auto; }
       .dong-ho-compare { grid-template-columns: 1fr; }
     }
 
@@ -7532,14 +7549,8 @@
       <header class="chapter-opener revival-opener">
         <div class="revival-bg" aria-hidden="true"></div>
         <div class="revival-copy article-wide">
-          <span class="chapter-number">CHƯƠNG 3 · 2014</span>
+          <span class="chapter-number">CHƯƠNG 3</span>
           <h2>Đánh thức ký ức</h2>
-          <p>Từ một cuộc gặp ở làng Kim Hoàng, hành trình phục dựng bắt đầu: người nghiên cứu đi tìm manh mối, người con của làng lần đầu cầm ván khắc để nối lại sắc đỏ đã mất.</p>
-          <div class="revival-marks" aria-label="Các mốc chính của chương 3">
-            <span>Nguyễn Thị Thu Hòa</span>
-            <span>Đào Đình Chung</span>
-            <span>Vân Canh · Kim Hoàng</span>
-          </div>
         </div>
       </header>
 
@@ -7568,13 +7579,10 @@
             <p>Từ những bức tranh gà, tranh lợn còn lưu giữ trong bảo tàng, ông Chung lần theo ký ức của các bậc cao niên để phục dựng lại cách pha màu, xử lý màu và quét màu lên giấy dó trước khi đem phơi.</p>
             <blockquote>“Tôi tìm đến các cụ cao niên để hỏi về cách nhuộm giấy làm tranh.”</blockquote>
           </div>
-          <div class="paper-lab-stage" aria-label="Các lớp giấy màu Kim Hoàng">
-            <img class="paper-hands" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 2.png" alt="Những lớp giấy đỏ và giấy màu được đặt trên bàn làm tranh" loading="lazy" />
-            <img class="paper-touch" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 8.png" alt="Bàn tay nghệ nhân miết lên tờ giấy đã xử lý màu" loading="lazy" />
-            <span class="paper-sheet s-red"></span>
-            <span class="paper-sheet s-pink"></span>
-            <span class="paper-sheet s-yellow"></span>
-            <span class="paper-sheet s-orange"></span>
+          <div class="paper-lab-stage" aria-label="Video minh họa hành trình phục dựng tranh Kim Hoàng">
+            <video class="paper-lab-video" autoplay muted loop playsinline preload="metadata">
+              <source src="podcast-final.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
