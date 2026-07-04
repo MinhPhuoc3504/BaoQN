@@ -650,20 +650,20 @@
 
     .comparison-right .comparison-stage {
       grid-template-columns: 1fr;
-      gap: clamp(1rem, 2vw, 1.5rem);
+      gap: clamp(.75rem, 1.4vw, 1rem);
       min-height: 0;
-      padding: clamp(1rem, 2vw, 1.4rem);
+      padding: clamp(.85rem, 1.6vw, 1.15rem);
       border: 1px solid rgba(245, 196, 93, .3);
       background: rgba(255, 244, 223, .92);
       box-shadow: 0 20px 54px rgba(28, 8, 5, .2);
     }
 
     .comparison-right .paper-sample {
-      height: clamp(300px, 42vw, 430px);
+      height: clamp(220px, 30vw, 320px);
     }
 
     .comparison-right .paper-art {
-      width: min(82%, 300px);
+      width: min(72%, 230px);
     }
 
     .paper-sample {
@@ -2586,10 +2586,17 @@
       --return-pad: clamp(5rem, 9vw, 8rem);
       position: relative;
       isolation: isolate;
-      background: linear-gradient(180deg, #f7dfaa, #fff3d1 46%, #b51f27 46%, #8d1518);
+      background: #b51f27 url("Chương 3.png") center bottom/cover no-repeat;
+      padding: 0;
+      overflow: clip;
+    }
+
+    .return-hero {
+      position: relative;
       min-height: 100svh;
       padding: var(--return-pad) var(--page-pad);
-      overflow: hidden;
+      overflow: clip;
+      background: #fff3d1;
     }
 
     .return-video-pin {
@@ -2603,25 +2610,15 @@
       margin-left: calc(50% - 50vw);
       overflow: hidden;
       pointer-events: none;
-      background: transparent;
-    }
-
-    .return-bg-video {
-      position: absolute;
-      z-index: 0;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      transform: none;
-      object-fit: cover;
-      background: transparent;
+      background: #fff3d1 url("may_bay_ngang_nhieu_may_preview.gif") center/cover no-repeat;
     }
 
     .return-copy {
       position: relative;
       z-index: 1;
       text-align: center;
-      margin-bottom: clamp(2rem, 5vw, 4rem);
+      margin: clamp(5rem, 14vh, 9rem) auto 0;
+      padding-bottom: clamp(4rem, 12vh, 8rem);
     }
 
     .return-copy h3,
@@ -2642,6 +2639,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
       margin: 0 auto;
+      padding: clamp(4rem, 8vw, 7rem) var(--page-pad) 0;
     }
 
     .return-gallery figure {
@@ -2660,6 +2658,7 @@
       position: relative;
       z-index: 1;
       margin-top: clamp(2rem, 5vw, 4rem);
+      padding-bottom: clamp(4rem, 8vw, 7rem);
       color: #fff1d4;
       text-align: center;
       font-family: var(--serif);
@@ -6884,8 +6883,6 @@
               </div>
               <div class="comparison-copy" id="comparisonCopy">
                 <h4><span class="comparison-title-name">Kim Hoàng</span><span class="comparison-title-desc">sắc đỏ và dấu tay người nghệ nhân</span></h4>
-                <p>Tranh được in nét đen lên nền giấy đỏ trước, tô màu thủ công rồi dập lại bản nét. Vì được phóng bút bằng
-                  tay, không có hai bức tranh hoàn toàn giống nhau.</p>
               </div>
             </div>
           </div>
@@ -7189,16 +7186,14 @@
       </section>
 
       <section class="return-reveal reveal-on-scroll" aria-labelledby="return-title">
-        <div class="return-video-pin" aria-hidden="true">
-          <video class="return-bg-video" autoplay muted loop playsinline preload="metadata">
-            <source src="7122fcbf-c449-4da1-bda8-5c0aa03fa8d2.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="return-copy article-narrow">
-          <span class="kicker">KHOẢNH KHẮC TRANH KIM HOÀNG TRỞ LẠI</span>
-          <h3 id="return-title">Năm 2014, bức Thần Kê đầu tiên được phục dựng thành công.</h3>
-          <p>Sau nhiều năm tìm tư liệu, phục dựng màu giấy, thử kỹ thuật in và làm lại từ đầu, bức Thần Kê hoàn thiện đánh dấu thời khắc tranh Kim Hoàng bước ra khỏi tư liệu để trở lại đời sống.</p>
-          <blockquote>“Khi hoàn thiện được bức Thần Kê đầu tiên, tôi vui lắm. Sau bao nhiêu lần thử nghiệm, cuối cùng bức tranh cũng được làm xong như mong muốn.”</blockquote>
+        <div class="return-hero">
+          <div class="return-video-pin" aria-hidden="true"></div>
+          <div class="return-copy article-narrow">
+            <span class="kicker">KHOẢNH KHẮC TRANH KIM HOÀNG TRỞ LẠI</span>
+            <h3 id="return-title">Năm 2014, bức Thần Kê đầu tiên được phục dựng thành công.</h3>
+            <p>Sau nhiều năm tìm tư liệu, phục dựng màu giấy, thử kỹ thuật in và làm lại từ đầu, bức Thần Kê hoàn thiện đánh dấu thời khắc tranh Kim Hoàng bước ra khỏi tư liệu để trở lại đời sống.</p>
+            <blockquote>“Khi hoàn thiện được bức Thần Kê đầu tiên, tôi vui lắm. Sau bao nhiêu lần thử nghiệm, cuối cùng bức tranh cũng được làm xong như mong muốn.”</blockquote>
+          </div>
         </div>
         <div class="return-gallery article-wide">
           <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 3.png" alt="Nghệ nhân kiểm tra bản in trên giấy đỏ" loading="lazy" /><figcaption>Những lần thử trên nền giấy đỏ.</figcaption></figure>
@@ -7452,14 +7447,14 @@
     setFlood(0);
 
     const comp = {
-      dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc', 'Giấy điệp tạo độ óng; mỗi màu thường có một bản in riêng, bản nét đen dùng để định hình hình ảnh.'],
-      kimhoang: ['Kim Hoàng', 'sắc đỏ và dấu tay người nghệ nhân', 'Tranh được in nét đen lên nền giấy đỏ trước, tô màu thủ công rồi dập lại bản nét. Vì được phóng bút bằng tay, không có hai bức tranh hoàn toàn giống nhau.']
+      dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc'],
+      kimhoang: ['Kim Hoàng', 'sắc đỏ và dấu tay người nghệ nhân']
     };
     $$('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
       $$('.tab-btn').forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-selected', 'false') });
       btn.classList.add('is-active'); btn.setAttribute('aria-selected', 'true');
       const key = btn.dataset.tab; $('#comparisonStage').dataset.active = key;
-      $('#comparisonCopy').innerHTML = `<h4><span class="comparison-title-name">${comp[key][0]}</span><span class="comparison-title-desc">${comp[key][1]}</span></h4><p>${comp[key][2]}</p>`;
+      $('#comparisonCopy').innerHTML = `<h4><span class="comparison-title-name">${comp[key][0]}</span><span class="comparison-title-desc">${comp[key][1]}</span></h4>`;
     }));
 
     const infoModal = $('#infoModal');
