@@ -4660,6 +4660,61 @@
       transition: opacity .75s ease, filter .75s ease, transform .75s ease;
     }
 
+    .process-step-image {
+      position: absolute;
+      z-index: 4;
+      inset: 7%;
+      width: 86%;
+      height: 86%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transform: scale(.985);
+      filter: saturate(1.04) contrast(1.04);
+      transition: opacity .65s ease, filter .65s ease, transform .65s ease;
+    }
+
+    .process-step-image-3,
+    .process-step-image-3-color,
+    .process-step-image-4,
+    .process-step-image-5 {
+      object-fit: contain;
+      background: #c73424;
+    }
+
+    .wind-layer {
+      position: absolute;
+      z-index: 7;
+      inset: -8% 4% -8% -34%;
+      overflow: visible;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .45s ease;
+    }
+
+    .wind-layer:before,
+    .wind-layer:after {
+      content: "";
+      position: absolute;
+      left: 2%;
+      width: clamp(11rem, 28vw, 19rem);
+      height: clamp(5rem, 12vw, 8rem);
+      background:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 320 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23fff0c7' stroke-width='5' stroke-linecap='round' opacity='.78'%3E%3Cpath d='M7 29 C73 4 127 10 171 31 C205 47 235 50 278 25'/%3E%3Cpath d='M33 63 C98 41 153 48 198 71 C226 85 252 85 294 62' opacity='.72'/%3E%3Cpath d='M86 95 C134 78 174 82 211 99 C230 108 252 108 281 94' opacity='.58'/%3E%3Cpath d='M247 23 C283 8 310 18 308 42 C306 62 279 66 270 49' opacity='.68'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat;
+      filter: drop-shadow(0 0 10px rgba(255, 218, 140, .18));
+      opacity: 0;
+      animation: windSketchSweep 4.2s ease-in-out infinite;
+    }
+
+    .wind-layer:before { top: 18%; }
+
+    .wind-layer:after {
+      top: 54%;
+      width: clamp(9rem, 23vw, 15rem);
+      animation-delay: -1.8s;
+      animation-duration: 4.8s;
+    }
+
     .ink-lines {
       z-index: 5;
       inset: 15% 11% 13%;
@@ -4819,6 +4874,82 @@
       filter: contrast(1.8);
     }
 
+    .worktable[data-step] .process-art-image {
+      opacity: 0 !important;
+    }
+
+    .worktable[data-step="0"] .process-step-image-0 {
+      opacity: 1;
+      transform: scale(1);
+      filter: saturate(.96) contrast(1.04) brightness(1.04);
+    }
+
+    .worktable[data-step="1"] .process-step-image-1 {
+      opacity: 1;
+      transform: scale(1);
+      filter: saturate(1.1) contrast(1.08) brightness(1.02);
+      animation: paperBreath 3.8s ease-in-out infinite alternate;
+    }
+
+    .worktable[data-step="1"] .wind-layer {
+      opacity: 1;
+    }
+
+    .worktable[data-step="4"] .process-step-image-4 {
+      animation: paperBreath 3.8s ease-in-out infinite alternate;
+    }
+
+    .worktable[data-step="4"] .wind-layer {
+      opacity: 1;
+    }
+
+    .worktable[data-step="3"] .process-step-image-3 {
+      opacity: 1;
+      transform: scale(1.01);
+      filter: saturate(1.12) contrast(1.16) brightness(1.08);
+    }
+
+    .worktable[data-step="3"] .process-step-image-3-color {
+      animation: colorPrintReveal 5.2s ease-in-out both;
+    }
+
+    .worktable[data-step="4"] .process-step-image-4,
+    .worktable[data-step="5"] .process-step-image-5 {
+      opacity: 1;
+      transform: scale(1);
+      filter: saturate(1.1) contrast(1.08) brightness(1.02);
+    }
+
+    .worktable[data-step="3"] .color-layer,
+    .worktable[data-step="3"] .ink-lines,
+    .worktable[data-step="4"] .color-layer,
+    .worktable[data-step="4"] .ink-lines,
+    .worktable[data-step="5"] .color-layer,
+    .worktable[data-step="5"] .ink-lines {
+      opacity: 0 !important;
+    }
+
+    .worktable[data-step="3"] .layer-brush {
+      opacity: 1;
+      right: -2%;
+      background: #8d4d2c;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, .24), 0 0 22px rgba(255, 225, 160, .28);
+      animation: brushIn 1.8s ease-in-out infinite alternate;
+    }
+
+    .worktable[data-step="4"] .layer-brush,
+    .worktable[data-step="5"] .layer-brush {
+      opacity: 0 !important;
+      right: -20% !important;
+      animation: none !important;
+    }
+
+    .worktable[data-step="5"] .second-stamp {
+      display: grid !important;
+      opacity: 1;
+      animation: secondStamp 1.15s cubic-bezier(.18, .85, .25, 1) both !important;
+    }
+
     @keyframes secondStamp {
       0% {
         opacity: 0;
@@ -4838,6 +4969,36 @@
       100% {
         opacity: 0;
         transform: translateY(-118%) rotate(3deg) scale(1.02)
+      }
+    }
+
+    @keyframes windSketchSweep {
+      0% { transform: translate3d(-8%, 12px, 0) scale(.78); opacity: 0; }
+      18% { opacity: .62; }
+      72% { opacity: .5; }
+      100% { transform: translate3d(155%, -8px, 0) scale(1.02); opacity: 0; }
+    }
+
+    @keyframes paperBreath {
+      from { transform: translate3d(-3px, 0, 0) scale(1); }
+      to { transform: translate3d(4px, -5px, 0) scale(1.012); }
+    }
+
+    @keyframes brushIn {
+      from { transform: translate3d(16px, 10px, 0) rotate(-31deg); }
+      to { transform: translate3d(-34px, -6px, 0) rotate(-24deg); }
+    }
+
+    @keyframes colorPrintReveal {
+      0%, 44% {
+        opacity: 0;
+        transform: scale(1.01);
+        filter: saturate(1.02) contrast(1.03) brightness(1.03);
+      }
+      62%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: saturate(1.1) contrast(1.08) brightness(1.02);
       }
     }
 
@@ -7066,7 +7227,6 @@
       <section class="process-scrolly" id="processScrolly" aria-label="Quy trình làm tranh Kim Hoàng">
         <div class="process-sticky">
           <div class="process-heading">
-            <span class="kicker">SCROLLYTELLING TRUNG TÂM</span>
             <h3>Một bức tranh được tạo ra như thế nào?</h3>
           </div>
           <div class="worktable" id="worktable">
@@ -7074,8 +7234,21 @@
             <div class="sheet layer-sheet"></div>
             <img class="process-art-image" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/hình 5.png"
               alt="Tranh lợn Kim Hoàng trong quá trình in" loading="eager" />
+            <img class="process-step-image process-step-image-0" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 5.jpg"
+              alt="Nền giấy mộc dùng làm tranh Kim Hoàng" loading="eager" />
+            <img class="process-step-image process-step-image-1" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/giay-do-phoi-gio.png"
+              alt="Giấy đỏ Kim Hoàng sau khi nhuộm màu" loading="eager" />
+            <img class="process-step-image process-step-image-3" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/lon-kim-hoang-net-trang.png"
+              alt="Nét trắng trên nền giấy đỏ của tranh lợn Kim Hoàng" loading="lazy" />
+            <img class="process-step-image process-step-image-3-color" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/lon-kim-hoang-mau-nen-do.png"
+              alt="Tranh lợn Kim Hoàng được tô màu sau nét trắng" loading="lazy" />
+            <img class="process-step-image process-step-image-4" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/lon-kim-hoang-mau-nen-do.png"
+              alt="Tranh lợn Kim Hoàng đang để màu khô" loading="lazy" />
+            <img class="process-step-image process-step-image-5" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/lon-kim-hoang-mau-nen-do.png"
+              alt="Tranh lợn Kim Hoàng hoàn chỉnh" loading="lazy" />
             <div class="color-layer color-yellow"></div>
             <div class="color-layer color-blue"></div>
+            <div class="wind-layer" aria-hidden="true"></div>
             <div class="block layer-block"><span>BẢN KHẮC</span></div>
             <div class="second-stamp" aria-hidden="true"><span>IN NÉT LẦN 2</span></div>
             <div class="brush layer-brush" aria-hidden="true"></div>
