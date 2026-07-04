@@ -2945,10 +2945,24 @@
     .video-modal {
       border: 0;
       padding: 3rem;
-      max-width: 640px;
+      max-width: 760px;
       width: calc(100% - 2rem);
+      max-height: calc(100vh - 2rem);
+      overflow: auto;
       box-shadow: 0 35px 100px rgba(0, 0, 0, .4);
       background: #f4e5c6
+    }
+
+    .modal h3 {
+      margin: 0 3rem 1rem 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .modal p {
+      margin: 0;
+      font-size: clamp(.98rem, 1.35vw, 1.08rem);
+      line-height: 1.72;
     }
 
     .modal::backdrop,
@@ -4600,11 +4614,6 @@
       line-height: 1;
     }
 
-    .rooster-comb {
-      top: 54%;
-      left: 72%
-    }
-
     .rooster-tail {
       top: 28%;
       left: 43%
@@ -5651,6 +5660,19 @@
       z-index: 2;
     }
 
+    .chapter-one .red-opener {
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      padding-top: clamp(7rem, 13vh, 9rem);
+      padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    .chapter-one .red-opener h2 {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .chapter-one-video-section {
       display: none;
     }
@@ -5660,7 +5682,7 @@
       z-index: 2;
       width: min(100%, 560px);
       aspect-ratio: 16/9;
-      margin: 58svh auto 0;
+      margin: clamp(2.5rem, 9vh, 5rem) auto 0;
       display: block;
       object-fit: cover;
       border: 1px solid rgba(255, 226, 160, .36);
@@ -5668,7 +5690,7 @@
     }
 
     .chapter-one .red-opener {
-      min-height: 168svh;
+      min-height: auto;
     }
 
     @media(max-width:700px) {
@@ -7008,6 +7030,14 @@
       transform: scale(1.14);
     }
 
+    .chapter-one .gallery-section > h3 {
+      font-family: var(--title-font) !important;
+      font-size: clamp(3.5rem, 8vw, 8rem) !important;
+      line-height: 1.02 !important;
+      margin: 0 0 1.5rem;
+      max-width: 15ch;
+    }
+
     .chapter-one .golden-track .golden-card-media {
       transform: scale(1.12);
     }
@@ -7337,8 +7367,9 @@
       </section>
 
       <section class="article-wide gallery-section">
-        <div class="section-heading"><span class="kicker">NHỮNG BỨC TRANH KỂ CHUYỆN</span>
-          <h3>Chạm vào chi tiết để đọc ý nghĩa</h3>
+       <h3>NHỮNG BỨC TRANH KỂ CHUYỆN</h3>
+        <div class="section-heading"><span class="kicker">Chạm vào chi tiết để đọc ý nghĩa</span>
+
         </div>
         <div class="art-grid">
           <figure class="art-card story-art-card rooster-card" tabindex="0" role="button" data-title="Thần Kê"
@@ -7346,12 +7377,9 @@
             <div class="folk-art rooster-photo" role="img" aria-label="Tranh Thần Kê Kim Hoàng">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/hình 4.png" alt="Tranh Thần Kê Kim Hoàng"
                 loading="lazy" />
-              <button class="hotspot rooster-comb" type="button" aria-label="Ý nghĩa mào và dáng gà"
-                data-title="Mào đỏ và dáng đứng"
-                data-pop="Mào đỏ, dáng đứng vươn lên và bộ lông rực rỡ biểu trưng cho sinh khí, sự tỉnh thức và khí chất bảo hộ trong tranh Tết.">+</button>
-              <button class="hotspot rooster-tail" type="button" aria-label="Ý nghĩa bộ lông gà"
-                data-title="Bộ lông nhiều sắc"
-                data-pop="Những mảng vàng, đỏ, trắng được tô tay khiến mỗi bản tranh có nhịp điệu riêng, vừa trang trí vừa gửi gắm lời chúc cát tường.">+</button>
+              <button class="hotspot rooster-tail" type="button" aria-label="Ý nghĩa tranh Thần Kê"
+                data-title="Thần Kê Kim Hoàng"
+                data-pop="Bức tranh Gà Kim Hoàng, hay còn được các cụ ngày xưa gọi là Thần Kê, không đơn thuần là hình ảnh một con vật nuôi quen thuộc. Chú gà trong tranh Kim Hoàng mang dáng dấp đại cát, oai phong với cái mào đỏ rực như hoa hướng dương, chiếc đuôi dài cong vút kiêu hãnh phóng khoáng. Trên mình gà thường được điểm xuyết những nét vẽ phượng, vẽ hoa đầy tài hoa. Theo quan niệm dân gian, bức Thần Kê mang năng lượng tâm linh mạnh mẽ, dùng để trấn trạch, xua đuổi tà ma, quỷ dữ và bảo vệ bình an cho gia chủ mỗi dịp năm mới. Người ta thường mua một cặp Thần Kê về dán hai bên cánh cửa chính của ngôi nhà nhằm mục đích canh giữ đất đai, cầu mong một năm mới mưa thuận gió hòa, làm ăn hanh thông.">+</button>
             </div>
             <figcaption><strong>Thần Kê</strong></figcaption>
           </figure>
