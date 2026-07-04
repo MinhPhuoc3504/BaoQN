@@ -1116,8 +1116,7 @@
     }
 
     .flood-scrolly {
-      height: auto;
-      min-height: 800vh;
+      height: 520vh;
       background: #181c1d
     }
 
@@ -1227,17 +1226,11 @@
 
     .flood-water {
       position: absolute;
-      left: -10%;
-      right: -10%;
-      bottom: -108%;
+      left: 0;
+      right: 0;
+      bottom: -100%;
       height: 100%;
-      background:
-        linear-gradient(to top, rgba(18, 12, 8, .72), rgba(18, 12, 8, .18) 72%, transparent 100%),
-        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/ChatGPT Image 01_35_50 5 thg 7, 2026.png");
-      background-size: 100% 100%, 100% 185%;
-      background-position: center, center bottom;
-      background-repeat: no-repeat;
-      box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.32);
+      background: url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/flood-waves-transparent.png") center bottom / 100% 170% no-repeat;
       transition: bottom 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
       z-index: 10;
       pointer-events: none;
@@ -1270,10 +1263,11 @@
 
     .flood-copy {
       position: absolute;
-      left: 7vw;
-      top: 20%;
-      width: min(440px, calc(100vw - 2rem));
-      min-height: clamp(7rem, 14vw, 12rem);
+      left: 27%;
+      top: 34%;
+      width: min(470px, calc(54vw - 2rem));
+      min-height: clamp(9rem, 16vw, 13rem);
+      transform: translateX(-50%);
       z-index: 12;
     }
 
@@ -1281,18 +1275,19 @@
       position: absolute;
       inset: 0;
       margin: 0;
-      display: flex;
-      align-items: flex-start;
+      display: grid;
+      place-items: center;
       font: 700 clamp(1.6rem, 3vw, 3rem)/1.12 var(--serif);
+      text-align: center;
       opacity: 0;
-      transform: translateY(1rem);
+      transform: translateY(.8rem);
       transition: opacity .45s ease, transform .45s ease;
       text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(0, 0, 0, 0.9);
     }
 
     .flood-line.active {
       opacity: 1;
-      transform: none;
+      transform: none
     }
 
     .flood-sticky[data-step="1"] .woodblock-card-1 {
@@ -1311,46 +1306,28 @@
       transform: rotate(14deg) translate(30px, -25px);
     }
 
+    .flood-sticky[data-step="0"] .flood-water {
+      bottom: -78%
+    }
+
+    .flood-sticky[data-step="1"] .flood-water {
+      bottom: -54%
+    }
+
+    .flood-sticky[data-step="2"] .flood-water {
+      bottom: -30%
+    }
+
+    .flood-sticky[data-step="3"] .flood-water {
+      bottom: -6%
+    }
+
     .flood-sticky[data-step="3"] .woodblock-card-1 {
       transform: rotate(-25deg) translate(-90px, -45px);
       opacity: 0;
     }
 
     .flood-sticky[data-step="3"] .woodblock-card-2 {
-      transform: rotate(32deg) translate(110px, -60px);
-      opacity: 0;
-    }
-
-    .flood-sticky[data-step="4"] .flood-water {
-      bottom: -72%;
-    }
-
-    .flood-sticky[data-step="5"] .flood-water {
-      bottom: -36%;
-    }
-
-    .flood-sticky[data-step="6"] .flood-water {
-      bottom: 0;
-    }
-
-    .flood-sticky[data-step="4"] .flood-copy,
-    .flood-sticky[data-step="5"] .flood-copy,
-    .flood-sticky[data-step="6"] .flood-copy {
-      opacity: 0;
-      transform: translateY(-.75rem);
-      transition: opacity .45s ease, transform .45s ease;
-    }
-
-    .flood-sticky[data-step="4"] .woodblock-card-1,
-    .flood-sticky[data-step="5"] .woodblock-card-1,
-    .flood-sticky[data-step="6"] .woodblock-card-1 {
-      transform: rotate(-25deg) translate(-90px, -45px);
-      opacity: 0;
-    }
-
-    .flood-sticky[data-step="4"] .woodblock-card-2,
-    .flood-sticky[data-step="5"] .woodblock-card-2,
-    .flood-sticky[data-step="6"] .woodblock-card-2 {
       transform: rotate(32deg) translate(110px, -60px);
       opacity: 0;
     }
@@ -1861,8 +1838,9 @@
     .thread-section {
       position: relative;
       overflow: hidden;
-      padding-top: clamp(5rem, 9vw, 9rem);
-      padding-bottom: clamp(5rem, 9vw, 9rem);
+      min-height: 210vh;
+      padding-top: 0;
+      padding-bottom: 0;
       background-image:
         var(--paper-texture),
         radial-gradient(circle at 16% 28%, rgba(218, 151, 55, .22), transparent 26%),
@@ -1884,7 +1862,11 @@
     }
 
     .thread-layout {
-      position: relative;
+      position: sticky;
+      top: 0;
+      min-height: 100svh;
+      padding-top: clamp(5rem, 9vw, 9rem);
+      padding-bottom: clamp(5rem, 9vw, 9rem);
       z-index: 1;
       display: grid;
       grid-template-columns: minmax(320px, 460px) minmax(620px, 1fr);
@@ -3589,14 +3571,15 @@
       }
 
       .flood-scrolly {
-        height: auto;
-        min-height: 800vh
+        height: 420vh
       }
 
       .flood-copy {
-        left: 1rem;
-        right: 1rem;
-        top: 10%
+        left: 30%;
+        right: auto;
+        top: 32%;
+        width: min(440px, calc(62vw - 1rem));
+        transform: translateX(-50%)
       }
 
       /* Woodblock handled by scalable transform rules */
@@ -5518,9 +5501,11 @@
       }
 
       .flood-copy {
-        left: var(--page-pad);
-        right: var(--page-pad);
-        top: 12%
+        left: 32%;
+        right: auto;
+        top: 32%;
+        width: min(440px, calc(66vw - var(--page-pad)));
+        transform: translateX(-50%)
       }
 
       .museum-map {
@@ -7472,9 +7457,7 @@
           <div></div>
           <div></div>
           <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div class="flood-hold"></div>
         </div>
       </section>
 
@@ -7859,8 +7842,10 @@
     }
     setProcess(0);
     function setFlood(i) {
-      const sticky = $('.flood-sticky'); sticky.dataset.step = i;
-      $$('.flood-line').forEach((x, n) => x.classList.toggle('active', n === i));
+      const lastFlood = $$('.flood-line').length - 1;
+      const step = Math.min(i, lastFlood);
+      const sticky = $('.flood-sticky'); sticky.dataset.step = step;
+      $$('.flood-line').forEach((x, n) => x.classList.toggle('active', n === step));
     }
     setFlood(0);
 
