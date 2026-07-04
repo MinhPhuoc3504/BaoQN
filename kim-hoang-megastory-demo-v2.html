@@ -4474,6 +4474,17 @@
       color: #ffd1bd;
     }
 
+    .story-art-card figcaption {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .story-art-card figcaption strong {
+      width: 100%;
+      font-family: "NVNBeloved", var(--title-font), Arial, Tahoma, "Segoe UI", sans-serif !important;
+      color: #7B2525 !important;
+    }
+
     .hotspot {
       z-index: 3;
       display: grid;
@@ -5983,7 +5994,7 @@
     .golden-intro h3 {
       font-family: var(--serif);
       font-size: clamp(2.7rem, 4.8vw, 5.8rem);
-      line-height: .92;
+      line-height: 1.04;
       margin: .7rem 0 1rem;
       letter-spacing: 0;
     }
@@ -6046,19 +6057,23 @@
       border: 1px solid rgba(255, 229, 160, .38) !important;
       border-radius: 6px;
       background:
-        radial-gradient(circle at 50% 18%, rgba(246, 201, 92, .2), transparent 34%),
-        linear-gradient(160deg, #551712 0%, #32130e 56%, #170706 100%) !important;
+        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
+        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat !important;
       background-image:
-        radial-gradient(circle at 50% 18%, rgba(246, 201, 92, .2), transparent 34%),
-        linear-gradient(160deg, #551712 0%, #32130e 56%, #170706 100%) !important;
+        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
+        url("Thiết kế chưa có tên (3).png") !important;
+      background-size: cover, cover !important;
+      background-position: center center, center center !important;
+      background-repeat: no-repeat !important;
+      background-blend-mode: normal !important;
       box-shadow: 0 34px 80px rgba(24, 3, 3, .36), inset 0 0 0 1px rgba(255, 255, 255, .08) !important;
       color: #fff6df;
     }
 
     .golden-track .golden-card:nth-child(even) {
       background:
-        radial-gradient(circle at 50% 18%, rgba(246, 201, 92, .2), transparent 34%),
-        linear-gradient(160deg, #551712 0%, #32130e 56%, #170706 100%) !important;
+        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
+        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat !important;
       color: #fff6df;
     }
 
@@ -6067,14 +6082,7 @@
     }
 
     .golden-track .golden-card:after {
-      content: "";
-      position: absolute;
-      z-index: 3;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(180deg, rgba(255, 230, 160, .08), transparent 34%),
-        repeating-linear-gradient(0deg, rgba(255, 235, 180, .045) 0 1px, transparent 1px 34px);
+      display: none;
     }
 
     .golden-track .golden-card-media {
@@ -6122,6 +6130,12 @@
       color: #641614 !important;
       font: 800 .95rem/1 var(--sans) !important;
       box-shadow: 0 0 0 8px rgba(246, 201, 92, .16);
+    }
+
+    .golden-track article.golden-card span,
+    .golden-track article.golden-card:nth-child(even) span {
+      background: #f6c95c !important;
+      color: #641614 !important;
     }
 
     .golden-track .golden-card h4,
@@ -7034,7 +7048,7 @@
                 data-title="Bộ lông nhiều sắc"
                 data-pop="Những mảng vàng, đỏ, trắng được tô tay khiến mỗi bản tranh có nhịp điệu riêng, vừa trang trí vừa gửi gắm lời chúc cát tường.">+</button>
             </div>
-            <figcaption><strong>Thần Kê</strong><span>Tỉnh thức · bình an · cát tường</span></figcaption>
+            <figcaption><strong>Thần Kê</strong></figcaption>
           </figure>
           <figure class="art-card story-art-card pig-card" tabindex="0" role="button" data-title="Lợn Kim Hoàng"
             data-desc="Hình tượng lợn trong tranh Kim Hoàng là lời chúc no đủ, sinh sôi và gia đình sung túc, nổi bật trên nền giấy đỏ hồng điều.">
@@ -7048,7 +7062,7 @@
                 data-title="Dáng lợn tròn đầy"
                 data-pop="Thân lợn chắc, đầy và nét in đậm tạo cảm giác sung túc, gửi gắm ước vọng mùa màng, gia đình và tài lộc.">+</button>
             </div>
-            <figcaption><strong>Lợn Kim Hoàng</strong><span>Sung túc · sinh sôi · gia đình êm ấm</span></figcaption>
+            <figcaption><strong>Lợn Kim Hoàng</strong></figcaption>
           </figure>
         </div>
       </section>
