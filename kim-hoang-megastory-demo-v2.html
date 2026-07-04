@@ -2352,12 +2352,34 @@
     }
 
     .artist-bridge {
+      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1.04fr) minmax(320px, .96fr);
       gap: clamp(2rem, 5vw, 5rem);
       align-items: center;
       padding-top: clamp(5rem, 10vw, 9rem);
       padding-bottom: clamp(5rem, 10vw, 9rem);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .artist-bg-video {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    .artist-bridge:before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: rgba(255, 243, 209, .58);
+      pointer-events: none;
     }
 
     .artist-portrait {
@@ -2954,6 +2976,34 @@
       padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
     }
 
+    .experience-section {
+      padding: 0;
+      position: relative;
+      overflow: clip;
+      background: #b51f27;
+      isolation: isolate;
+    }
+
+    .experience-hero {
+      position: relative;
+      min-height: 120svh;
+      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+      overflow: clip;
+    }
+
+    .experience-bg-pin {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      width: 100vw;
+      height: 100svh;
+      margin-top: calc(clamp(5rem, 9vw, 8rem) * -1);
+      margin-bottom: -100svh;
+      margin-left: calc(50% - 50vw);
+      background: #f6ead1 url("Thiết kế chưa có tên (2).png") center/cover no-repeat;
+      pointer-events: none;
+    }
+
     .experience-grid,
     .outreach-grid,
     .youth-grid,
@@ -2966,6 +3016,22 @@
     .experience-grid,
     .youth-grid {
       grid-template-columns: minmax(320px, .96fr) minmax(0, 1.04fr);
+    }
+
+    .experience-section .experience-grid {
+      position: relative;
+      z-index: 1;
+      grid-template-columns: minmax(0, 760px);
+      justify-content: center;
+      min-height: calc(100svh - clamp(5rem, 9vw, 8rem) * 2);
+    }
+
+    .experience-section .experience-photo {
+      display: none;
+    }
+
+    .experience-section .experience-copy {
+      text-align: center;
     }
 
     .outreach-grid,
@@ -3070,12 +3136,43 @@
     }
 
     .outreach-section {
-      background: linear-gradient(180deg, #fff1cf 0, #f6d98f 42%, #9d1c22 42%, #741512 100%);
+      padding: 0;
+      background: linear-gradient(180deg, #9d1c22 0, #741512 100%);
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .outreach-hero {
+      position: relative;
+      min-height: 110svh;
+      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+      overflow: clip;
+    }
+
+    .outreach-bg-pin {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      width: 100vw;
+      height: 100svh;
+      margin-top: calc(clamp(5rem, 9vw, 8rem) * -1);
+      margin-bottom: -100svh;
+      margin-left: calc(50% - 50vw);
+      background: #f6ead1 url("Thiết kế chưa có tên (2).png") center/cover no-repeat;
+      pointer-events: none;
     }
 
     .outreach-intro {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      margin: 0 auto clamp(2rem, 5vw, 4rem);
+      margin: clamp(5rem, 16vh, 10rem) auto 0;
+      padding-bottom: clamp(4rem, 12vh, 8rem);
+    }
+
+    .outreach-section .outreach-grid {
+      padding-top: clamp(4rem, 8vw, 7rem);
+      padding-bottom: clamp(5rem, 9vw, 8rem);
     }
 
     .timeline-card {
@@ -7126,6 +7223,9 @@
       </header>
 
       <section class="artist-bridge article-wide reveal-on-scroll">
+        <video class="artist-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="7122fcbf-c449-4da1-bda8-5c0aa03fa8d2.mp4" type="video/mp4" />
+        </video>
         <figure class="artist-portrait">
           <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 10.JPG" alt="Nghệ nhân Đào Đình Chung cầm bản khắc tranh Kim Hoàng" loading="lazy" />
           <figcaption>Nghệ nhân Đào Đình Chung trong không gian tranh đỏ Kim Hoàng.</figcaption>
@@ -7220,17 +7320,20 @@
       </header>
 
       <section class="experience-section reveal-on-scroll" aria-labelledby="experience-title">
-        <div class="experience-grid article-wide">
-          <figure class="experience-photo">
-            <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu không gian tranh đỏ Kim Hoàng của nghệ nhân Đào Đình Chung" loading="lazy" />
-            <figcaption>Không gian của nghệ nhân Đào Đình Chung không chỉ là nơi làm tranh mà còn trở thành một “lớp học di sản” đặc biệt.</figcaption>
-          </figure>
-          <div class="experience-copy">
-            <span class="kicker">KHÔNG GIAN TRẢI NGHIỆM CỦA NGHỆ NHÂN</span>
-            <h3 id="experience-title">Nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất.</h3>
-            <p>Căn nhà nhỏ của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa quen thuộc với người yêu di sản. Tại đây, khách tham quan được tận mắt xem quy trình làm tranh, nghe câu chuyện hồi sinh của tranh Kim Hoàng và trực tiếp chạm vào giấy gió, bản khắc mộc, màu nhuộm.</p>
-            <blockquote>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường, mà là một “lớp học di sản” sống động.</blockquote>
-            <p>Qua từng lần trải nghiệm, người xem hiểu hơn rằng sau mỗi bức tranh là tri thức dân gian, sự kiên nhẫn và công sức thủ công của người nghệ nhân.</p>
+        <div class="experience-hero">
+          <div class="experience-bg-pin" aria-hidden="true"></div>
+          <div class="experience-grid article-wide">
+            <figure class="experience-photo">
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu không gian tranh đỏ Kim Hoàng của nghệ nhân Đào Đình Chung" loading="lazy" />
+              <figcaption>Không gian của nghệ nhân Đào Đình Chung không chỉ là nơi làm tranh mà còn trở thành một “lớp học di sản” đặc biệt.</figcaption>
+            </figure>
+            <div class="experience-copy">
+              <span class="kicker">KHÔNG GIAN TRẢI NGHIỆM CỦA NGHỆ NHÂN</span>
+              <h3 id="experience-title">Nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất.</h3>
+              <p>Căn nhà nhỏ của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa quen thuộc với người yêu di sản. Tại đây, khách tham quan được tận mắt xem quy trình làm tranh, nghe câu chuyện hồi sinh của tranh Kim Hoàng và trực tiếp chạm vào giấy gió, bản khắc mộc, màu nhuộm.</p>
+              <blockquote>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường, mà là một “lớp học di sản” sống động.</blockquote>
+              <p>Qua từng lần trải nghiệm, người xem hiểu hơn rằng sau mỗi bức tranh là tri thức dân gian, sự kiên nhẫn và công sức thủ công của người nghệ nhân.</p>
+            </div>
           </div>
         </div>
         <div class="workshop-collage article-wide" aria-label="Các chi tiết trong không gian trải nghiệm Kim Hoàng">
@@ -7241,10 +7344,13 @@
       </section>
 
       <section class="outreach-section reveal-on-scroll" aria-labelledby="outreach-title">
-        <div class="outreach-intro article-narrow">
-          <span class="kicker">KHI TRANH BƯỚC RA KHỎI BẢO TÀNG</span>
-          <h3 id="outreach-title">Tranh Kim Hoàng chỉ thực sự được hồi sinh.</h3>
-          <p>Sau phục dựng, thử thách tiếp theo là đưa tranh Kim Hoàng ra khỏi không gian lưu trữ, đến gần hơn với cộng đồng và được đón nhận trong đời sống hôm nay.</p>
+        <div class="outreach-hero">
+          <div class="outreach-bg-pin" aria-hidden="true"></div>
+          <div class="outreach-intro article-narrow">
+            <span class="kicker">KHI TRANH BƯỚC RA KHỎI BẢO TÀNG</span>
+            <h3 id="outreach-title">Tranh Kim Hoàng chỉ thực sự được hồi sinh.</h3>
+            <p>Sau phục dựng, thử thách tiếp theo là đưa tranh Kim Hoàng ra khỏi không gian lưu trữ, đến gần hơn với cộng đồng và được đón nhận trong đời sống hôm nay.</p>
+          </div>
         </div>
         <div class="outreach-grid article-wide">
           <div class="outreach-timeline">
