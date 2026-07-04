@@ -2292,6 +2292,90 @@
     .museum-map i {
       background: linear-gradient(90deg, rgba(208, 42, 45, .1), #d02a2d, rgba(208, 42, 45, .1));
     }
+
+    .museum-video-section {
+      min-height: clamp(32rem, 78vh, 52rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      padding: 0;
+      background: #090807 !important;
+      background-image: none !important;
+      isolation: isolate;
+    }
+
+    .museum-video-section:before {
+      content: none;
+    }
+
+    .museum-video-section:after {
+      content: none;
+    }
+
+    .museum-video-header {
+      position: relative;
+      z-index: 1;
+      min-height: inherit;
+      display: grid;
+      place-items: center;
+      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem);
+      text-align: left;
+      background: #7B2525;
+      overflow: hidden;
+    }
+
+    .museum-video-header:before {
+      content: none;
+    }
+
+    .museum-video-header h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #fff4df;
+      font-family: "Times New Roman", Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 6.4rem);
+      line-height: .95;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      text-shadow: 0 8px 34px rgba(0, 0, 0, .72);
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .museum-video-panel {
+      position: relative;
+      min-height: inherit;
+      display: grid;
+      place-items: center;
+      background: #090807;
+      overflow: hidden;
+    }
+
+    .museum-bg-video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      background: #090807;
+      filter: saturate(1.05) contrast(1.08) brightness(.86);
+    }
+
+    @media(max-width: 760px) {
+      .museum-video-section {
+        grid-template-columns: 1fr;
+      }
+
+      .museum-video-header,
+      .museum-video-panel {
+        min-height: 50vh;
+      }
+
+      .museum-video-header {
+        text-align: center;
+      }
+    }
     .chapter-three {
       background: #f2dfb7;
       color: #2a1210;
@@ -7421,41 +7505,14 @@
         </div>
       </section>
 
-      <section class="museum-section article-wide">
-        <div class="museum-layout">
-          <div class="section-heading museum-heading"><span class="kicker">CHỈ CÒN LẠI TRONG BẢO TÀNG</span>
-            <h3>Những mảnh ký ức sau lớp kính</h3>
-            <p>Có những dấu vết của tranh Kim Hoàng không còn nằm ở sân đình hay phiên chợ Tết, mà lặng lẽ ở Paris, phía sau lớp kính bảo tàng.</p>
-          </div>
-          <div class="museum-room" aria-label="Tủ kính trưng bày hiện vật ở Paris">
-            <div class="museum-room-sign">
-              <span>Paris</span>
-              <strong>Cabinet de conservation</strong>
-            </div>
-            <div class="museum-case">
-              <div class="case-top-light" aria-hidden="true"></div>
-              <div class="case-glass" aria-hidden="true"></div>
-              <div class="museum-gallery">
-                <button class="museum-frame museum-photo-frame" data-title="Hiện vật tranh Kim Hoàng tại Paris"
-                  data-desc="Một mảnh tư liệu còn lại của dòng tranh đỏ, được lưu giữ như hiện vật bảo tàng ở Paris.">
-                  <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 9.jpeg" alt="Hiện vật tranh Kim Hoàng trong bảo tàng ở Paris" loading="lazy" />
-                  <em>Hiện vật 01</em>
-                </button>
-                <button class="museum-frame museum-photo-frame" data-title="Dấu tích sau lớp kính"
-                  data-desc="Lớp kính bảo tàng giữ lại hình ảnh, nhưng cũng nhắc rằng dòng truyền nghề từng bị đứt đoạn ở chính quê hương của nó.">
-                  <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 10.jpeg" alt="Hiện vật tranh Kim Hoàng sau lớp kính bảo tàng" loading="lazy" />
-                  <em>Hiện vật 02</em>
-                </button>
-              </div>
-              <div class="case-caption">
-                <span>Trong tủ kính</span>
-                <p>Hai tư liệu được nhìn như hiện vật: có khoảng cách, có lớp bảo quản, và có cảm giác những mảnh ký ức đã rời khỏi không gian làng quê để nằm yên trong một bảo tàng Paris.</p>
-              </div>
-            </div>
-          </div>
-          <div class="museum-map" aria-label="Hành trình tư liệu">
-            <span>Kim Hoàng</span><i></i><span>Hà Nội</span><i></i><span>Paris</span>
-          </div>
+      <section class="museum-section museum-video-section" aria-labelledby="museum-video-title">
+        <header class="museum-video-header">
+          <h3 id="museum-video-title">CHỈ CÒN LẠI TRONG BẢO TÀNG</h3>
+        </header>
+        <div class="museum-video-panel" aria-hidden="true">
+          <video class="museum-bg-video" autoplay muted loop playsinline preload="metadata">
+            <source src="museum_dragon_sketch_animated.mp4" type='video/mp4; codecs="avc1.640029"' />
+          </video>
         </div>
       </section>
     </section>
