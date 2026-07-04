@@ -6120,6 +6120,14 @@
       font-kerning: normal;
     }
 
+    body,
+    body * {
+      letter-spacing: 0 !important;
+      word-spacing: 0 !important;
+      font-variant-ligatures: normal;
+      font-feature-settings: "kern" 1;
+    }
+
     body :where(h1, h2, h3, h4, p, blockquote, figcaption, span, em, strong, a, button, li, dt, dd, label, time) {
       font-family: var(--vietnamese-ui) !important;
       text-rendering: auto;
@@ -6136,7 +6144,7 @@
     .revival-marks span,
     .workshop-collage figcaption,
     .chapter-four .future-counters span {
-      letter-spacing: .045em !important;
+      letter-spacing: 0 !important;
     }
 
     html {
