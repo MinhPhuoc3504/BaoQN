@@ -236,8 +236,16 @@
 
     .hero-title-reduced {
       display: inline-block;
-      font-size: .7em;
-      line-height: 1.08
+      font-family: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      font-size: .8em;
+      line-height: 1.08;
+      transform: scaleX(.9);
+      transform-origin: left center
+    }
+
+    .hero-title-narrow {
+      transform: scaleX(.82);
+      transform-origin: left center
     }
 
     .deck {
@@ -658,9 +666,32 @@
     }
 
     .comparison-copy h4 {
-      font-family: var(--serif);
+      font-family: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      color: #7B2525;
       font-size: 2rem;
+      line-height: 1.08;
       margin: 0 0 .6rem
+    }
+
+    .comparison-copy p {
+      color: #7B2525
+    }
+
+    .comparison-title-name,
+    .comparison-title-desc {
+      display: block
+    }
+
+    .comparison-title-name {
+      font-family: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      font-size: 1.35em;
+      line-height: .95
+    }
+
+    .comparison-title-desc {
+      margin-top: .25rem;
+      font-size: .82em;
+      font-style: italic
     }
 
     .comparison-copy p {
@@ -4019,11 +4050,11 @@
     .comparison-section .comparison-copy,
     .comparison-section .comparison-copy h4,
     .comparison-section .comparison-copy p {
-      color: #ff6b5f;
+      color: #7B2525;
     }
 
     .comparison-section .comparison-copy h4 {
-      color: #ff4b3e;
+      color: #7B2525;
     }
 
     .archive-section,
@@ -4602,11 +4633,11 @@
       min-height: 0;
       border-radius: 0;
       background:
-        linear-gradient(90deg, rgba(30, 5, 7, .9) 0%, rgba(74, 12, 13, .74) 46%, rgba(128, 22, 18, .58) 100%),
-        linear-gradient(0deg, rgba(20, 4, 5, .9) 0%, rgba(20, 4, 5, .2) 45%, rgba(20, 4, 5, .45) 100%),
+        linear-gradient(90deg, rgba(30, 5, 7, .72) 0%, rgba(74, 12, 13, .5) 46%, rgba(128, 22, 18, .34) 100%),
+        linear-gradient(0deg, rgba(20, 4, 5, .68) 0%, rgba(20, 4, 5, .1) 45%, rgba(20, 4, 5, .28) 100%),
         url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/contain no-repeat;
-      opacity: .86;
-      filter: blur(.25px) saturate(1.06) brightness(.94);
+      opacity: .95;
+      filter: blur(.08px) saturate(1.18) brightness(1.12);
       transform: scale(1.5);
       box-shadow: none;
     }
@@ -4697,9 +4728,9 @@
     }@media(max-width:900px) {
       .hero:before {
         background:
-          linear-gradient(0deg, rgba(30, 5, 7, .92) 0%, rgba(73, 12, 14, .68) 58%, rgba(73, 12, 14, .78) 100%),
+          linear-gradient(0deg, rgba(30, 5, 7, .7) 0%, rgba(73, 12, 14, .42) 58%, rgba(73, 12, 14, .52) 100%),
           url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/cover no-repeat;
-        opacity: .78;
+        opacity: .92;
       }
 
       .hero-image-stack {
@@ -5035,7 +5066,7 @@
 
       .hero:before {
         background:
-          linear-gradient(0deg, rgba(30, 5, 7, .94) 0%, rgba(73, 12, 14, .62) 56%, rgba(73, 12, 14, .82) 100%),
+          linear-gradient(0deg, rgba(30, 5, 7, .72) 0%, rgba(73, 12, 14, .38) 56%, rgba(73, 12, 14, .5) 100%),
           url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/cover no-repeat;
         transform: scale(1.12);
       }
@@ -6147,7 +6178,9 @@
       }
 
       .chapter-one .map-scrolly .story-card {
-        min-height: 100vh !important;
+        min-height: 70vh !important;
+        padding-top: 1.1rem !important;
+        padding-bottom: 1.1rem !important;
       }
     }
     /* ===== UI FIX PASS: typography, overlap and responsive spacing ===== */
@@ -6265,7 +6298,7 @@
     }
 
     h4 {
-      font-family: var(--body-font) !important;
+      font-family: var(--title-font) !important;
     }
 
     .chapter-opener h2,
@@ -6587,7 +6620,7 @@
       </div>
       <div class="hero-copy">
         <!-- SỬA TIÊU ĐỀ TẠI ĐÂY -->
-        <h1 id="hero-title"><span class="hero-title-reduced">Một thế kỷ<br>thất truyền</span><br><em class="hero-title-reduced">và cuộc hồi sinh của</em><br>tranh đỏ<br>Kim Hoàng</h1>
+        <h1 id="hero-title"><span class="hero-title-reduced">Một thế kỷ<br>thất truyền</span><br><em class="hero-title-reduced hero-title-narrow">và cuộc hồi<br>sinh của</em><br>tranh đỏ<br>Kim Hoàng</h1>
         <!-- SỬA MÔ TẢ NGẮN DƯỚI TIÊU ĐỀ TẠI ĐÂY -->
         <p class="deck">Gần một thế kỷ sau khi thất truyền, tranh Kim Hoàng - dòng tranh dân gian từng vang danh đất Kinh Kỳ - đang dần hồi sinh nhờ nỗ lực bền bỉ của nghệ nhân Đào Đình Chung. Từ những tư liệu ít ỏi còn sót lại, ông đã từng bước khôi phục một di sản văn hóa tưởng chừng chỉ còn trong ký ức.</p>
         <div class="hero-meta">
@@ -6634,27 +6667,19 @@
               <div class="red-print print-2" aria-hidden="true"></div>
               <div class="red-print print-3" aria-hidden="true"></div>
             </div>
-            <div class="visual-caption">Ảnh bản đồ: Sở Nội vụ TP Hà Nội · Đồ họa nhấn dòng sông</div>
           </div>
         </div>
         <div class="scrolly-copy">
           <article class="story-card is-active" data-scene="map-1">
             <span class="kicker">TỪ MỘT NGÔI LÀNG</span>
             <h3>Bên dòng Đáy hiền hòa</h3>
-            <p>Làng Kim Hoàng thuộc xã Sơn Đồng, Hà Nội ngày nay nằm dọc bờ sông Đáy. Vùng đất ven sông ấy vừa nuôi
-              dưỡng đời sống nông nghiệp, vừa là cái nôi sản sinh dòng tranh đỏ độc nhất vô nhị.</p>
+            <p>Làng Kim Hoàng thuộc xã Sơn Đồng, Hà Nội ngày nay vốn là sự hợp nhất của hai làng cổ: Kim Bảng và Hoàng Bảng vào đầu thế kỷ XIX (Theo Địa chí Hà Tây, Sở Văn hóa Thông tin, 1999). Vùng đất cổ này không chỉ nổi tiếng với truyền thống khoa bảng, hiếu học mà còn là cái nôi sản sinh ra dòng tranh đỏ độc nhất vô nhị của nền mỹ thuật dân gian Việt Nam.</p>
           </article>
           <article class="story-card" data-scene="map-2">
-            <span class="kicker">ĐẦU THẾ KỶ XIX</span>
-            <h3>Hai làng cổ hợp thành một tên gọi</h3>
-            <p>Kim Hoàng vốn là sự hợp nhất của hai làng cổ Kim Bảng và Hoàng Bảng. Từ nền đất hiếu học, khoa bảng ấy,
-              kỹ thuật mộc bản Bắc Bộ gặp tư duy thẩm mỹ bản địa để tạo nên một thương hiệu tranh Tết riêng.</p>
+            <p>Sự hình thành của dòng tranh Kim Hoàng gắn liền với những biến động lịch sử và nhu cầu văn hóa tâm linh của người dân xứ Đoài. Vào thời kỳ Thăng Long - Hà Nội còn là trung tâm hội tụ của các làng nghề, người dân Kim Hoàng đã biết kết hợp kỹ thuật khắc in mộc bản của vùng đồng bằng Bắc Bộ với tư duy thẩm mỹ đậm tính bản địa để tạo nên một thương hiệu tranh Tết riêng biệt.</p>
           </article>
-          <article class="story-card" data-scene="map-3">
-            <span class="kicker">NỬA CUỐI THẾ KỶ XVIII - XIX</span>
-            <h3>Sắc đỏ theo dòng nước ra chợ Tết</h3>
-            <p>Vào thời hoàng kim, tranh làm ra đến đâu bán hết đến đấy. Những gánh tranh đỏ theo người đi bộ, theo
-              chuyến đò dọc sông Đáy tỏa về các phiên chợ quê và đất Kinh Kỳ.</p>
+          <article class="story-card" data-scene="map-2">
+            <p>Dòng tranh này ra đời vào khoảng nửa sau thế kỷ XVIII, thời kỳ phục hưng của các giá trị văn hóa nghệ thuật truyền thống dưới triều Lê - Trịnh (Theo Nghiên cứu tranh dân gian Việt Nam, Nguyễn Bá Vân - Chu Quang Trứ, NXB Văn hóa, 1984). Điểm đặc biệt là tranh Kim Hoàng không chỉ phục vụ cho tầng lớp thị dân khá giả chốn kinh kỳ mà nhanh chóng len lỏi vào từng gian nhà tranh của người nông dân nghèo ven đô, trở thành món ăn tinh thần không thể thiếu mỗi dịp Tết đến xuân về.</p>
           </article>
         </div>
       </section>
@@ -6681,7 +6706,7 @@
             </div>
           </div>
           <div class="comparison-copy" id="comparisonCopy">
-            <h4>Kim Hoàng — sắc đỏ và dấu tay người nghệ nhân</h4>
+            <h4><span class="comparison-title-name">Kim Hoàng</span><span class="comparison-title-desc">sắc đỏ và dấu tay người nghệ nhân</span></h4>
             <p>Tranh được in nét đen lên nền giấy đỏ trước, tô màu thủ công rồi dập lại bản nét. Vì được phóng bút bằng
               tay, không có hai bức tranh hoàn toàn giống nhau.</p>
           </div>
@@ -7256,14 +7281,14 @@
     setFlood(0);
 
     const comp = {
-      dongho: ['Đông Hồ — các mảng màu được in từ nhiều bản khắc', 'Giấy điệp tạo độ óng; mỗi màu thường có một bản in riêng, bản nét đen dùng để định hình hình ảnh.'],
-      kimhoang: ['Kim Hoàng — sắc đỏ và dấu tay người nghệ nhân', 'Tranh được in nét đen lên nền giấy đỏ trước, tô màu thủ công rồi dập lại bản nét. Vì được phóng bút bằng tay, không có hai bức tranh hoàn toàn giống nhau.']
+      dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc', 'Giấy điệp tạo độ óng; mỗi màu thường có một bản in riêng, bản nét đen dùng để định hình hình ảnh.'],
+      kimhoang: ['Kim Hoàng', 'sắc đỏ và dấu tay người nghệ nhân', 'Tranh được in nét đen lên nền giấy đỏ trước, tô màu thủ công rồi dập lại bản nét. Vì được phóng bút bằng tay, không có hai bức tranh hoàn toàn giống nhau.']
     };
     $$('.tab-btn').forEach(btn => btn.addEventListener('click', () => {
       $$('.tab-btn').forEach(x => { x.classList.remove('is-active'); x.setAttribute('aria-selected', 'false') });
       btn.classList.add('is-active'); btn.setAttribute('aria-selected', 'true');
       const key = btn.dataset.tab; $('#comparisonStage').dataset.active = key;
-      $('#comparisonCopy').innerHTML = `<h4>${comp[key][0]}</h4><p>${comp[key][1]}</p>`;
+      $('#comparisonCopy').innerHTML = `<h4><span class="comparison-title-name">${comp[key][0]}</span><span class="comparison-title-desc">${comp[key][1]}</span></h4><p>${comp[key][2]}</p>`;
     }));
 
     const infoModal = $('#infoModal');
