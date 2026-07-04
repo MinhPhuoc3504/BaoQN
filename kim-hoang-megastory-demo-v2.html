@@ -2690,7 +2690,417 @@
     .toast.show {
       opacity: 1;
       transform: translate(-50%, 0)
-    }@media(max-width:900px) {
+    }
+
+    .chapter-four {
+      background: #fff1cf;
+      color: #2d1711;
+      overflow: clip;
+    }
+
+    .chapter-four .final-opener {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding: 7rem var(--page-pad) 6rem;
+      color: #fff7df;
+      background:
+        linear-gradient(90deg, rgba(36, 7, 8, .9), rgba(93, 14, 18, .46) 46%, rgba(22, 8, 6, .72)),
+        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 10.jpg") center/cover no-repeat;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .chapter-four .final-opener:after {
+      content: "SỐNG TIẾP";
+      position: absolute;
+      right: -.04em;
+      bottom: -.15em;
+      z-index: -1;
+      font: 900 clamp(5.5rem, 18vw, 19rem)/.78 var(--sans);
+      color: rgba(255, 209, 92, .13);
+      letter-spacing: -.08em;
+    }
+
+    .chapter-four .final-copy {
+      width: min(980px, 100%);
+      position: relative;
+      z-index: 1;
+    }
+
+    .chapter-four .final-copy h2 {
+      max-width: 9ch;
+      margin: .35rem 0 1.25rem;
+      font-family: var(--serif);
+      font-size: clamp(3.1rem, 9vw, 9rem);
+      line-height: .88;
+      color: #fff7df;
+    }
+
+    .chapter-four .final-copy p {
+      max-width: 760px;
+      margin: 0;
+      color: #ffe7bd;
+      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+      line-height: 1.65;
+    }
+
+    .chapter-four .final-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem;
+      margin-top: 1.7rem;
+    }
+
+    .chapter-four .final-tags span {
+      border: 1px solid rgba(255, 225, 155, .42);
+      background: rgba(40, 8, 8, .48);
+      padding: .62rem .85rem;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .experience-section,
+    .outreach-section,
+    .youth-section,
+    .living-section,
+    .future-section {
+      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+    }
+
+    .experience-grid,
+    .outreach-grid,
+    .youth-grid,
+    .living-grid {
+      display: grid;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .experience-grid,
+    .youth-grid {
+      grid-template-columns: minmax(320px, .96fr) minmax(0, 1.04fr);
+    }
+
+    .outreach-grid,
+    .living-grid {
+      grid-template-columns: minmax(0, .92fr) minmax(320px, 1.08fr);
+      align-items: start;
+    }
+
+    .experience-photo,
+    .outreach-photo,
+    .youth-photo,
+    .product-photo {
+      margin: 0;
+      background: #230d0c;
+      box-shadow: 0 35px 100px rgba(73, 20, 11, .22);
+    }
+
+    .experience-photo img,
+    .outreach-photo img,
+    .youth-photo img,
+    .product-photo img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    .experience-photo figcaption,
+    .outreach-photo figcaption,
+    .youth-photo figcaption,
+    .product-photo figcaption {
+      padding: .75rem .9rem;
+      color: #f8e7c8;
+      background: #210f0d;
+      font-size: .76rem;
+    }
+
+    .chapter-four h3 {
+      margin: .4rem 0 1.2rem;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.2vw, 4.6rem);
+      line-height: 1;
+      color: #741512;
+    }
+
+    .chapter-four p {
+      font-size: clamp(1rem, 1.45vw, 1.12rem);
+      line-height: 1.75;
+    }
+
+    .chapter-four blockquote {
+      margin: 1.6rem 0;
+      padding: 1.2rem 1.4rem;
+      border-left: 5px solid #b51f27;
+      background: rgba(255, 248, 224, .74);
+      color: #8d1518;
+      font: 700 clamp(1.08rem, 1.8vw, 1.38rem)/1.45 var(--serif);
+    }
+
+    .workshop-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: clamp(2rem, 5vw, 4rem);
+    }
+
+    .workshop-collage figure {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      min-height: 310px;
+      background: #3d1010;
+      box-shadow: 0 26px 80px rgba(63, 12, 11, .18);
+    }
+
+    .workshop-collage figure:nth-child(2) {
+      transform: translateY(2.2rem);
+    }
+
+    .workshop-collage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .workshop-collage figure:hover img {
+      transform: scale(1.05);
+    }
+
+    .workshop-collage figcaption {
+      position: absolute;
+      left: .9rem;
+      right: .9rem;
+      bottom: .9rem;
+      background: rgba(33, 15, 13, .84);
+      color: #fff1d4;
+      padding: .65rem .75rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: .72rem;
+    }
+
+    .outreach-section {
+      background: linear-gradient(180deg, #fff1cf 0, #f6d98f 42%, #9d1c22 42%, #741512 100%);
+    }
+
+    .outreach-intro {
+      text-align: center;
+      margin: 0 auto clamp(2rem, 5vw, 4rem);
+    }
+
+    .timeline-card {
+      position: relative;
+      margin-bottom: 1rem;
+      padding: 1.15rem 1.2rem 1.15rem 4rem;
+      border: 1px solid rgba(255, 209, 92, .24);
+      background: rgba(255, 244, 220, .1);
+      color: #fff0d0;
+    }
+
+    .timeline-card span {
+      position: absolute;
+      left: 1.1rem;
+      top: 1rem;
+      color: #ffd15c;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+
+    .timeline-card h4 {
+      margin: 0 0 .35rem;
+      color: #fff7df;
+      font-size: 1.08rem;
+    }
+
+    .timeline-card p {
+      margin: 0;
+      color: #f1d8b2;
+      font-size: .98rem;
+    }
+
+    .outreach-visuals {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .outreach-visuals blockquote {
+      margin: 0;
+      background: #fff1cf;
+      color: #8d1518;
+    }
+
+    .youth-section {
+      background: #1a1110;
+      color: #fff4df;
+    }
+
+    .youth-visual {
+      position: sticky;
+      top: 6rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .youth-copy h3 {
+      color: #ffd15c;
+    }
+
+    .youth-copy .kicker,
+    .living-copy .kicker {
+      color: #ffd15c;
+    }
+
+    .youth-copy p {
+      color: #ead6ba;
+    }
+
+    .youth-copy blockquote {
+      background: rgba(255, 244, 220, .08);
+      border-color: #ffd15c;
+      color: #fff2cc;
+    }
+
+    .youth-mini-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+
+    .youth-mini-gallery img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+    }
+
+    .living-section {
+      background: radial-gradient(circle at 15% 18%, rgba(255, 209, 92, .24), transparent 30%), linear-gradient(135deg, #9f1b21, #d94a2e 55%, #efb23d);
+      color: #fff8e7;
+    }
+
+    .living-copy h3,
+    .living-copy p {
+      color: #fff8e7;
+    }
+
+    .product-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .product-cards article {
+      min-height: 150px;
+      padding: 1rem;
+      background: rgba(255, 244, 220, .14);
+      border: 1px solid rgba(255, 244, 220, .22);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .product-cards strong {
+      color: #fff7df;
+      font-size: 1.05rem;
+    }
+
+    .product-cards span {
+      color: #ffe5b4;
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .future-section {
+      padding-top: 0;
+      background: linear-gradient(180deg, #fff1cf, #f5d995);
+    }
+
+    .chapter-four .future-counters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      min-height: 58vh;
+      margin: 0 auto;
+      box-shadow: 0 35px 100px rgba(73, 20, 11, .18);
+    }
+
+    .chapter-four .future-counters div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      background: linear-gradient(135deg, #b51f27, #e85b2f);
+      color: white;
+    }
+
+    .chapter-four .future-counters .outline {
+      background: #fff4d5;
+      color: #a51e27;
+    }
+
+    .chapter-four .future-counters strong {
+      font: 700 clamp(5rem, 15vw, 13rem)/.8 var(--serif);
+    }
+
+    .chapter-four .future-counters span {
+      max-width: 340px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .future-copy {
+      margin: clamp(2.5rem, 5vw, 4rem) auto 0;
+      text-align: center;
+    }
+
+    .future-copy h3 {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .chapter-four .chapter-transition {
+      color: #741512;
+    }
+
+    @media(max-width:900px) {
+      .chapter-four .final-opener {
+        min-height: 92svh;
+        padding: 6rem var(--page-pad) 4rem;
+      }
+
+      .experience-grid,
+      .outreach-grid,
+      .youth-grid,
+      .living-grid,
+      .chapter-four .future-counters {
+        grid-template-columns: 1fr;
+      }
+
+      .workshop-collage {
+        grid-template-columns: 1fr;
+      }
+
+      .workshop-collage figure,
+      .workshop-collage figure:nth-child(2) {
+        min-height: 260px;
+        transform: none;
+      }
+
+      .youth-visual {
+        position: relative;
+        top: auto;
+      }
+
       .topbar {
         padding: 0 1rem
       }
@@ -2832,6 +3242,23 @@
     }
 
     @media(max-width:560px) {
+      .experience-section,
+      .outreach-section,
+      .youth-section,
+      .living-section,
+      .future-section {
+        padding: 4.5rem 1rem;
+      }
+
+      .chapter-four .final-copy h2 {
+        font-size: clamp(2.6rem, 14vw, 4.4rem);
+      }
+
+      .product-cards,
+      .youth-mini-gallery {
+        grid-template-columns: 1fr;
+      }
+
       .chapter-nav {
         display: none
       }
@@ -6136,30 +6563,123 @@
 
     <section class="chapter chapter-four" id="chapter-4">
       <header class="chapter-opener final-opener">
-        <span class="chapter-number">CHƯƠNG 4</span>
-        <h2>Một di sản được đánh thức</h2>
-        <p>Ảnh, video trải nghiệm, sản phẩm ứng dụng và con số phục dựng sẽ tạo nhịp sáng, gần gũi hơn.</p>
+        <div class="final-copy article-wide">
+          <span class="chapter-number">CHƯƠNG 4</span>
+          <h2>Một di sản được đánh thức</h2>
+          <p>Từ căn nhà nhỏ ở làng Kim Hoàng, tranh đỏ bước ra khỏi tủ kính bảo tàng, gặp lại công chúng, đi vào những buổi học di sản và mở tiếp một hành trình cho người trẻ.</p>
+          <div class="final-tags" aria-label="Các nhịp chính của chương 4">
+            <span>Không gian trải nghiệm</span>
+            <span>Triển lãm</span>
+            <span>Người trẻ</span>
+            <span>50+ mẫu phục dựng</span>
+          </div>
+        </div>
       </header>
-      <section class="media-strip article-wide">
-        <article>
-          <div class="media-ph m1"><span class="media-ring"></span><b>▶</b><em>VIDEO XƯỞNG</em></div>
-          <h3>Không gian trải nghiệm</h3>
-          <p>Video walkthrough ngắn + hotspot vào giấy, bản khắc và bàn in.</p>
-        </article>
-        <article>
-          <div class="media-ph m2"><span class="media-grid-art"></span><em>PHOTO STORY</em></div>
-          <h3>Người trẻ chạm vào di sản</h3>
-          <p>Dải ảnh biểu cảm, bàn tay và khoảnh khắc nhấc bản in.</p>
-        </article>
-        <article>
-          <div class="media-ph m3"><span class="media-product-art"></span><em>ỨNG DỤNG</em></div>
-          <h3>Tranh trong đời sống mới</h3>
-          <p>Slider ứng dụng họa tiết lên sổ tay, bưu thiếp, túi và bao bì.</p>
-        </article>
+
+      <section class="experience-section reveal-on-scroll" aria-labelledby="experience-title">
+        <div class="experience-grid article-wide">
+          <figure class="experience-photo">
+            <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu không gian tranh đỏ Kim Hoàng của nghệ nhân Đào Đình Chung" loading="lazy" />
+            <figcaption>Ngôi nhà của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa của làng Kim Hoàng.</figcaption>
+          </figure>
+          <div class="experience-copy">
+            <span class="kicker">KHÔNG GIAN TRẢI NGHIỆM CỦA NGHỆ NHÂN</span>
+            <h3 id="experience-title">Một lớp học di sản trong căn nhà nhỏ.</h3>
+            <p>Có thể nói, chính ngôi nhà của nghệ nhân Đào Đình Chung tại làng Kim Hoàng là nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất. Sau nhiều năm phục dựng và quảng bá, căn nhà nhỏ của ông dần trở thành điểm đến quen thuộc đối với những người yêu di sản.</p>
+            <p>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường. Thay vì những hiện vật nằm sau lớp kính, du khách được trực tiếp cầm trên tay giấy gió, quan sát bản khắc mộc, tìm hiểu quy trình nhuộm giấy và trải nghiệm những công đoạn cơ bản trong quá trình làm tranh.</p>
+            <blockquote>Đằng sau mỗi bức tranh là cả một kho tàng tri thức dân gian và công sức lao động của người nghệ nhân.</blockquote>
+            <p>Mỗi tờ giấy đỏ đều phải trải qua quá trình pha màu, nhuộm, phơi và xử lý thủ công; mỗi bản in thành công là kết quả của nhiều lần thử nghiệm. Vì thế, ông Chung mong người trẻ không chỉ đến để trải nghiệm cho biết, mà còn hiểu được giá trị của sự kiên nhẫn, tỉ mỉ và tinh thần gìn giữ di sản văn hóa truyền thống.</p>
+          </div>
+        </div>
+        <div class="workshop-collage article-wide" aria-label="Các chi tiết trong không gian trải nghiệm Kim Hoàng">
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Nghệ nhân tô màu trên tranh Kim Hoàng" loading="lazy" /><figcaption>Phóng bút tô màu</figcaption></figure>
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Người trẻ trải nghiệm in tranh trên giấy đỏ" loading="lazy" /><figcaption>Tự tay in tranh</figcaption></figure>
+          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 11.JPG" alt="Cọ vẽ và màu trong xưởng tranh Kim Hoàng" loading="lazy" /><figcaption>Giấy, mộc bản và màu</figcaption></figure>
+        </div>
       </section>
-      <section class="counter-section">
-        <div><strong>50+</strong><span>mẫu tranh đã được phục dựng</span></div>
-        <div class="outline"><strong>50+</strong><span>mẫu vẫn đang được nghiên cứu</span></div>
+
+      <section class="outreach-section reveal-on-scroll" aria-labelledby="outreach-title">
+        <div class="outreach-intro article-narrow">
+          <span class="kicker">KHI TRANH BƯỚC RA KHỎI BẢO TÀNG</span>
+          <h3 id="outreach-title">Hồi sinh không dừng ở việc làm ra một bức tranh.</h3>
+          <p>Sau hành trình phục dựng, thử thách tiếp theo là làm sao để công chúng biết đến sự tồn tại của một dòng tranh từng bị lãng quên. Với ông Chung, tranh Kim Hoàng chỉ thực sự hồi sinh khi đến gần hơn với đời sống cộng đồng.</p>
+        </div>
+        <div class="outreach-grid article-wide">
+          <div class="outreach-timeline">
+            <article class="timeline-card"><span>01</span><h4>Phục dựng thành công</h4><p>Các tác phẩm mới được phục dựng trở thành điểm khởi đầu cho câu chuyện trở về của tranh đỏ.</p></article>
+            <article class="timeline-card"><span>02</span><h4>Đi tặng, đi giới thiệu</h4><p>Tranh được đưa tới người trong làng, bảo tàng, hội chợ và các sự kiện quảng bá di sản.</p></article>
+            <article class="timeline-card"><span>03</span><h4>Kể lại một làng nghề</h4><p>Mỗi bức tranh trưng bày là một cách kể về làng nghề từng vang danh nhưng chìm trong quên lãng.</p></article>
+            <article class="timeline-card"><span>04</span><h4>Công chúng tìm về</h4><p>Nhiều nhà nghiên cứu, sinh viên và người yêu văn hóa dân gian tìm về tận làng Kim Hoàng.</p></article>
+          </div>
+          <div class="outreach-visuals">
+            <figure class="outreach-photo">
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 6.JPG" alt="Chứng nhận tham gia triển lãm tranh dân gian Việt Nam của nghệ nhân Đào Đình Chung" loading="lazy" />
+              <figcaption>Những cuộc triển lãm và sự kiện văn hóa giúp cái tên Kim Hoàng được biết đến rộng rãi hơn.</figcaption>
+            </figure>
+            <blockquote>“Tôi cũng đi tặng một số người trong làng và cũng đi các bảo tàng và các hội chợ để quảng bá. Tôi cũng tham gia rất nhiều chương trình, sự kiện để nhiều người biết đến làng Kim Hoàng hơn.”</blockquote>
+            <blockquote>“Người ta cũng tìm hiểu và về tận làng để khám phá, để biết rằng ngày xưa làng Kim Hoàng cũng nổi tiếng và có dòng tranh đỏ rất quý trong kho tàng tranh dân gian Việt Nam.”</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="youth-section reveal-on-scroll" aria-labelledby="youth-title">
+        <div class="youth-grid article-wide">
+          <div class="youth-visual">
+            <figure class="youth-photo">
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 7.JPG" alt="Người trẻ quan sát tranh Kim Hoàng trong không gian trưng bày" loading="lazy" />
+              <figcaption>Di sản trở nên gần gũi khi người trẻ được nhìn, chạm và tự tay thực hành.</figcaption>
+            </figure>
+            <div class="youth-mini-gallery">
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Trải nghiệm in tranh Kim Hoàng" loading="lazy" />
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Tô màu tranh Kim Hoàng" loading="lazy" />
+              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 5.JPG" alt="Tư liệu về sự trở lại của sắc đỏ Kim Hoàng" loading="lazy" />
+            </div>
+          </div>
+          <div class="youth-copy">
+            <span class="kicker">NGƯỜI TRẺ VÀ NHỮNG LẦN ĐẦU BIẾT ĐẾN KIM HOÀNG</span>
+            <h3 id="youth-title">Một di sản chỉ thực sự sống khi có người tiếp nhận nó.</h3>
+            <p>Trong nhiều năm qua, bên cạnh việc đón khách tham quan tại làng Kim Hoàng, ông Chung còn phối hợp với các trường học, trung tâm văn hóa và các đơn vị giáo dục để tổ chức những buổi trải nghiệm thực hành về tranh dân gian.</p>
+            <p>Mỗi lần đến trường học, ông lại mang theo bản khắc gỗ, giấy màu và các dụng cụ làm tranh quen thuộc. Dưới sự hướng dẫn của người nghệ nhân, học sinh được tận tay đặt giấy lên bản mộc, trải nghiệm công đoạn in tranh và tự tô màu cho những hình tượng như gà, lợn hay các linh vật dân gian.</p>
+            <blockquote>“Điểm đặc biệt của tranh Kim Hoàng là được in trên nền giấy đỏ điều, tạo nên hiệu ứng màu sắc rất nổi bật và bắt mắt. Các mảng màu khi thể hiện trên nền giấy đỏ đều trở nên rực rỡ hơn.”</blockquote>
+            <p>Chính những trải nghiệm trực tiếp ấy giúp tranh Kim Hoàng trở nên gần gũi hơn với thế hệ trẻ. Những khái niệm tưởng như khô khan trong sách giáo khoa bỗng được cảm nhận bằng đôi tay, bằng màu sắc và bằng niềm tò mò của người lần đầu gặp một di sản.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="living-section reveal-on-scroll" aria-labelledby="living-title">
+        <div class="living-grid article-wide">
+          <div class="living-copy">
+            <span class="kicker">TRANH TRONG ĐỜI SỐNG MỚI</span>
+            <h3 id="living-title">Từ bức tranh treo tường đến cảm hứng thiết kế đương đại.</h3>
+            <p>Bên cạnh các hoạt động trải nghiệm và giáo dục di sản, tranh Kim Hoàng đang từng bước tìm được chỗ đứng trong đời sống đương đại. Những hình tượng quen thuộc như Thần Kê, lợn đàn hay các họa tiết dân gian không còn chỉ xuất hiện trên tranh treo tường.</p>
+            <p>Các hình ảnh ấy đã được đưa lên móc khóa, sổ tay, bưu thiếp, túi vải, áo thun, sản phẩm lưu niệm, bao bì và quà tặng văn hóa. Khi giá trị truyền thống được kết nối với nhu cầu và thẩm mỹ hôm nay, Kim Hoàng trở thành nguồn cảm hứng sáng tạo cho hiện tại và tương lai.</p>
+            <div class="product-cards" aria-label="Các hướng ứng dụng tranh Kim Hoàng">
+              <article><strong>Bưu thiếp</strong><span>Đưa hình tượng dân gian vào vật phẩm nhỏ, dễ trao tặng.</span></article>
+              <article><strong>Sổ tay</strong><span>Biến họa tiết truyền thống thành chi tiết sử dụng hằng ngày.</span></article>
+              <article><strong>Túi vải, áo thun</strong><span>Giúp người trẻ bắt gặp tranh đỏ ngoài không gian triển lãm.</span></article>
+              <article><strong>Bao bì, quà tặng</strong><span>Mở rộng giá trị thẩm mỹ Kim Hoàng vào thiết kế văn hóa.</span></article>
+            </div>
+          </div>
+          <figure class="product-photo">
+            <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 9.JPG" alt="Sản phẩm ứng dụng họa tiết tranh Kim Hoàng trong hộp quà" loading="lazy" />
+            <figcaption>Họa tiết Kim Hoàng được đưa vào sản phẩm quà tặng, mở thêm đường sống cho di sản.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="future-section reveal-on-scroll" aria-labelledby="future-title">
+        <div class="future-counters article-wide">
+          <div><strong>50+</strong><span>mẫu tranh Kim Hoàng đã được phục dựng</span></div>
+          <div class="outline"><strong>50+</strong><span>mẫu khác đang tiếp tục nghiên cứu và hoàn thiện</span></div>
+        </div>
+        <div class="future-copy article-narrow">
+          <span class="kicker">HÀNH TRÌNH VẪN TIẾP TỤC</span>
+          <h3 id="future-title">Điều còn ở phía trước không chỉ là số lượng tranh, mà là câu chuyện về con người.</h3>
+          <p>Hơn một thập kỷ kể từ ngày bắt tay vào phục dựng, nghệ nhân Đào Đình Chung đã đưa một dòng tranh dân gian thất truyền trở lại với đời sống đương đại. Nhưng với ông, hành trình ấy vẫn chưa thể xem là hoàn thành.</p>
+          <blockquote>“Trong làng cũng có rất nhiều người biết đến tôi là người đầu tiên khôi phục tranh Kim Hoàng, nên đã động viên và mong muốn mình giữ lại nghề để truyền lại cho lớp trẻ sau này, để không bị thất truyền về cái dòng tranh của làng nữa.”</blockquote>
+          <p>Ngày hôm nay, trong căn nhà nhỏ ở làng Kim Hoàng, người nghệ nhân vẫn đều đặn làm việc bên những bản khắc gỗ, những tờ giấy đỏ và những hộp màu thủ công. Công việc ấy diễn ra lặng lẽ, nhưng phía sau là khát vọng gìn giữ một phần di sản văn hóa dân tộc.</p>
+          <p class="chapter-transition">Vẫn còn những người yêu di sản, vẫn còn những người trẻ muốn tìm hiểu và tiếp nối, hành trình hồi sinh của tranh Kim Hoàng sẽ vẫn tiếp tục.</p>
+        </div>
       </section>
     </section>
 
