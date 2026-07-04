@@ -20,6 +20,22 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "Montserrat";
+      src: url("Montserrat-Variable.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("Montserrat-Italic-Variable.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
     /* SỬA FONT CHỮ VÀ MÀU CHỦ ĐẠO TẠI ĐÂY: thay các biến --red, --paper, --serif, --sans nếu cần. */
     :root {
       --red: #a52323;
@@ -32,7 +48,7 @@
       --white: #fffaf0;
       --shadow: 0 24px 70px rgba(25, 21, 18, .18);
       --title-font: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
-      --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
+      --body-font: "Montserrat", Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
       --serif: var(--title-font);
       --sans: var(--body-font);
     }
@@ -6131,7 +6147,7 @@
     /* ===== UI FIX PASS: typography, overlap and responsive spacing ===== */
     :root {
       --title-font: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
-      --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
+      --body-font: "Montserrat", Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
       --vietnamese-ui: var(--body-font);
       --sans: var(--body-font);
       --serif: var(--title-font);
@@ -6173,6 +6189,11 @@
     .workshop-collage figcaption,
     .chapter-four .future-counters span {
       letter-spacing: 0 !important;
+    }
+
+    .chapter-number {
+      font-size: clamp(1.35rem, 2vw, 1.7rem) !important;
+      line-height: 1.2 !important;
     }
 
     html {
@@ -6408,6 +6429,34 @@
 
     .closing h2 {
       line-height: 1.12 !important;
+    }
+
+    .chapter-one .comparison-section .paper-art img {
+      inset: -5%;
+      width: 110%;
+      height: 110%;
+    }
+
+    .chapter-one .process-art-image {
+      inset: 2.7%;
+      width: 94.6%;
+      height: 94.6%;
+    }
+
+    .chapter-one .story-art-card .folk-art img {
+      transform: scale(1.1);
+    }
+
+    .chapter-one .story-art-card:hover .folk-art img {
+      transform: scale(1.14);
+    }
+
+    .chapter-one .golden-track .golden-card-media {
+      transform: scale(1.12);
+    }
+
+    .chapter-one .golden-track .golden-card:hover .golden-card-media {
+      transform: scale(1.18);
     }
 
     @media(max-width:900px) {
