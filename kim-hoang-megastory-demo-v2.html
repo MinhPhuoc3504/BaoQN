@@ -3052,10 +3052,12 @@
     .experience-photo img,
     .outreach-photo img,
     .youth-photo img,
+    .youth-photo video,
     .product-photo img {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
+      display: block;
     }
 
     .experience-photo figcaption,
@@ -5382,6 +5384,26 @@
       z-index: 2;
     }
 
+    .chapter-one-video-section {
+      display: none;
+    }
+
+    .chapter-one-video {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 560px);
+      aspect-ratio: 16/9;
+      margin: 58svh auto 0;
+      display: block;
+      object-fit: cover;
+      border: 1px solid rgba(255, 226, 160, .36);
+      box-shadow: 0 28px 80px rgba(22, 3, 4, .36);
+    }
+
+    .chapter-one .red-opener {
+      min-height: 168svh;
+    }
+
     @media(max-width:700px) {
       .chapter-one .red-opener {
         background:
@@ -6907,6 +6929,10 @@
       <header class="chapter-opener red-opener">
         <span class="chapter-number">CHƯƠNG 1</span>
         <h2>Một thời rực đỏ</h2>
+        <video class="chapter-one-video reveal-on-scroll" controls playsinline preload="metadata">
+          <source src="chuong-1-video.mp4" type="video/mp4" />
+          Trình duyệt của bạn không hỗ trợ video.
+        </video>
       </header>
 
       <section class="scrolly map-scrolly" aria-label="Bản đồ hình thành làng Kim Hoàng">
@@ -7388,7 +7414,9 @@
         <div class="youth-grid article-wide">
           <div class="youth-visual">
             <figure class="youth-photo">
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 7.JPG" alt="Người trẻ quan sát tranh Kim Hoàng trong không gian trưng bày" loading="lazy" />
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Người trẻ quan sát tranh Kim Hoàng trong không gian trưng bày">
+                <source src="podcast-final.mp4" type="video/mp4" />
+              </video>
               <figcaption>Với nhiều bạn, đây là lần đầu tiên nhận ra rằng những di sản tưởng như xa xôi thực chất vẫn đang hiện diện rất gần trong cuộc sống hôm nay.</figcaption>
             </figure>
             <div class="youth-mini-gallery">
