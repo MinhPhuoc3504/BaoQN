@@ -2583,16 +2583,61 @@
     }
 
     .return-reveal {
+      --return-pad: clamp(5rem, 9vw, 8rem);
+      position: relative;
+      isolation: isolate;
       background: linear-gradient(180deg, #f7dfaa, #fff3d1 46%, #b51f27 46%, #8d1518);
-      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+      min-height: 100svh;
+      padding: var(--return-pad) var(--page-pad);
+      overflow: hidden;
+    }
+
+    .return-video-pin {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      width: 100vw;
+      height: 100svh;
+      margin-top: calc(var(--return-pad) * -1);
+      margin-bottom: -100svh;
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      pointer-events: none;
+      background: transparent;
+    }
+
+    .return-bg-video {
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: none;
+      object-fit: cover;
+      background: transparent;
     }
 
     .return-copy {
+      position: relative;
+      z-index: 1;
       text-align: center;
       margin-bottom: clamp(2rem, 5vw, 4rem);
     }
 
+    .return-copy h3,
+    .return-copy p {
+      color: #741512;
+      text-shadow: none;
+    }
+
+    .return-copy blockquote {
+      background: rgba(255, 248, 224, .7);
+      box-shadow: none;
+    }
+
     .return-gallery {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
@@ -2612,6 +2657,8 @@
     }
 
     .chapter-transition {
+      position: relative;
+      z-index: 1;
       margin-top: clamp(2rem, 5vw, 4rem);
       color: #fff1d4;
       text-align: center;
@@ -2643,7 +2690,6 @@
       .paper-touch { right: 4%; bottom: 8%; }
       .trial-visual { position: relative; top: auto; }
       .dong-ho-compare { grid-template-columns: 1fr; }
-      .return-reveal { background: linear-gradient(180deg, #f7dfaa, #fff3d1 38%, #b51f27 38%, #8d1518); }
     }
 
     @media(max-width:900px) {
@@ -7143,6 +7189,11 @@
       </section>
 
       <section class="return-reveal reveal-on-scroll" aria-labelledby="return-title">
+        <div class="return-video-pin" aria-hidden="true">
+          <video class="return-bg-video" autoplay muted loop playsinline preload="metadata">
+            <source src="7122fcbf-c449-4da1-bda8-5c0aa03fa8d2.mp4" type="video/mp4" />
+          </video>
+        </div>
         <div class="return-copy article-narrow">
           <span class="kicker">KHOẢNH KHẮC TRANH KIM HOÀNG TRỞ LẠI</span>
           <h3 id="return-title">Năm 2014, bức Thần Kê đầu tiên được phục dựng thành công.</h3>
