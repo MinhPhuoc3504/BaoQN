@@ -14,6 +14,12 @@
       font-display: swap;
     }
 
+    @font-face {
+      font-family: "NVNBeloved";
+      src: url("NVNBeloved.ttf") format("truetype");
+      font-display: swap;
+    }
+
     /* SỬA FONT CHỮ VÀ MÀU CHỦ ĐẠO TẠI ĐÂY: thay các biến --red, --paper, --serif, --sans nếu cần. */
     :root {
       --red: #a52323;
@@ -25,7 +31,7 @@
       --muted: #7b7064;
       --white: #fffaf0;
       --shadow: 0 24px 70px rgba(25, 21, 18, .18);
-      --title-font: "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      --title-font: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
       --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
       --serif: var(--title-font);
       --sans: var(--body-font);
@@ -113,8 +119,13 @@
     }
 
     .chapter-nav {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
-      gap: .3rem
+      justify-content: center;
+      gap: .3rem;
+      pointer-events: none
     }
 
     .chapter-nav a {
@@ -125,7 +136,8 @@
       display: grid;
       place-items: center;
       text-decoration: none;
-      font-size: .7rem
+      font-size: .7rem;
+      pointer-events: auto
     }
 
     .chapter-nav a:hover,
@@ -215,10 +227,15 @@
 
     .hero-meta {
       display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      font-size: .78rem;
+      flex-direction: column;
+      gap: .38rem;
+      font-size: clamp(.82rem, .72vw, .95rem);
+      line-height: 1.45;
       color: #eac8b6
+    }
+
+    .hero-meta span {
+      display: block
     }
 
     .hero-paper {
@@ -266,7 +283,7 @@
       left: 50%;
       transform: translateX(-50%);
       text-decoration: none;
-      font-size: .78rem;
+      font-size: clamp(1rem, 1vw, 1.15rem);
       letter-spacing: .12em;
       text-transform: uppercase;
       display: flex;
@@ -3374,11 +3391,11 @@
       }
 
       .hero-meta {
-        font-size: .72rem
+        font-size: .82rem
       }
 
       .scroll-cue {
-        font-size: .68rem
+        font-size: .9rem
       }
     }
 
@@ -5012,8 +5029,8 @@
       }
 
       .hero-meta {
-        gap: .5rem 1rem;
-        font-size: .7rem
+        gap: .35rem;
+        font-size: .82rem
       }
 
       .hero-paper.hero-image-stack {
@@ -6113,7 +6130,7 @@
     }
     /* ===== UI FIX PASS: typography, overlap and responsive spacing ===== */
     :root {
-      --title-font: "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
+      --title-font: "NVNBeloved", "LHanoienne", Arial, Tahoma, "Segoe UI", sans-serif;
       --body-font: Montserrat, Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
       --vietnamese-ui: var(--body-font);
       --sans: var(--body-font);
@@ -6201,12 +6218,27 @@
     .trial-copy h3,
     .return-copy h3,
     .chapter-four h3 {
-      font-family: var(--body-font) !important;
       letter-spacing: 0 !important;
       font-kerning: normal;
       text-rendering: auto;
       overflow-wrap: normal;
       word-break: normal;
+    }
+
+    h2,
+    h3,
+    .photo-prologue h2,
+    .artist-copy h3,
+    .red-lab-copy h3,
+    .trial-copy h3,
+    .return-copy h3,
+    .chapter-four h3,
+    .future-copy h3 {
+      font-family: var(--title-font) !important;
+    }
+
+    h4 {
+      font-family: var(--body-font) !important;
     }
 
     .chapter-opener h2,
@@ -6232,13 +6264,13 @@
     }
 
     .hero-copy {
-      max-width: 620px;
+      max-width: 760px;
     }
 
     .hero h1 {
       font-size: clamp(3rem, 5.45vw, 6.15rem) !important;
-      line-height: .94 !important;
-      max-width: 10.8ch;
+      line-height: 1.08 !important;
+      max-width: 13.4ch;
     }
 
     .deck {
@@ -6277,14 +6309,21 @@
 
     .revival-copy h2,
     .chapter-four .final-copy h2 {
-      max-width: 12ch;
-      line-height: .95 !important;
+      max-width: 15.5ch;
+      line-height: 1.12 !important;
     }
 
     .red-lab-copy h3 {
       font-size: clamp(2.15rem, 3.55vw, 4rem) !important;
-      line-height: 1.08 !important;
-      max-width: 11.8ch;
+      line-height: 1.14 !important;
+      max-width: 15ch;
+    }
+
+    .chapter-opener h2,
+    .photo-prologue h2,
+    .closing h2 {
+      max-width: 15ch;
+      line-height: 1.12 !important;
     }
 
     .artist-copy h3,
@@ -6292,7 +6331,8 @@
     .return-copy h3,
     .chapter-four h3,
     .future-copy h3 {
-      line-height: 1.08 !important;
+      max-width: 17ch;
+      line-height: 1.14 !important;
     }
 
     .red-lab-copy blockquote,
@@ -6358,7 +6398,7 @@
 
     .future-copy h3 {
       font-size: clamp(2rem, 3.8vw, 4.3rem) !important;
-      max-width: 880px;
+      max-width: min(100%, 17ch);
     }
 
     .chapter-four .future-counters strong {
@@ -6367,7 +6407,7 @@
     }
 
     .closing h2 {
-      line-height: 1.02 !important;
+      line-height: 1.12 !important;
     }
 
     @media(max-width:900px) {
@@ -6378,12 +6418,13 @@
       }
 
       .hero-copy {
-        max-width: min(100%, 620px);
+        max-width: min(100%, 720px);
       }
 
       .hero h1 {
         font-size: clamp(2.45rem, 10vw, 4.5rem) !important;
-        max-width: 11ch;
+        line-height: 1.08 !important;
+        max-width: 12.8ch;
       }
 
       .hero-paper.hero-image-stack {
@@ -6414,6 +6455,8 @@
       .chapter-four h3,
       .future-copy h3 {
         font-size: clamp(2rem, 8vw, 3.4rem) !important;
+        line-height: 1.14 !important;
+        max-width: 16ch;
       }
     }
 
@@ -6437,6 +6480,8 @@
 
       .hero h1 {
         font-size: clamp(2.05rem, 11vw, 3.1rem) !important;
+        line-height: 1.1 !important;
+        max-width: 12.4ch;
       }
 
       .deck {
@@ -6452,6 +6497,7 @@
       .red-lab-copy h3 {
         max-width: none;
         font-size: clamp(2rem, 9vw, 3rem) !important;
+        line-height: 1.15 !important;
       }
     }
   </style>
@@ -6461,7 +6507,7 @@
   <div class="progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
   <header class="topbar" id="topbar">
-    <a class="brand" href="#hero" aria-label="Về đầu trang">SẮC ĐỎ TRỞ VỀ</a>
+    <a class="brand" href="#hero" aria-label="Về đầu trang"></a>
     <nav class="chapter-nav" aria-label="Điều hướng chương">
       <a href="#chapter-1">01</a>
       <a href="#chapter-2">02</a>
@@ -6485,14 +6531,15 @@
           loading="eager" />
       </div>
       <div class="hero-copy">
-        <!-- SỬA NHÃN PHỤ PHẦN HERO TẠI ĐÂY -->
-        <p class="eyebrow">MEGASTORY · BẢN DEMO THỊ GIÁC V2</p>
         <!-- SỬA TIÊU ĐỀ TẠI ĐÂY -->
         <h1 id="hero-title">Một thế kỷ<br>thất truyền<br><em>và cuộc hồi sinh</em><br>của tranh đỏ<br>Kim Hoàng</h1>
         <!-- SỬA MÔ TẢ NGẮN DƯỚI TIÊU ĐỀ TẠI ĐÂY -->
-        <p class="deck">Một trải nghiệm báo chí thị giác với màu đỏ son, vàng nghệ, xanh chàm, ảnh toàn màn hình và
-          chuyển động gắn với từng lớp ký ức.</p>
-        <div class="hero-meta"><span>Bài viết: Nhóm dự án</span><span>Thiết kế demo: Prototype</span></div>
+        <p class="deck">Gần một thế kỷ sau khi thất truyền, tranh Kim Hoàng - dòng tranh dân gian từng vang danh đất Kinh Kỳ - đang dần hồi sinh nhờ nỗ lực bền bỉ của nghệ nhân Đào Đình Chung. Từ những tư liệu ít ỏi còn sót lại, ông đã từng bước khôi phục một di sản văn hóa tưởng chừng chỉ còn trong ký ức.</p>
+        <div class="hero-meta">
+          <span>Nội dung: Quang Ngọc, Thu Hiên</span>
+          <span>Hình ảnh: Cẩm Hà, Thu Trang</span>
+          <span>Thiết kế: Quỳnh Như, Bình Minh</span>
+        </div>
       </div>
       <a class="scroll-cue" href="#chapter-1">Cuộn để bắt đầu <span aria-hidden="true">↓</span></a>
     </section>
