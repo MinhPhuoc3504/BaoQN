@@ -6104,6 +6104,41 @@
       }
     }
     /* ===== UI FIX PASS: typography, overlap and responsive spacing ===== */
+    :root {
+      --vietnamese-ui: Arial, Tahoma, "Segoe UI", Helvetica, sans-serif;
+      --sans: var(--vietnamese-ui);
+    }
+
+    body,
+    button,
+    input,
+    textarea,
+    select {
+      font-family: var(--vietnamese-ui) !important;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-kerning: normal;
+    }
+
+    body :where(h1, h2, h3, h4, p, blockquote, figcaption, span, em, strong, a, button, li, dt, dd, label, time) {
+      font-family: var(--vietnamese-ui) !important;
+      text-rendering: auto;
+      font-kerning: normal;
+    }
+
+    .eyebrow,
+    .kicker,
+    .chapter-number,
+    .brand,
+    .scroll-cue,
+    .chapter-nav a,
+    .final-tags span,
+    .revival-marks span,
+    .workshop-collage figcaption,
+    .chapter-four .future-counters span {
+      letter-spacing: .045em !important;
+    }
+
     html {
       scroll-padding-top: 76px;
     }
@@ -6139,11 +6174,11 @@
     .chapter-four h3,
     .chapter-four blockquote,
     .chapter-four .future-counters strong,
-    .closing h2 {
-      font-family: var(--sans) !important;
+      .closing h2 {
+      font-family: var(--vietnamese-ui) !important;
       letter-spacing: 0 !important;
       font-kerning: normal;
-      text-rendering: geometricPrecision;
+      text-rendering: auto;
       overflow-wrap: normal;
       word-break: normal;
     }
