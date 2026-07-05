@@ -162,21 +162,6 @@
       border-color: var(--red)
     }
 
-    .sound-toggle {
-      border: 1px solid rgba(255, 255, 255, .28);
-      color: white;
-      background: rgba(0, 0, 0, .15);
-      border-radius: 999px;
-      padding: .5rem .85rem;
-      display: flex;
-      gap: .45rem;
-      align-items: center
-    }
-
-    .sound-toggle[aria-pressed="true"] {
-      background: var(--red)
-    }
-
     .hero {
       min-height: 115vh;
       position: relative;
@@ -3380,14 +3365,6 @@
       font-size: 1.7rem
     }
 
-    .team-placeholder {
-      aspect-ratio: 16/8;
-      background: #dcc9a6;
-      display: grid;
-      place-items: center;
-      margin: 2rem 0
-    }
-
     .contact-drawer dl {
       display: grid;
       grid-template-columns: 110px 1fr;
@@ -3400,18 +3377,6 @@
 
     .contact-drawer dd {
       margin: 0
-    }
-
-    .social-links {
-      display: flex;
-      gap: .6rem;
-      margin-top: 2rem
-    }
-
-    .social-links a {
-      border: 1px solid #8a796a;
-      padding: .55rem .8rem;
-      text-decoration: none
     }
 
     .modal,
@@ -3962,10 +3927,6 @@
 
       .topbar {
         padding: 0 1rem
-      }
-
-      .sound-label {
-        display: none
       }
 
       .hero {
@@ -6034,10 +5995,6 @@
         letter-spacing: .08em
       }
 
-      .sound-toggle {
-        padding: .45rem .65rem
-      }
-
       .hero {
         min-height: 100svh;
         padding-left: 1rem;
@@ -7943,9 +7900,6 @@
       <a href="#chapter-3">03</a>
       <a href="#chapter-4">04</a>
     </nav>
-    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="false">
-      <span class="sound-icon" aria-hidden="true">♪</span><span class="sound-label">Bật âm thanh</span>
-    </button>
   </header>
 
   <main>
@@ -8497,10 +8451,7 @@
     <button class="drawer-close" id="drawerClose" type="button" aria-label="Đóng cửa sổ liên hệ">×</button>
     <span class="kicker">VỀ DỰ ÁN</span>
     <h2 id="contactTitle">Liên hệ với chúng tôi</h2>
-    <p>Thông tin tạm thời. Sau này chỉ cần sửa đối tượng <code>contactData</code> trong <code>script.js</code>.</p>
-    <div class="team-placeholder"><span>LOGO / ẢNH NHÓM</span></div>
     <dl id="contactInfo"></dl>
-    <div class="social-links" id="socialLinks"></div>
   </aside>
 
   <dialog class="modal" id="infoModal">
@@ -8522,14 +8473,11 @@
   <script>
     const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
-    // SỬA THÔNG TIN LIÊN HỆ TẠI ĐÂY: email, số điện thoại, link Facebook/Instagram/Website.
+    // SỬA THÔNG TIN LIÊN HỆ TẠI ĐÂY.
     const contactData = {
-      projectName: 'Sắc đỏ trở về',
-      introduction: 'Megastory về hành trình thất truyền và hồi sinh của tranh dân gian Kim Hoàng.',
-      members: 'Thông tin nhóm sẽ cập nhật',
-      email: 'team@example.com',
-      phone: 'Chưa công khai',
-      Facebook: '#', Instagram: '#', website: '#'
+      representative: 'Thu Trang',
+      email: 'trangnguyenvu592@gmail.com',
+      phone: '0975229952'
     };
 
     const progress = $('#readingProgress');
@@ -8690,13 +8638,6 @@
       $('#modalTitle').textContent = f.dataset.title; $('#modalDesc').textContent = f.dataset.desc; infoModal.showModal();
     }));
     $('[data-close-modal]').addEventListener('click', () => infoModal.close());
-    const soundToggle = $('#soundToggle');
-    if (soundToggle) soundToggle.addEventListener('click', () => {
-      const on = soundToggle.getAttribute('aria-pressed') === 'true';
-      soundToggle.setAttribute('aria-pressed', String(!on));
-      $('.sound-label').textContent = !on ? 'Tắt âm thanh' : 'Bật âm thanh';
-    });
-
     const videoModal = $('#videoModal'), openVideo = $('#openVideo'), closeVideo = $('[data-close-video]');
     if (videoModal && openVideo) openVideo.addEventListener('click', () => videoModal.showModal());
     if (videoModal && closeVideo) closeVideo.addEventListener('click', () => { videoModal.querySelector('video').pause(); videoModal.close() });
@@ -8707,8 +8648,7 @@
     $$('.reveal-on-scroll').forEach(el => revealObs.observe(el));
     const drawer = $('#contactDrawer'), overlay = $('#drawerOverlay'), fab = $('#contactFab'), close = $('#drawerClose');
     function renderContact() {
-      $('#contactInfo').innerHTML = `<dt>Dự án</dt><dd>${contactData.projectName}</dd><dt>Nhóm</dt><dd>${contactData.members}</dd><dt>Email</dt><dd><a href="mailto:${contactData.email}">${contactData.email}</a></dd><dt>Điện thoại</dt><dd>${contactData.phone}</dd>`;
-      $('#socialLinks').innerHTML = `<a href="${contactData.Facebook}">Facebook</a><a href="${contactData.Instagram}">Instagram</a><a href="${contactData.website}">Website</a>`;
+      $('#contactInfo').innerHTML = `<dt>Đại diện</dt><dd>${contactData.representative}</dd><dt>Email</dt><dd><a href="mailto:${contactData.email}">${contactData.email}</a></dd><dt>Điện thoại</dt><dd><a href="tel:${contactData.phone}">${contactData.phone}</a></dd>`;
     }
     renderContact();
     function openDrawer() { drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); overlay.hidden = false; fab.setAttribute('aria-expanded', 'true'); close.focus() }
@@ -8729,9 +8669,6 @@
     updateChapterNav();
     addEventListener('scroll', updateChapterNav, { passive: true });
     addEventListener('resize', updateChapterNav);
-
-    function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2200) }
-    $$('.social-links a').forEach(a => a.addEventListener('click', e => { if (a.getAttribute('href') === '#') { e.preventDefault(); toast('Liên kết mẫu — sẽ cập nhật sau') } }));
 
   </script>
 </body>
