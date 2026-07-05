@@ -1176,25 +1176,6 @@
       border-top: 1px solid #362920;
     }
 
-    .woodblock-card .image-credit {
-      position: absolute;
-      right: .45rem;
-      bottom: 42px;
-      z-index: 4;
-      margin: 0;
-      padding: .16rem .42rem;
-      background: rgba(58, 16, 12, .76);
-      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
-      color: #f8e7c8;
-      font-size: .64rem;
-      font-style: italic;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 1.2;
-      text-transform: none;
-      pointer-events: none;
-    }
-
     .woodblock-card-1 {
       left: 0;
       top: 0;
@@ -1204,9 +1185,9 @@
 
     .woodblock-card-2 {
       right: 0;
-      top: 20px;
+      top: 0;
       z-index: 1;
-      transform: rotate(4deg);
+      transform: rotate(0deg);
     }
 
     @media (max-width: 900px) {
@@ -6888,30 +6869,6 @@
       background: linear-gradient(0deg, rgba(35, 8, 6, .34), transparent 42%);
     }
 
-    .comparison-section .paper-dongho,
-    .comparison-section .paper-kimhoang {
-      overflow: visible;
-    }
-
-    .comparison-section .paper-dongho .image-credit,
-    .comparison-section .paper-kimhoang .image-credit {
-      position: absolute;
-      right: 0;
-      bottom: -2rem;
-      z-index: 3;
-      margin: 0;
-      padding: .18rem .45rem;
-      background: rgba(58, 16, 12, .76);
-      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
-      color: #f8e7c8;
-      font-size: .68rem;
-      font-style: italic;
-      font-weight: 500;
-      letter-spacing: 0;
-      line-height: 1.2;
-      text-transform: none;
-    }
-
     .comparison-section .paper-hangtrong {
       display: none;
     }
@@ -7919,6 +7876,15 @@
       height: 110%;
     }
 
+    .chapter-one .comparison-section .paper-kimhoang img {
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      background: #b51f27;
+    }
+
     .chapter-one .process-art-image {
       inset: 2.7%;
       width: 94.6%;
@@ -8400,13 +8366,11 @@
                 <div class="paper-art paper-dongho">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 7.JPG" alt="Tranh Đông Hồ" loading="eager" />
                   <span>Giấy điệp</span>
-                  <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
                 </div>
                 <div class="paper-art paper-kimhoang">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 3.webp" alt="Tranh Kim Hoàng"
                     loading="eager" />
                   <span>Nền đỏ · in nét · tô tay · in nét lần hai</span>
-                  <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
                 </div>
               </div>
               <div class="comparison-copy" id="comparisonCopy">
@@ -8564,12 +8528,10 @@
           <div class="woodblock" id="woodblock">
             <div class="woodblock-card woodblock-card-1">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 9.jpeg" alt="Bản khắc gỗ" />
-              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div class="woodblock-card woodblock-card-2">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 10.jpeg" alt="Bản khắc gỗ" />
-              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--serif); font-size: 0.85rem; font-weight: 700; color: #a52323; letter-spacing: 0.15em; background: #f1e3c4; padding: 4px 12px; border: 2px solid #a52323; border-radius: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 5;">
@@ -8896,6 +8858,7 @@
     }
 
     function mediaCreditHost(media) {
+      if (media.closest('.comparison-section, .flood-scrolly')) return null;
       return media.closest([
         'figure',
         '.folk-art',
