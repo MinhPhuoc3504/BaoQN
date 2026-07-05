@@ -8275,6 +8275,16 @@
       pointer-events: none;
     }
 
+    .media-credit em {
+      display: block;
+      margin-top: .12rem;
+      font-size: .66rem;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.25;
+      opacity: .88;
+    }
+
     .video-modal .media-credit {
       right: 3.5rem !important;
     }
@@ -8305,7 +8315,7 @@
       <header class="chapter-opener red-opener">
         <span class="chapter-number">CHƯƠNG 1</span>
         <h2>Một thời rực đỏ</h2>
-        <video class="chapter-one-video reveal-on-scroll" controls playsinline preload="metadata">
+        <video class="chapter-one-video reveal-on-scroll" controls playsinline preload="metadata" data-ai-note="true">
           <source src="chuong-1-video.mp4" type="video/mp4" />
           Trình duyệt của bạn không hỗ trợ video.
         </video>
@@ -8716,7 +8726,7 @@
       <section class="trial-scrolly" aria-labelledby="trial-title">
         <div class="trial-grid article-wide">
           <div class="trial-visual">
-            <video class="trial-video" controls muted playsinline preload="metadata">
+            <video class="trial-video" controls muted playsinline preload="metadata" data-ai-note="true">
               <source src="chuong-2-video-h264.mp4?v=1" type="video/mp4" />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
@@ -8866,7 +8876,17 @@
   <script>
     const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
     const IMAGE_CREDIT_TEXT = 'Ảnh: Cẩm Hà, Thu Trang';
-    const VIDEO_CREDIT_TEXT = 'Thực hiện: Cầm Hà, Thu Trang';
+    const VIDEO_CREDIT_TEXT = 'Thực hiện: Cẩm Hà, Thu Trang';
+    const VIDEO_AI_NOTE = 'Sản phẩm ứng dụng trí tuệ nhân tạo';
+
+    function setCreditText(credit, type, media = null) {
+      credit.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
+      if (type === 'video' && media?.dataset.aiNote === 'true') {
+        const note = document.createElement('em');
+        note.textContent = VIDEO_AI_NOTE;
+        credit.appendChild(note);
+      }
+    }
 
     function directCredit(host, type) {
       return [...host.children].find(el => {
@@ -8905,14 +8925,14 @@
         host.classList.add('media-credit-host');
         const existing = directCredit(host, type);
         if (existing) {
-          existing.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
+          setCreditText(existing, type, media);
           existing.dataset.creditType = type;
           return;
         }
         const credit = document.createElement('span');
         credit.className = 'media-credit';
         credit.dataset.creditType = type;
-        credit.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
+        setCreditText(credit, type, media);
         host.appendChild(credit);
       });
     }
