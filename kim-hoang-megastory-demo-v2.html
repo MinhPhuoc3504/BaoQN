@@ -2995,26 +2995,41 @@
 
     .trial-copy h3 {
       color: #ffd15c;
+      font-size: clamp(1.85rem, 3vw, 3.45rem) !important;
+      line-height: 1.16 !important;
+      max-width: 21ch !important;
+    }
+
+    .trial-subtitle {
+      margin: .55rem 0 0;
+      color: #f3dcc0;
+      font-size: clamp(.82rem, .95vw, .98rem);
+      font-style: italic;
+      line-height: 1.6;
+      white-space: nowrap;
     }
 
     .trial-step-stack {
       position: relative;
       min-height: clamp(430px, 58vh, 620px);
-      margin-top: 1.4rem;
+      margin-top: 1.6rem;
     }
 
     .trial-step {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       margin: 0;
-      padding: 1.35rem 1.45rem 1.35rem 4.9rem;
+      box-sizing: border-box;
+      padding: 1rem 1.15rem 1rem 4.25rem;
       background: rgba(255, 245, 220, .08);
       border: 1px solid rgba(255, 210, 120, .16);
       opacity: 0;
       pointer-events: none;
       transform: translateY(28px);
       transition: opacity .5s ease, transform .5s ease;
-      overflow: auto;
+      overflow: visible;
     }
 
     .trial-step.is-active {
@@ -3025,8 +3040,8 @@
 
     .trial-step span {
       position: absolute;
-      left: 1.2rem;
-      top: 1.25rem;
+      left: 1.1rem;
+      top: 1rem;
       color: #ffd15c;
       font-weight: 900;
       font-size: 1.2rem;
@@ -3073,20 +3088,19 @@
 
     .return-hero {
       position: relative;
-      min-height: 100svh;
+      min-height: 138svh;
       padding: var(--return-pad) var(--page-pad);
       overflow: clip;
       background: #fff3d1;
     }
 
     .return-video-pin {
-      position: sticky;
+      position: absolute;
       top: 0;
       z-index: 0;
       width: 100vw;
       height: 100svh;
       margin-top: calc(var(--return-pad) * -1);
-      margin-bottom: -100svh;
       margin-left: calc(50% - 50vw);
       overflow: hidden;
       pointer-events: none;
@@ -3094,11 +3108,13 @@
     }
 
     .return-copy {
-      position: relative;
+      position: sticky;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 1;
       text-align: center;
-      margin: clamp(5rem, 14vh, 9rem) auto 0;
-      padding-bottom: clamp(4rem, 12vh, 8rem);
+      margin: 0 auto;
+      padding-bottom: 0;
     }
 
     .return-copy h3,
@@ -3107,9 +3123,67 @@
       text-shadow: none;
     }
 
+    #return-title {
+      max-width: none !important;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      margin-bottom: .85rem;
+      text-align: center;
+      white-space: nowrap;
+      font-size: clamp(1.1rem, 3.6vw, 3rem);
+    }
+
+    .return-scroll-copy {
+      position: relative;
+      min-height: clamp(10.5rem, 18vw, 14rem);
+      margin: .35rem auto 0;
+    }
+
+    .return-copy-step {
+      position: absolute;
+      inset: 0;
+      max-width: 68ch;
+      margin: 0 auto;
+      line-height: 1.62;
+      opacity: 0;
+      transform: translateY(1.2rem);
+      transition: opacity .45s ease, transform .45s ease;
+      pointer-events: none;
+    }
+
+    .return-copy[data-return-step="0"] .return-copy-step[data-return-step="0"],
+    .return-copy[data-return-step="1"] .return-copy-step[data-return-step="1"] {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .return-copy.is-switching .return-copy-step {
+      opacity: 0;
+      transform: translateY(-1rem);
+      pointer-events: none;
+    }
+
+    .return-step-triggers {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 0;
+      margin-top: 10svh;
+      pointer-events: none;
+    }
+
+    .return-step-trigger {
+      min-height: 32svh;
+    }
+
     .return-copy blockquote {
       background: rgba(255, 248, 224, .7);
       box-shadow: none;
+      max-width: 62ch;
+      margin: .7rem auto 0;
+      padding: 1rem 1.2rem;
     }
 
     .return-gallery {
@@ -7479,6 +7553,20 @@
       line-height: 1.14 !important;
     }
 
+    .trial-copy h3#trial-title {
+      max-width: none !important;
+      white-space: nowrap !important;
+      font-size: 2.55rem !important;
+      line-height: 1.12 !important;
+    }
+
+    .trial-copy .trial-subtitle {
+      max-width: none !important;
+      white-space: nowrap !important;
+      font-size: .98rem !important;
+      line-height: 1.45 !important;
+    }
+
     .artist-copy h3.artist-title {
       font-family: var(--title-font) !important;
       font-size: clamp(2rem, 3.35vw, 4rem) !important;
@@ -7542,6 +7630,24 @@
         inset: auto !important;
         opacity: 1 !important;
         transform: none !important;
+      }
+
+      .trial-copy h3#trial-title {
+        font-size: 2rem !important;
+      }
+
+      .trial-copy .trial-subtitle {
+        font-size: .82rem !important;
+      }
+    }
+
+    @media(max-width:560px) {
+      .trial-copy h3#trial-title {
+        font-size: 1.18rem !important;
+      }
+
+      .trial-copy .trial-subtitle {
+        font-size: .58rem !important;
       }
     }
 
@@ -8264,20 +8370,14 @@
       <section class="trial-scrolly" aria-labelledby="trial-title">
         <div class="trial-grid article-wide">
           <div class="trial-visual">
-            <video class="trial-video" controls muted playsinline preload="metadata" poster="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 6.png">
-              <source src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/cách in tranh kim hoàng.mp4" type="video/mp4" />
+            <video class="trial-video" controls muted playsinline preload="metadata">
+              <source src="chuong-2-video-h264.mp4?v=1" type="video/mp4" />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
-            <div class="dong-ho-compare">
-              <video muted playsinline preload="metadata" poster="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/chương 3 - ảnh 6.png">
-                <source src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 3/cách in tranh đông hồ.mp4" type="video/mp4" />
-              </video>
-              <p>Đông Hồ là điểm đối chiếu, nhưng không thể trở thành khuôn mẫu cho Kim Hoàng.</p>
-            </div>
           </div>
           <div class="trial-copy">
-            <span class="kicker">NHỮNG LẦN LÀM LẠI TỪ ĐẦU</span>
-            <h3 id="trial-title">Không có công thức chuẩn, mỗi bản in là một lần thử.</h3>
+            <h3 id="trial-title">NHỮNG LẦN LÀM LẠI TỪ ĐẦU</h3>
+            <p class="trial-subtitle">Không có công thức chuẩn, mỗi bản in là một lần thử.</p>
             <div class="trial-step-stack" id="trialStepStack">
               <article class="trial-step is-active"><span>01</span><h4>Thử thách lớn nhất</h4><p>Nếu việc tìm lại sắc đỏ đặc trưng của giấy Kim Hoàng là cánh cửa đầu tiên dẫn vào hành trình phục dựng, thì việc khôi phục kỹ thuật chế tác tranh mới thực sự là thử thách lớn nhất đối với nghệ nhân Đào Đình Chung.</p></article>
               <article class="trial-step"><span>02</span><h4>Bắt đầu từ con số không</h4><p>Những bản khắc mộc cổ gần như không còn, các nghệ nhân xưa đã không còn ai để truyền nghề, còn tư liệu ghi chép về kỹ thuật làm tranh thì vô cùng ít ỏi. Điều đó đồng nghĩa với việc ông gần như phải bắt đầu từ con số không.</p></article>
@@ -8286,7 +8386,7 @@
               <article class="trial-step"><span>05</span><h4>Khác biệt với Đông Hồ</h4><p>Tranh Đông Hồ sử dụng phương pháp in quen thuộc với hệ thống căn chỉnh tương đối rõ ràng, giúp người làm tranh dễ xác định vị trí của từng lần in. Trong khi đó, tranh Kim Hoàng sở hữu kỹ thuật in ngửa đặc biệt, đòi hỏi độ chính xác rất cao và gần như không còn tài liệu hướng dẫn.</p></article>
               <article class="trial-step"><span>06</span><h4>Mỗi lần thử là một cuộc đánh cược</h4><p>Có những bản khắc mất nhiều ngày mới hoàn thành nhưng khi in ra lại không đạt yêu cầu. Có những chi tiết tưởng như rất nhỏ nhưng chỉ cần lệch đi một chút cũng làm hỏng toàn bộ bố cục. Hết lần này đến lần khác, ông lại sửa chữa, điều chỉnh rồi làm lại từ đầu.</p></article>
               <article class="trial-step"><span>07</span><h4>Nhận ra quy trình riêng</h4><p>Sau nhiều lần nghiên cứu và đối chiếu với các hiện vật còn lưu giữ trong bảo tàng, ông đi đến kết luận rằng tranh Kim Hoàng phải được hoàn thiện theo một trình tự khác biệt: in phần nét chính lên giấy màu, tô màu thủ công, chờ lớp màu khô rồi in nét thêm một lần nữa.</p></article>
-              <article class="trial-step key-step"><span>08</span><h4>In nét hai lần</h4><p>Ông giải thích: “Khi phục dựng bức tranh Gà, tôi nhận ra tranh Kim Hoàng phải được thực hiện theo một quy trình riêng. Trước hết là in nét từ bản khắc, sau đó mới tô màu. Khi lớp màu đã khô hoàn toàn, bức tranh sẽ được in nét thêm một lần nữa để hoàn thiện.”</p></article>
+              <article class="trial-step"><span>08</span><h4>In nét hai lần</h4><p>Ông giải thích: “Khi phục dựng bức tranh Gà, tôi nhận ra tranh Kim Hoàng phải được thực hiện theo một quy trình riêng. Trước hết là in nét từ bản khắc, sau đó mới tô màu. Khi lớp màu đã khô hoàn toàn, bức tranh sẽ được in nét thêm một lần nữa để hoàn thiện.”</p></article>
               <article class="trial-step"><span>09</span><h4>Mực đen từ tro lá</h4><p>Ngay cả màu mực cũng phải được phục dựng theo phương pháp truyền thống. Với tranh lợn Kim Hoàng, màu đen đặc trưng không đến từ mực công nghiệp hiện đại mà được tạo ra từ tro than lá cây, rồi xử lý thành chất liệu màu để in trên nền giấy đỏ.</p></article>
               <article class="trial-step"><span>10</span><h4>Kiên nhẫn bắt đầu lại</h4><p>Từ màu giấy, bản khắc, kỹ thuật in cho đến chất liệu màu, mỗi công đoạn đều được xây dựng từ hàng chục, thậm chí hàng trăm lần thử nghiệm. Đằng sau mỗi bức tranh hoàn chỉnh là vô số tờ giấy hỏng, những bản in chưa đạt yêu cầu và những lần kiên nhẫn bắt đầu lại từ đầu.</p></article>
             </div>
@@ -8309,11 +8409,17 @@
       <section class="return-reveal reveal-on-scroll" aria-labelledby="return-title">
         <div class="return-hero">
           <div class="return-video-pin" aria-hidden="true"></div>
-          <div class="return-copy article-narrow">
-            <span class="kicker">KHOẢNH KHẮC TRANH KIM HOÀNG TRỞ LẠI</span>
-            <h3 id="return-title">Năm 2014, bức Thần Kê đầu tiên được phục dựng thành công.</h3>
-            <p>Sau nhiều năm tìm tư liệu, phục dựng màu giấy, thử kỹ thuật in và làm lại từ đầu, bức Thần Kê hoàn thiện đánh dấu thời khắc tranh Kim Hoàng bước ra khỏi tư liệu để trở lại đời sống.</p>
+          <div class="return-copy article-narrow" data-return-step="0">
+            <h3 id="return-title">Khoảnh khắc tranh Kim Hoàng trở lại</h3>
+            <div class="return-scroll-copy">
+              <p class="return-copy-step" data-return-step="0">Sau nhiều năm miệt mài tìm kiếm tư liệu, phục dựng màu giấy, nghiên cứu kỹ thuật in và liên tục thử nghiệm, hành trình hồi sinh tranh Kim Hoàng cuối cùng cũng đón nhận thành quả đầu tiên. Những thất bại kéo dài tưởng chừng không có điểm dừng, nhưng chính sự kiên trì ấy đã giúp nghệ nhân Đào Đình Chung từng bước tiến gần hơn tới mục tiêu đưa dòng tranh dân gian thất truyền trở lại với đời sống đương đại.</p>
+              <p class="return-copy-step" data-return-step="1">Năm 2014 đánh dấu một cột mốc đặc biệt trong hành trình ấy. Sau vô số lần in thử, chỉnh sửa và làm lại từ đầu, bức tranh Thần Kê đầu tiên đã được phục dựng thành công. Trên nền giấy đỏ đặc trưng của Kim Hoàng, những đường nét hiện lên sắc sảo, hài hòa với các mảng màu tươi sáng. Đó không chỉ là một tác phẩm hoàn chỉnh mà còn là minh chứng cho những năm tháng bền bỉ theo đuổi một di sản tưởng như đã bị lãng quên.</p>
+            </div>
             <blockquote>“Khi hoàn thiện được bức Thần Kê đầu tiên, tôi vui lắm. Sau bao nhiêu lần thử nghiệm, cuối cùng bức tranh cũng được làm xong như mong muốn.”</blockquote>
+          </div>
+          <div class="return-step-triggers" aria-hidden="true">
+            <div class="return-step-trigger" data-return-step="0"></div>
+            <div class="return-step-trigger" data-return-step="1"></div>
           </div>
         </div>
         <div class="return-gallery article-wide">
@@ -8331,90 +8437,8 @@
           <span class="chapter-number">CHƯƠNG 4</span>
           <h2>Một di sản được đánh thức</h2>
           <p>Cuộc trở về ấy không chỉ là sự hồi sinh của một dòng tranh, mà còn là sự trở lại của một phần ký ức văn hóa dân tộc.</p>
-          <div class="final-tags" aria-label="Các nhịp chính của chương 4">
-            <span>Không gian trải nghiệm</span>
-            <span>Khi tranh bước ra khỏi bảo tàng</span>
-            <span>Người trẻ và những lần đầu biết đến Kim Hoàng</span>
-            <span>Hành trình vẫn tiếp tục</span>
-          </div>
         </div>
       </header>
-
-      <section class="experience-section reveal-on-scroll" aria-labelledby="experience-title">
-        <div class="experience-hero">
-          <div class="experience-bg-pin" aria-hidden="true"></div>
-          <div class="experience-grid article-wide">
-            <figure class="experience-photo">
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu không gian tranh đỏ Kim Hoàng của nghệ nhân Đào Đình Chung" loading="lazy" />
-              <figcaption>Không gian của nghệ nhân Đào Đình Chung không chỉ là nơi làm tranh mà còn trở thành một “lớp học di sản” đặc biệt.</figcaption>
-            </figure>
-            <div class="experience-copy">
-              <span class="kicker">KHÔNG GIAN TRẢI NGHIỆM CỦA NGHỆ NHÂN</span>
-              <h3 id="experience-title">Nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất.</h3>
-              <p>Căn nhà nhỏ của nghệ nhân Đào Đình Chung đã trở thành điểm đến văn hóa quen thuộc với người yêu di sản. Tại đây, khách tham quan được tận mắt xem quy trình làm tranh, nghe câu chuyện hồi sinh của tranh Kim Hoàng và trực tiếp chạm vào giấy gió, bản khắc mộc, màu nhuộm.</p>
-              <blockquote>Không gian ấy không phải là một bảo tàng theo nghĩa thông thường, mà là một “lớp học di sản” sống động.</blockquote>
-              <p>Qua từng lần trải nghiệm, người xem hiểu hơn rằng sau mỗi bức tranh là tri thức dân gian, sự kiên nhẫn và công sức thủ công của người nghệ nhân.</p>
-            </div>
-          </div>
-        </div>
-        <div class="workshop-collage article-wide" aria-label="Các chi tiết trong không gian trải nghiệm Kim Hoàng">
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Nghệ nhân tô màu trên tranh Kim Hoàng" loading="lazy" /><figcaption>Màu, giấy và bản in đều đòi hỏi thời gian, kinh nghiệm và tâm huyết.</figcaption></figure>
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Người trẻ trải nghiệm in tranh trên giấy đỏ" loading="lazy" /><figcaption>Người trẻ được tự tay trải nghiệm công đoạn in tranh.</figcaption></figure>
-          <figure><img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 11.JPG" alt="Cọ vẽ và màu trong xưởng tranh Kim Hoàng" loading="lazy" /><figcaption>Kỹ thuật từng thất truyền được truyền lại qua từng buổi trải nghiệm.</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="outreach-section reveal-on-scroll" aria-labelledby="outreach-title">
-        <div class="outreach-hero">
-          <div class="outreach-bg-pin" aria-hidden="true"></div>
-          <div class="outreach-intro article-narrow">
-            <span class="kicker">KHI TRANH BƯỚC RA KHỎI BẢO TÀNG</span>
-            <h3 id="outreach-title">Tranh Kim Hoàng chỉ thực sự được hồi sinh.</h3>
-            <p>Sau phục dựng, thử thách tiếp theo là đưa tranh Kim Hoàng ra khỏi không gian lưu trữ, đến gần hơn với cộng đồng và được đón nhận trong đời sống hôm nay.</p>
-          </div>
-        </div>
-        <div class="outreach-grid article-wide">
-          <div class="outreach-timeline">
-            <article class="timeline-card"><span>01</span><h4>Triển lãm và hội chợ</h4><p>Ông Chung đưa tranh đến các không gian văn hóa, hội chợ và sự kiện quảng bá di sản.</p></article>
-            <article class="timeline-card"><span>02</span><h4>Kể lại lịch sử</h4><p>Mỗi tác phẩm trưng bày là một cách kể về làng nghề từng vang danh nơi đất Kinh Kỳ.</p></article>
-            <article class="timeline-card"><span>03</span><h4>Công chúng biết đến</h4><p>Cái tên Kim Hoàng dần vượt ra khỏi sách nghiên cứu và ký ức của một số nhà sưu tầm.</p></article>
-            <article class="timeline-card"><span>04</span><h4>Tìm về làng</h4><p>Nhiều người yêu văn hóa dân gian đã tìm về Kim Hoàng để hiểu nguồn gốc dòng tranh.</p></article>
-          </div>
-          <div class="outreach-visuals">
-            <figure class="outreach-photo">
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 6.JPG" alt="Chứng nhận tham gia triển lãm tranh dân gian Việt Nam của nghệ nhân Đào Đình Chung" loading="lazy" />
-              <figcaption>Tranh Kim Hoàng nay đã hiện diện tại các không gian văn hóa, các sự kiện cộng đồng.</figcaption>
-            </figure>
-            <blockquote>“Tôi cũng tham gia rất nhiều chương trình, sự kiện để nhiều người biết đến làng Kim Hoàng hơn.”</blockquote>
-            <blockquote>“Người ta cũng tìm hiểu và về tận làng để khám phá, để biết rằng ngày xưa làng Kim Hoàng cũng nổi tiếng và có dòng tranh đỏ rất quý trong kho tàng tranh dân gian Việt Nam.”</blockquote>
-          </div>
-        </div>
-      </section>
-
-      <section class="youth-section reveal-on-scroll" aria-labelledby="youth-title">
-        <div class="youth-grid article-wide">
-          <div class="youth-visual">
-            <figure class="youth-photo">
-              <video autoplay muted loop playsinline preload="metadata" aria-label="Người trẻ quan sát tranh Kim Hoàng trong không gian trưng bày">
-                <source src="podcast-final.mp4" type="video/mp4" />
-              </video>
-              <figcaption>Với nhiều bạn, đây là lần đầu tiên nhận ra rằng những di sản tưởng như xa xôi thực chất vẫn đang hiện diện rất gần trong cuộc sống hôm nay.</figcaption>
-            </figure>
-            <div class="youth-mini-gallery">
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG" alt="Trải nghiệm in tranh Kim Hoàng" loading="lazy" />
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 2.JPG" alt="Tô màu tranh Kim Hoàng" loading="lazy" />
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 5.JPG" alt="Tư liệu về sự trở lại của sắc đỏ Kim Hoàng" loading="lazy" />
-            </div>
-          </div>
-          <div class="youth-copy">
-            <span class="kicker">NGƯỜI TRẺ VÀ NHỮNG LẦN ĐẦU BIẾT ĐẾN KIM HOÀNG</span>
-            <h3 id="youth-title">Một di sản chỉ thực sự sống khi có người biết đến, yêu thích và mong muốn gìn giữ nó.</h3>
-            <p>Đưa tranh đến với thế hệ trẻ là bước đi quan trọng để di sản có thể tiếp tục tồn tại. Trong các buổi trải nghiệm, học sinh, sinh viên được đặt giấy lên bản mộc, in tranh và tự tô màu cho những hình tượng quen thuộc như gà, lợn hay linh vật dân gian.</p>
-            <blockquote>“Điểm đặc biệt của tranh Kim Hoàng là được in trên nền giấy đỏ điều, tạo nên hiệu ứng màu sắc rất nổi bật và bắt mắt.”</blockquote>
-            <p>Từ trải nghiệm trực tiếp, nhiều bạn bắt đầu chủ động tìm hiểu thêm về tranh dân gian, lịch sử làng nghề và các giá trị văn hóa truyền thống.</p>
-          </div>
-        </div>
-      </section>
 
       <section class="living-section reveal-on-scroll" aria-labelledby="living-title">
         <div class="living-grid article-wide">
@@ -8434,21 +8458,6 @@
             <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 9.JPG" alt="Sản phẩm ứng dụng họa tiết tranh Kim Hoàng trong hộp quà" loading="lazy" />
             <figcaption>Không ít nhà thiết kế trẻ và các đơn vị sáng tạo văn hóa cũng bắt đầu khai thác các giá trị thẩm mỹ của tranh Kim Hoàng.</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section class="future-section reveal-on-scroll" aria-labelledby="future-title">
-        <div class="future-counters article-wide">
-          <div><strong>50+</strong><span>hơn 50 mẫu tranh Kim Hoàng</span></div>
-          <div class="outline"><strong>50+</strong><span>hơn 50 mẫu khác đang tiếp tục được nghiên cứu và hoàn thiện</span></div>
-        </div>
-        <div class="future-copy article-narrow">
-          <span class="kicker">HÀNH TRÌNH VẪN TIẾP TỤC</span>
-          <h3 id="future-title">Hành trình ấy vẫn chưa thể xem là hoàn thành.</h3>
-          <p>Hơn một thập kỷ phục dựng đã đưa Kim Hoàng trở lại đời sống, nhưng kho tàng tranh vẫn còn nhiều khoảng trống. Ông Chung cho biết đã phục dựng hơn 50 mẫu, trong khi hơn 50 mẫu khác vẫn tiếp tục được nghiên cứu và hoàn thiện.</p>
-          <p>Điều khiến ông trăn trở hơn cả không chỉ là số lượng tranh, mà là câu chuyện truyền nghề và thế hệ kế cận.</p>
-          <blockquote>“Trong làng cũng có rất nhiều người biết đến tôi là người đầu tiên khôi phục tranh Kim Hoàng, nên đã động viên và mong muốn mình giữ lại nghề để truyền lại cho lớp trẻ sau này, để không bị thất truyền về cái dòng tranh của làng nữa.”</blockquote>
-          <p class="chapter-transition">Hành trình phục dựng tranh Kim Hoàng vì thế không chỉ là khôi phục những bức tranh cũ, mà còn là nối lại sợi dây truyền thống và trao nó cho thế hệ tiếp theo.</p>
         </div>
       </section>
     </section>
@@ -8618,6 +8627,26 @@
       });
     }, { threshold: .55 });
     $$('.trial-step-trigger').forEach(el => trialObserver.observe(el));
+
+    let returnStepTimer = null;
+    function setReturnStep(i) {
+      const returnCopy = $('.return-copy[data-return-step]');
+      if (!returnCopy) return;
+      const nextStep = String(Math.max(0, Math.min(i, 1)));
+      if (returnCopy.dataset.returnStep === nextStep && !returnCopy.classList.contains('is-switching')) return;
+      clearTimeout(returnStepTimer);
+      returnCopy.classList.add('is-switching');
+      returnStepTimer = setTimeout(() => {
+        returnCopy.dataset.returnStep = nextStep;
+        returnCopy.classList.remove('is-switching');
+      }, 280);
+    }
+    const returnObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setReturnStep(+entry.target.dataset.returnStep);
+      });
+    }, { threshold: .55 });
+    $$('.return-step-trigger').forEach(el => returnObserver.observe(el));
 
     const comp = {
       dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc'],
