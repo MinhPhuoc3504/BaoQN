@@ -4018,6 +4018,229 @@
       color: #741512;
     }
 
+    .museum-outreach-page {
+      position: relative;
+      background: #210b09;
+      color: #fff4dc;
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .museum-outreach-scrolly {
+      position: relative;
+      min-height: 520svh;
+    }
+
+    .museum-outreach-bg {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      height: 100svh;
+      background:
+        linear-gradient(90deg, rgba(19, 7, 6, .82), rgba(32, 8, 7, .38) 44%, rgba(18, 7, 6, .75)),
+        linear-gradient(0deg, rgba(20, 5, 4, .82), rgba(20, 5, 4, .1) 45%, rgba(20, 5, 4, .68)),
+        url("ChatGPT Image 20_10_45 5 thg 7, 2026.png") center/cover no-repeat;
+    }
+
+    .museum-outreach-flow {
+      position: relative;
+      z-index: 1;
+      width: min(760px, calc(100% - 2 * var(--page-pad)));
+      margin-left: var(--page-pad);
+      margin-top: -100svh;
+      padding: 0 0 22svh;
+    }
+
+    .museum-outreach-title-screen {
+      min-height: 100svh;
+      display: flex;
+      align-items: end;
+      padding-bottom: clamp(4rem, 10vh, 7rem);
+    }
+
+    .museum-outreach-title-screen h2 {
+      max-width: none;
+      margin: 0;
+      color: #fff7df;
+      font-family: var(--title-font);
+      font-size: clamp(2rem, 4.2vw, 4.6rem);
+      line-height: 1;
+      text-shadow: 0 18px 55px rgba(14, 4, 3, .42);
+    }
+
+    .museum-outreach-title-screen h2 span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .museum-outreach-card {
+      min-height: 92svh;
+      display: flex;
+      align-items: center;
+    }
+
+    .museum-outreach-card > div {
+      width: 100%;
+      padding: clamp(1.35rem, 2.8vw, 2.15rem);
+      background: rgba(31, 9, 8, .76);
+      border: 1px solid rgba(255, 223, 170, .2);
+      box-shadow: 0 28px 90px rgba(15, 4, 3, .34);
+      backdrop-filter: blur(3px);
+    }
+
+    .museum-outreach-card p {
+      margin: 0;
+      color: #fff4dc;
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      line-height: 1.82;
+    }
+
+    .museum-outreach-card p + p {
+      margin-top: 1rem;
+    }
+
+    .museum-outreach-card blockquote {
+      margin: 0;
+      padding: 0 0 0 1.2rem;
+      border-left: 5px solid #ffd15c;
+      color: #ffe7a8;
+      font: 700 clamp(1.12rem, 1.9vw, 1.42rem)/1.5 var(--title-font);
+    }
+
+    .museum-outreach-card blockquote + p,
+    .museum-outreach-card p + blockquote {
+      margin-top: 1rem;
+    }
+
+    .young-return-page {
+      position: relative;
+      background: #1d0908;
+      color: #fff4dc;
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .young-return-scrolly {
+      position: relative;
+      min-height: 780svh;
+    }
+
+    .young-return-bg {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      height: 100svh;
+      display: block;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(22, 6, 5, .82), rgba(32, 8, 7, .38) 42%, rgba(18, 6, 5, .72)),
+        linear-gradient(0deg, rgba(20, 5, 4, .88), rgba(20, 5, 4, .16) 48%, rgba(20, 5, 4, .7)),
+        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 5.JPG") center/cover no-repeat;
+    }
+
+    .young-return-bg:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(21, 6, 5, .1), rgba(21, 6, 5, .08) 48%, rgba(21, 6, 5, .55)),
+        linear-gradient(0deg, rgba(20, 5, 4, .4), transparent 42%, rgba(20, 5, 4, .24));
+      pointer-events: none;
+    }
+
+    .young-return-side-photos {
+      position: absolute;
+      top: 50%;
+      right: clamp(1.25rem, 4vw, 4rem);
+      z-index: 1;
+      width: min(30vw, 420px);
+      display: grid;
+      gap: clamp(1rem, 2vw, 1.5rem);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .young-return-bg span {
+      display: block;
+      aspect-ratio: 4 / 3;
+      background-size: cover;
+      background-position: center;
+      filter: saturate(.9) contrast(1.04);
+      box-shadow: 0 26px 70px rgba(12, 3, 3, .38);
+      border: 1px solid rgba(255, 229, 180, .22);
+    }
+
+    .young-return-bg span:nth-child(1) {
+      background-image: url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 7.JPG");
+    }
+
+    .young-return-bg span:nth-child(2) {
+      background-image: url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG");
+    }
+
+    .young-return-flow {
+      position: relative;
+      z-index: 1;
+      width: min(760px, calc(100% - 2 * var(--page-pad)));
+      margin-left: var(--page-pad);
+      margin-top: -100svh;
+      padding: 12svh 0 24svh;
+    }
+
+    .young-return-card {
+      min-height: 88svh;
+      display: flex;
+      align-items: center;
+    }
+
+    .young-return-card > div {
+      width: 100%;
+      padding: clamp(1.35rem, 2.8vw, 2.15rem);
+      background: rgba(31, 9, 8, .78);
+      border: 1px solid rgba(255, 223, 170, .22);
+      box-shadow: 0 28px 90px rgba(15, 4, 3, .34);
+      backdrop-filter: blur(3px);
+    }
+
+    .young-return-card h2 {
+      max-width: 18ch;
+      margin: 0;
+      color: #fff7df;
+      font-family: var(--title-font) !important;
+      font-size: clamp(2rem, 3.6vw, 4rem) !important;
+      line-height: 1.14 !important;
+      letter-spacing: 0 !important;
+      font-kerning: normal;
+      text-rendering: auto;
+    }
+
+    .young-return-card h2 span {
+      display: block;
+    }
+
+    .young-return-card p {
+      margin: 0;
+      color: #fff4dc;
+      font-size: clamp(1rem, 1.25vw, 1.12rem);
+      line-height: 1.82;
+    }
+
+    .young-return-card p + p {
+      margin-top: 1rem;
+    }
+
+    .young-return-card p + blockquote {
+      margin-top: 1rem;
+    }
+
+    .young-return-card blockquote {
+      margin: 0;
+      padding: 0 0 0 1.2rem;
+      border-left: 5px solid #ffd15c;
+      color: #ffe7a8;
+      font: 700 clamp(1.08rem, 1.7vw, 1.34rem)/1.58 var(--body-font);
+    }
+
     @media(max-width:900px) {
       .chapter-four .final-opener {
         min-height: 92svh;
@@ -8098,6 +8321,22 @@
       .living-scroll-copy {
         min-height: clamp(430px, 63vh, 660px);
       }
+
+      .museum-outreach-flow {
+        width: min(100% - 2rem, 680px);
+        margin: -100svh auto 0;
+      }
+
+      .young-return-side-photos {
+        right: 1rem;
+        width: min(34vw, 260px);
+        opacity: .58;
+      }
+
+      .young-return-flow {
+        width: min(100% - 2rem, 680px);
+        margin: -100svh auto 0;
+      }
     }
 
     @media(max-width:560px) {
@@ -8138,6 +8377,71 @@
         max-width: none;
         font-size: clamp(2rem, 9vw, 3rem) !important;
         line-height: 1.15 !important;
+      }
+
+      .museum-outreach-scrolly {
+        min-height: auto;
+      }
+
+      .museum-outreach-bg {
+        top: 54px;
+        height: calc(100svh - 54px);
+        background-position: center center;
+      }
+
+      .museum-outreach-flow {
+        padding-bottom: 8svh;
+      }
+
+      .museum-outreach-title-screen {
+        min-height: calc(100svh - 54px);
+        padding-bottom: 18svh;
+      }
+
+      .museum-outreach-title-screen h2 {
+        font-size: clamp(1.85rem, 8.2vw, 3rem) !important;
+        line-height: 1.06;
+      }
+
+      .museum-outreach-card {
+        min-height: auto;
+        padding: 14svh 0;
+      }
+
+      .museum-outreach-card > div {
+        padding: 1.15rem;
+      }
+
+      .young-return-scrolly {
+        min-height: auto;
+      }
+
+      .young-return-bg {
+        top: 54px;
+        height: calc(100svh - 54px);
+      }
+
+      .young-return-side-photos {
+        display: none;
+      }
+
+      .young-return-flow {
+        padding: 8svh 0;
+      }
+
+      .young-return-card {
+        min-height: auto;
+        padding: 13svh 0;
+      }
+
+      .young-return-card > div {
+        padding: 1.15rem;
+      }
+
+      .young-return-card h2 {
+        max-width: 16ch;
+        font-size: clamp(2rem, 8vw, 3.4rem) !important;
+        line-height: 1.14 !important;
       }
     }
 
@@ -8254,6 +8558,7 @@
     .video-modal .media-credit {
       right: 3.5rem !important;
     }
+
   </style>
 </head>
 
@@ -8267,6 +8572,7 @@
       <a href="#chapter-2">02</a>
       <a href="#chapter-3">03</a>
       <a href="#chapter-4">04</a>
+      <a href="#chapter-5">05</a>
     </nav>
   </header>
 
@@ -8799,12 +9105,148 @@
       </section>
     </section>
 
-    <section class="closing">
-      <div class="closing-wall" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="closing-copy article-narrow">
-        <h2>Sắc đỏ không còn chỉ nằm trong ký ức.</h2>
-        <p>Di sản sống khi tiếp tục được làm ra, được kể lại và được trao vào tay một thế hệ mới.</p>
+    <section class="chapter museum-outreach-page" id="chapter-5" aria-label="Khi tranh bước ra khỏi bảo tàng">
+      <section class="museum-outreach-scrolly" aria-label="Hành trình quảng bá tranh Kim Hoàng">
+        <div class="museum-outreach-bg" aria-hidden="true"></div>
+        <div class="museum-outreach-flow">
+          <div class="museum-outreach-title-screen">
+            <h2><span>Khi tranh</span><span>bước ra khỏi bảo tàng</span></h2>
+          </div>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Sau hành trình dài phục dựng đầy gian nan, thử thách tiếp theo đối với nghệ nhân Đào Đình Chung không còn là kỹ thuật làm tranh, mà là làm sao để công chúng biết đến sự tồn tại của một dòng tranh từng bị lãng quên.</p>
+              <p>Với ông, tranh Kim Hoàng chỉ thực sự được hồi sinh khi nó bước ra khỏi không gian lưu trữ của bảo tàng, đến gần hơn với đời sống cộng đồng và được đón nhận như một phần của văn hóa đương đại.</p>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Chính vì vậy, ngay từ những ngày đầu phục dựng thành công, ông Chung đã chủ động mang các tác phẩm của mình đến nhiều triển lãm, hội chợ văn hóa và sự kiện quảng bá di sản.</p>
+              <p>Ông không chỉ giới thiệu những bức tranh mới được phục dựng mà còn kể câu chuyện về lịch sử, giá trị nghệ thuật và hành trình hồi sinh của dòng tranh đỏ từng nổi danh nơi đất Kinh Kỳ.</p>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <blockquote>“Tôi cũng đi tặng một số người trong làng và cũng đi các bảo tàng và các hội chợ để quảng bá. Tôi cũng tham gia rất nhiều chương trình, sự kiện để nhiều người biết đến làng Kim Hoàng hơn.”</blockquote>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Đối với ông, việc quảng bá tranh không đơn thuần là giới thiệu một sản phẩm thủ công mỹ nghệ. Mỗi bức tranh được trưng bày còn là một cách để kể lại câu chuyện về một làng nghề từng vang danh nhưng đã có thời gian dài chìm vào quên lãng.</p>
+              <p>Thông qua những cuộc triển lãm, hội thảo và các hoạt động trải nghiệm văn hóa, công chúng có cơ hội tiếp cận gần hơn với tranh Kim Hoàng, hiểu hơn về những giá trị lịch sử và nghệ thuật mà dòng tranh này lưu giữ.</p>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Từng bước một, những nỗ lực bền bỉ ấy đã mang lại những tín hiệu tích cực. Nếu như trước đây, cái tên Kim Hoàng chỉ xuất hiện trong các công trình nghiên cứu hoặc trong ký ức của một số ít nhà sưu tầm, thì ngày nay dòng tranh này đã được biết đến rộng rãi hơn.</p>
+              <p>Nhiều người tìm đến các triển lãm để chiêm ngưỡng tranh, trong khi không ít nhà nghiên cứu, sinh viên và những người yêu văn hóa dân gian đã tìm về tận làng Kim Hoàng để tìm hiểu về nguồn gốc của dòng tranh.</p>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <blockquote>“Người ta cũng tìm hiểu và về tận làng để khám phá, để biết rằng ngày xưa làng Kim Hoàng cũng nổi tiếng và có dòng tranh đỏ rất quý trong kho tàng tranh dân gian Việt Nam.”</blockquote>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Sự quan tâm ngày càng lớn của công chúng không chỉ khẳng định thành công của quá trình phục dựng, mà còn cho thấy sức sống bền bỉ của các giá trị văn hóa truyền thống khi được trao cơ hội trở lại với đời sống hiện đại.</p>
+              <p>Từ những bức tranh từng nằm lặng lẽ trong các bộ sưu tập và kho lưu trữ, tranh Kim Hoàng nay đã hiện diện tại các không gian văn hóa, các sự kiện cộng đồng và trong chính những ngôi nhà của người yêu nghệ thuật dân gian.</p>
+            </div>
+          </article>
+
+          <article class="museum-outreach-card">
+            <div>
+              <p>Cuộc trở về ấy không chỉ là sự hồi sinh của một dòng tranh, mà còn là sự trở lại của một phần ký ức văn hóa dân tộc.</p>
+              <p>Nhờ tâm huyết của những người gìn giữ di sản như nghệ nhân Đào Đình Chung, tranh Kim Hoàng đã bước ra khỏi những tủ kính bảo tàng để tiếp tục sống trong đời sống hôm nay, kết nối quá khứ với hiện tại và mở ra cơ hội để những giá trị truyền thống tiếp tục được truyền lại cho các thế hệ mai sau.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="chapter young-return-page" id="chapter-6" aria-labelledby="young-return-title">
+      <div class="young-return-scrolly">
+        <div class="young-return-bg" aria-hidden="true">
+          <div class="young-return-side-photos">
+            <span></span><span></span>
+          </div>
+        </div>
+        <div class="young-return-flow">
+          <article class="young-return-card">
+            <div>
+              <h2 id="young-return-title"><span>Người trẻ và</span><span>những lần đầu biết đến Kim Hoàng</span></h2>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Nếu việc phục dựng thành công tranh Kim Hoàng giúp một dòng tranh dân gian thoát khỏi nguy cơ thất truyền, thì việc đưa tranh đến với thế hệ trẻ lại là bước đi quan trọng để di sản ấy có thể tiếp tục tồn tại trong tương lai. Bởi theo nghệ nhân Đào Đình Chung, một di sản chỉ thực sự sống khi có người biết đến, yêu thích và mong muốn gìn giữ nó.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Trong nhiều năm qua, bên cạnh việc đón khách tham quan tại làng Kim Hoàng, ông Chung còn tích cực phối hợp với các trường học, trung tâm văn hóa và các đơn vị giáo dục để tổ chức những buổi trải nghiệm thực hành về tranh dân gian. Từ các trường tiểu học, trung học đến các trường đại học, ngày càng có nhiều học sinh, sinh viên được tiếp xúc với tranh Kim Hoàng thông qua những tiết học ngoại khóa và các chương trình tìm hiểu văn hóa truyền thống. Đối với ông, việc phục dựng tranh chỉ mới hoàn thành một nửa sứ mệnh. Nửa còn lại là đưa dòng tranh đến với thế hệ trẻ.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Mỗi lần đến trường học, ông lại mang theo những bản khắc gỗ, những tờ giấy màu và các dụng cụ làm tranh quen thuộc. Dưới sự hướng dẫn của người nghệ nhân, các em học sinh được tận tay đặt giấy lên bản mộc, trải nghiệm công đoạn in tranh và tự tô màu cho những hình tượng quen thuộc như gà, lợn hay các linh vật dân gian.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Theo ông Chung, cảm xúc của người trẻ khi tự tay hoàn thiện một tác phẩm luôn là điều khiến ông vui nhất. Từ sự tò mò ban đầu, nhiều em dần hứng thú hơn với lịch sử và văn hóa dân tộc. Những khái niệm tưởng như khô khan trong sách giáo khoa bỗng trở nên gần gũi khi được cảm nhận bằng chính đôi tay của mình.</p>
+              <p>Trong số những người tìm đến làng Kim Hoàng để trải nghiệm và tìm hiểu về dòng tranh dân gian này có bạn Nguyễn Bảo Hoài (34 tuổi), hiện đang theo học chương trình cao học tại Trường Đại học Kiến trúc Hà Nội. Với mong muốn tìm hiểu sâu hơn về kỹ thuật chế tác tranh Kim Hoàng, Hoài đã trực tiếp đến gặp nghệ nhân Đào Đình Chung để quan sát và trải nghiệm quy trình làm tranh.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Chia sẻ cảm nhận của mình, Hoài cho biết:</p>
+              <blockquote>“Điểm đặc biệt của tranh Kim Hoàng là được in trên nền giấy đỏ điều, tạo nên hiệu ứng màu sắc rất nổi bật và bắt mắt. Các mảng màu khi thể hiện trên nền giấy đỏ đều trở nên rực rỡ hơn. Mình đặc biệt ấn tượng với những tác phẩm tiêu biểu của dòng tranh này như tranh Thần Kê hay tranh Lợn, bởi vừa mang giá trị thẩm mỹ, vừa chứa đựng nhiều ý nghĩa văn hóa dân gian.”</blockquote>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Chính những trải nghiệm trực tiếp ấy đã giúp tranh Kim Hoàng trở nên gần gũi hơn với thế hệ trẻ. Thay vì chỉ là một dòng tranh từng tồn tại trong quá khứ, Kim Hoàng hiện lên như một phần sinh động của đời sống văn hóa dân tộc, nơi mỗi đường nét, màu sắc đều chứa đựng câu chuyện của cha ông.</p>
+              <p>Không ít học sinh, sinh viên sau khi tham gia các buổi trải nghiệm đã chủ động tìm hiểu thêm về tranh dân gian Việt Nam, về lịch sử làng nghề Kim Hoàng hay các giá trị văn hóa truyền thống khác. Với nhiều bạn, đây là lần đầu tiên nhận ra rằng những di sản tưởng như xa xôi thực chất vẫn đang hiện diện rất gần trong cuộc sống hôm nay.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Đối với nghệ nhân Đào Đình Chung, đó có lẽ là phần thưởng lớn nhất sau nhiều năm miệt mài phục dựng tranh. Bởi hơn cả việc tạo ra những bức tranh đẹp, điều ông mong muốn là gieo được hạt mầm tình yêu văn hóa dân tộc trong lòng thế hệ trẻ. Khi những người trẻ biết đến, yêu mến và tự hào về tranh Kim Hoàng, hành trình hồi sinh của dòng tranh này mới thực sự có ý nghĩa và có cơ hội được tiếp nối trong tương lai.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Bên cạnh các hoạt động trải nghiệm và giáo dục di sản, tranh Kim Hoàng cũng đang từng bước tìm được chỗ đứng trong đời sống đương đại thông qua nhiều hình thức ứng dụng sáng tạo. Những hình tượng quen thuộc như Thần Kê, lợn đàn hay các họa tiết dân gian đặc trưng không còn chỉ xuất hiện trên tranh treo tường mà đã được đưa lên nhiều sản phẩm phục vụ đời sống hàng ngày như móc khóa, sổ tay, bưu thiếp, túi vải, áo thun hay các sản phẩm lưu niệm dành cho du khách.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Không ít nhà thiết kế trẻ và các đơn vị sáng tạo văn hóa cũng bắt đầu khai thác các giá trị thẩm mỹ của tranh Kim Hoàng để ứng dụng vào thiết kế bao bì sản phẩm, quà tặng văn hóa và các sản phẩm thủ công mang đậm bản sắc Việt. Việc đưa những hình ảnh dân gian vào các vật dụng quen thuộc giúp tranh Kim Hoàng tiếp cận công chúng theo một cách gần gũi hơn, đặc biệt là với thế hệ trẻ - những người có thể bắt gặp các họa tiết truyền thống ngay trong cuộc sống thường ngày thay vì chỉ trong không gian triển lãm hay bảo tàng.</p>
+            </div>
+          </article>
+
+          <article class="young-return-card">
+            <div>
+              <p>Đây cũng là một hướng đi cần thiết để di sản không chỉ được bảo tồn mà còn được tiếp tục sống trong bối cảnh xã hội hiện đại. Khi các giá trị truyền thống được kết nối với nhu cầu và thẩm mỹ đương đại, tranh Kim Hoàng không còn là ký ức của quá khứ mà trở thành nguồn cảm hứng sáng tạo cho hiện tại và tương lai.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
