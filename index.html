@@ -2507,6 +2507,10 @@
       font-family: "Times New Roman", Georgia, serif;
     }
 
+    .museum-story-card p {
+      color: #7B2525;
+    }
+
     .chapter-three .kicker,
     .chapter-three .chapter-number,
     .chapter-three button,
@@ -3819,7 +3823,9 @@
     }
 
     .living-section {
-      background: radial-gradient(circle at 15% 18%, rgba(255, 209, 92, .24), transparent 30%), linear-gradient(135deg, #9f1b21, #d94a2e 55%, #efb23d);
+      background:
+        linear-gradient(90deg, rgba(35, 8, 7, .74), rgba(35, 8, 7, .42) 48%, rgba(35, 8, 7, .68)),
+        url("Chương 3.png") center center/cover no-repeat;
       color: #fff8e7;
     }
 
@@ -6870,52 +6876,58 @@
       left: 0;
       right: 0;
       top: 50%;
+      z-index: 0;
       height: 2px;
       background: linear-gradient(90deg, rgba(250, 215, 119, .25), rgba(250, 215, 119, .9), rgba(250, 215, 119, .2));
       transform: translateY(-50%);
     }
 
     .golden-track .golden-card {
-      width: clamp(330px, 35vw, 500px) !important;
-      height: clamp(470px, 67vh, 670px) !important;
-      padding: clamp(1.6rem, 3vw, 3rem) !important;
+      width: clamp(300px, 28vw, 390px) !important;
+      height: clamp(230px, 30vh, 300px) !important;
+      min-height: 0 !important;
+      padding: 1.2rem 1.25rem !important;
       display: flex !important;
       flex-direction: column;
       justify-content: center !important;
       align-items: center;
-      text-align: center;
       position: relative;
       isolation: isolate;
-      overflow: hidden;
-      border: 1px solid rgba(255, 229, 160, .38) !important;
-      border-radius: 6px;
-      background:
-        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
-        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat !important;
-      background-image:
-        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
-        url("Thiết kế chưa có tên (3).png") !important;
-      background-size: cover, cover !important;
-      background-position: center center, center center !important;
-      background-repeat: no-repeat !important;
-      background-blend-mode: normal !important;
-      box-shadow: 0 34px 80px rgba(24, 3, 3, .36), inset 0 0 0 1px rgba(255, 255, 255, .08) !important;
-      color: #fff6df;
-    }
-
-    .golden-track .golden-card:nth-child(even) {
-      background:
-        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
-        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat !important;
-      color: #fff6df;
+      overflow: visible;
+      text-align: center;
+      border: 1px solid rgba(255, 210, 120, .22) !important;
+      border-radius: 0;
+      background: #ead7b6 !important;
+      box-shadow: none !important;
+      color: #3b1712;
+      flex: 0 0 clamp(300px, 28vw, 390px);
     }
 
     .golden-track .golden-card:before {
-      display: none;
+      content: "";
+      position: absolute;
+      inset: -1px;
+      z-index: 1;
+      background: #ead7b6;
+      border: inherit;
+    }
+
+    .golden-track .golden-card:nth-child(even) {
+      background: #ead7b6 !important;
+      color: #3b1712;
+    }
+
+    .golden-track .golden-card:before {
+      display: block;
     }
 
     .golden-track .golden-card:after {
-      display: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: rgba(234, 215, 182, .88);
+      pointer-events: none;
     }
 
     .golden-track .golden-card-media {
@@ -6951,24 +6963,23 @@
     .golden-track .golden-card span {
       position: relative;
       z-index: 4;
-      right: auto;
+      left: auto;
       top: auto;
-      display: grid;
-      place-items: center;
-      width: 3.4rem;
-      height: 3.4rem;
-      margin: 0 auto 1.1rem;
-      border-radius: 50%;
-      background: #f6c95c;
-      color: #641614 !important;
-      font: 800 .95rem/1 var(--sans) !important;
-      box-shadow: 0 0 0 8px rgba(246, 201, 92, .16);
+      display: block;
+      width: auto;
+      height: auto;
+      margin: 0 0 .55rem;
+      border-radius: 0;
+      background: transparent !important;
+      color: #ffd15c !important;
+      font: 900 1.2rem/1 var(--sans) !important;
+      box-shadow: none;
     }
 
     .golden-track article.golden-card span,
     .golden-track article.golden-card:nth-child(even) span {
-      background: #f6c95c !important;
-      color: #641614 !important;
+      background: transparent !important;
+      color: #ffd15c !important;
     }
 
     .golden-track .golden-card h4,
@@ -6978,21 +6989,22 @@
     }
 
     .golden-track .golden-card h4 {
+      color: #3b1712;
       font-family: var(--serif);
-      font-size: clamp(2.2rem, 3.8vw, 4.5rem) !important;
-      line-height: .96;
-      margin: 0;
+      font-size: 1.08rem !important;
+      line-height: 1.25;
+      margin: 0 0 .45rem;
       padding: 0;
     }
 
     .golden-track .golden-card p {
-      margin: .85rem 0 0;
-      max-width: 28ch;
+      margin: 0;
+      max-width: none;
       padding: 0;
-      color: #f8deb7;
-      font-family: var(--serif);
-      font-size: clamp(.98rem, 1.2vw, 1.18rem);
-      line-height: 1.55;
+      color: #5d3827;
+      font-family: var(--body-font);
+      font-size: .98rem;
+      line-height: 1.65;
     }
 
     .golden-progress {
@@ -7087,7 +7099,8 @@
       .golden-track .golden-card {
         width: 100% !important;
         height: auto !important;
-        min-height: 28rem !important;
+        flex-basis: auto;
+        min-height: 0 !important;
       }
     }
 
@@ -7101,11 +7114,11 @@
       }
 
       .golden-track .golden-card {
-        min-height: 26rem !important;
+        min-height: 0 !important;
       }
 
       .golden-track .golden-card h4 {
-        font-size: clamp(2rem, 10vw, 2.65rem) !important;
+        font-size: 1.08rem !important;
       }
 
       .golden-track .golden-card p {
