@@ -3088,19 +3088,20 @@
 
     .return-hero {
       position: relative;
-      min-height: 138svh;
+      min-height: 220svh;
       padding: var(--return-pad) var(--page-pad);
       overflow: clip;
       background: #fff3d1;
     }
 
     .return-video-pin {
-      position: absolute;
+      position: sticky;
       top: 0;
       z-index: 0;
       width: 100vw;
       height: 100svh;
       margin-top: calc(var(--return-pad) * -1);
+      margin-bottom: -100svh;
       margin-left: calc(50% - 50vw);
       overflow: hidden;
       pointer-events: none;
@@ -3128,7 +3129,6 @@
       width: 100vw;
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      margin-bottom: .85rem;
       text-align: center;
       white-space: nowrap;
       font-size: clamp(1.1rem, 3.6vw, 3rem);
@@ -3136,16 +3136,13 @@
 
     .return-scroll-copy {
       position: relative;
-      min-height: clamp(10.5rem, 18vw, 14rem);
-      margin: .35rem auto 0;
+      min-height: clamp(14rem, 24vw, 18rem);
+      margin: clamp(1rem, 2vw, 1.4rem) auto 0;
     }
 
     .return-copy-step {
       position: absolute;
       inset: 0;
-      max-width: 68ch;
-      margin: 0 auto;
-      line-height: 1.62;
       opacity: 0;
       transform: translateY(1.2rem);
       transition: opacity .45s ease, transform .45s ease;
@@ -3170,20 +3167,17 @@
       z-index: 2;
       display: grid;
       gap: 0;
-      margin-top: 10svh;
+      margin-top: 42svh;
       pointer-events: none;
     }
 
     .return-step-trigger {
-      min-height: 32svh;
+      min-height: 72svh;
     }
 
     .return-copy blockquote {
       background: rgba(255, 248, 224, .7);
       box-shadow: none;
-      max-width: 62ch;
-      margin: .7rem auto 0;
-      padding: 1rem 1.2rem;
     }
 
     .return-gallery {
@@ -3490,6 +3484,7 @@
       min-height: 100svh;
       display: grid;
       align-items: end;
+      justify-items: start;
       padding: 7rem var(--page-pad) 6rem;
       color: #fff7df;
       background:
@@ -7680,7 +7675,13 @@
     }
 
     .chapter-four .final-copy {
+      width: min(900px, 100%);
       max-width: 900px;
+      justify-self: start !important;
+      margin-left: 0 !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
 
     .chapter-four .final-copy h2 {
@@ -7868,6 +7869,12 @@
 
       .paper-lab-stage {
         min-height: clamp(360px, 82vw, 620px);
+      }
+
+      .chapter-four .final-copy {
+        justify-self: start;
+        margin-left: 0;
+        margin-right: auto;
       }
 
       .chapter-four .final-copy h2 {
@@ -8360,8 +8367,9 @@
             </div>
           </div>
           <div class="paper-lab-stage" aria-label="Video minh họa hành trình phục dựng tranh Kim Hoàng">
-            <video class="paper-lab-video" autoplay muted loop playsinline preload="metadata">
+            <video class="paper-lab-video" autoplay muted loop playsinline controls preload="auto">
               <source src="podcast-final.mp4" type="video/mp4" />
+              Trình duyệt của bạn không hỗ trợ video.
             </video>
           </div>
         </div>
