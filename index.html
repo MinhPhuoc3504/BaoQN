@@ -4241,6 +4241,145 @@
       font: 700 clamp(1.08rem, 1.7vw, 1.34rem)/1.58 var(--body-font);
     }
 
+    .journey-continues-page {
+      position: relative;
+      background: #240b09;
+      color: #fff4dc;
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .journey-continues-scrolly {
+      position: relative;
+      min-height: 1220svh;
+    }
+
+    .journey-continues-pin {
+      position: sticky;
+      top: 0;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(280px, .92fr) minmax(360px, .86fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      padding: clamp(5rem, 8vw, 7rem) var(--page-pad);
+      overflow: hidden;
+    }
+
+    .journey-continues-pin:before {
+      content: "";
+      position: absolute;
+      inset: -18px;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(22, 6, 5, .74), rgba(44, 9, 8, .34) 43%, rgba(22, 6, 5, .82)),
+        linear-gradient(0deg, rgba(22, 6, 5, .72), rgba(22, 6, 5, .14) 48%, rgba(22, 6, 5, .58)),
+        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 11.JPG") center/cover no-repeat;
+      filter: blur(3px) saturate(.96);
+      transform: scale(1.025);
+    }
+
+    .journey-continues-pin:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(27, 7, 6, .18);
+      pointer-events: none;
+    }
+
+    .journey-continues-photo {
+      position: relative;
+      z-index: 1;
+      width: min(46vw, 600px);
+      margin: 0;
+      box-shadow: 0 34px 95px rgba(13, 4, 3, .42);
+      border: 1px solid rgba(255, 225, 170, .22);
+      background: #1a0706;
+    }
+
+    .journey-continues-photo img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .journey-continues-photo figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: .72rem .85rem;
+      color: #ffe9bd;
+      background: rgba(28, 8, 7, .76);
+      font-size: .76rem;
+    }
+
+    .journey-continues-stage {
+      position: relative;
+      z-index: 1;
+      min-height: min(660px, 72svh);
+      display: grid;
+      align-items: center;
+    }
+
+    .journey-continues-title,
+    .journey-continues-box {
+      grid-area: 1 / 1;
+      opacity: 0;
+      transform: translateY(1.2rem);
+      transition: opacity .42s ease, transform .42s ease;
+      pointer-events: none;
+    }
+
+    .journey-continues-title.is-active,
+    .journey-continues-box.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .journey-continues-title h2 {
+      max-width: 11ch;
+      margin: 0;
+      color: #fff7df;
+      font-family: var(--title-font) !important;
+      font-size: clamp(2.6rem, 5.8vw, 6.8rem) !important;
+      line-height: .98 !important;
+      letter-spacing: 0 !important;
+      text-shadow: 0 22px 60px rgba(12, 3, 3, .42);
+    }
+
+    .journey-continues-box {
+      width: min(100%, 720px);
+      margin-left: auto;
+      padding: clamp(1.25rem, 2.5vw, 2rem);
+      background: rgba(31, 9, 8, .78);
+      border: 1px solid rgba(255, 223, 170, .24);
+      box-shadow: 0 28px 90px rgba(15, 4, 3, .34);
+      backdrop-filter: blur(3px);
+    }
+
+    .journey-continues-box p,
+    .journey-continues-box blockquote {
+      margin: 0;
+    }
+
+    .journey-continues-box p {
+      color: #fff4dc;
+      font-size: clamp(1rem, 1.22vw, 1.12rem);
+      line-height: 1.82;
+    }
+
+    .journey-continues-box blockquote {
+      padding: 0 0 0 1.2rem;
+      border-left: 5px solid #ffd15c;
+      color: #ffe7a8;
+      font: 700 clamp(1.08rem, 1.6vw, 1.32rem)/1.58 var(--body-font);
+    }
+
     @media(max-width:900px) {
       .chapter-four .final-opener {
         min-height: 92svh;
@@ -8337,6 +8476,15 @@
         width: min(100% - 2rem, 680px);
         margin: -100svh auto 0;
       }
+
+      .journey-continues-pin {
+        grid-template-columns: minmax(220px, .82fr) minmax(0, 1fr);
+        gap: 1.4rem;
+      }
+
+      .journey-continues-photo {
+        width: min(36vw, 300px);
+      }
     }
 
     @media(max-width:560px) {
@@ -8442,6 +8590,94 @@
         max-width: 16ch;
         font-size: clamp(2rem, 8vw, 3.4rem) !important;
         line-height: 1.14 !important;
+      }
+
+      .journey-continues-scrolly {
+        min-height: auto;
+      }
+
+      .journey-continues-pin {
+        position: relative;
+        top: auto;
+        min-height: auto;
+        display: block;
+        padding: 5rem 1rem;
+      }
+
+      .journey-continues-photo {
+        width: min(100%, 420px);
+        margin: 0 0 2rem;
+      }
+
+      .journey-continues-stage {
+        min-height: auto;
+        display: block;
+      }
+
+      .journey-continues-title,
+      .journey-continues-box {
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+      }
+
+      .journey-continues-title {
+        margin-bottom: 2rem;
+      }
+
+      .journey-continues-title h2 {
+        max-width: 12ch;
+        font-size: clamp(2.4rem, 12vw, 4rem) !important;
+        line-height: 1.04 !important;
+      }
+
+      .journey-continues-box {
+        margin: 0 0 1rem;
+        padding: 1.15rem;
+      }
+    }
+
+    .museum-outreach-title-screen h2,
+    .museum-outreach-title-screen h2 span,
+    #young-return-title,
+    #young-return-title span {
+      font-family: var(--title-font) !important;
+      letter-spacing: 0 !important;
+      font-kerning: normal;
+      text-rendering: auto;
+    }
+
+    .museum-outreach-title-screen h2 span,
+    #young-return-title span {
+      display: block;
+      white-space: nowrap;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    #young-return-title {
+      max-width: none !important;
+      font-size: clamp(1.35rem, 4.35vw, 3.85rem) !important;
+      line-height: 1.08 !important;
+    }
+
+    .young-return-card:first-child > div {
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+    }
+
+    @media(max-width:900px) {
+      #young-return-title {
+        font-size: clamp(1.24rem, 4.9vw, 2.55rem) !important;
+      }
+    }
+
+    @media(max-width:560px) {
+      #young-return-title {
+        font-size: clamp(1.12rem, 4.75vw, 1.8rem) !important;
       }
     }
 
@@ -9250,6 +9486,67 @@
       </div>
     </section>
 
+    <section class="chapter journey-continues-page" id="chapter-7" aria-labelledby="journey-continues-title">
+      <div class="journey-continues-scrolly">
+        <div class="journey-continues-pin">
+          <figure class="journey-continues-photo">
+            <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 10.jpg" alt="Nghệ nhân Đào Đình Chung trong không gian làm tranh Kim Hoàng" loading="lazy" />
+            <figcaption>Không gian phục dựng tranh Kim Hoàng tại làng Kim Hoàng.</figcaption>
+          </figure>
+
+          <div class="journey-continues-stage" data-journey-stage>
+            <div class="journey-continues-title is-active">
+              <h2 id="journey-continues-title">Hành trình vẫn tiếp tục</h2>
+            </div>
+
+            <article class="journey-continues-box">
+              <p>Hơn một thập kỷ kể từ ngày bắt tay vào phục dựng tranh Kim Hoàng, nghệ nhân Đào Đình Chung đã làm được điều mà nhiều người từng nghĩ là bất khả thi: đưa một dòng tranh dân gian thất truyền trở lại với đời sống đương đại. Từ những tư liệu ít ỏi còn sót lại, ông từng bước phục dựng kỹ thuật làm tranh, khôi phục màu giấy đặc trưng và đưa những hình tượng quen thuộc của tranh Kim Hoàng trở lại với công chúng. Thế nhưng, đối với ông, hành trình ấy vẫn chưa thể xem là hoàn thành.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Dù đã phục dựng thành công hàng chục mẫu tranh cổ, kho tàng tranh Kim Hoàng vẫn còn nhiều khoảng trống cần tiếp tục được lấp đầy. Mỗi bức tranh được khôi phục không chỉ là thành quả của quá trình nghiên cứu mà còn là một cuộc đối thoại với lịch sử, nơi người nghệ nhân phải lần theo những dấu vết còn sót lại để tìm cách tái hiện tinh thần của cha ông.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <blockquote>“Đến nay, tôi đã phục dựng được hơn 50 mẫu tranh Kim Hoàng. Hiện vẫn còn hơn 50 mẫu khác đang tiếp tục được nghiên cứu và hoàn thiện. Song song với việc khôi phục các mẫu tranh cổ, tôi cũng mong muốn sáng tạo thêm những tác phẩm mới trên nền tảng giá trị truyền thống của dòng tranh Kim Hoàng.”</blockquote>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Con số hơn 50 mẫu tranh được phục dựng là một thành tựu đáng ghi nhận, nhưng đồng thời cũng cho thấy khối lượng công việc còn ở phía trước. Nhiều mẫu tranh cổ hiện chỉ còn lại những tư liệu rời rạc hoặc hình ảnh không hoàn chỉnh, đòi hỏi người phục dựng phải dành rất nhiều thời gian nghiên cứu, đối chiếu và thử nghiệm. Bên cạnh việc khôi phục các mẫu tranh truyền thống, ông Chung cũng mong muốn tiếp tục sáng tạo trên nền tảng những giá trị cốt lõi của dòng tranh để giúp Kim Hoàng có thêm sức sống trong bối cảnh hiện đại.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Tuy nhiên, điều khiến ông trăn trở hơn cả không phải là số lượng tranh cần phục dựng, mà là câu chuyện về con người. Sau tất cả những nỗ lực để cứu một di sản khỏi nguy cơ biến mất, ông hiểu rằng sự tồn tại lâu dài của tranh Kim Hoàng không thể chỉ phụ thuộc vào một cá nhân.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Nhìn lại lịch sử của dòng tranh, ông càng thấm thía bài học về sự đứt gãy của truyền nghề. Chính vì vậy, mong muốn lớn nhất của ông hiện nay là có thêm những người trẻ cùng học nghề, cùng gìn giữ và tiếp nối công việc mà ông đã dành nhiều năm theo đuổi.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <blockquote>“Trong làng cũng có rất nhiều người biết đến tôi là người đầu tiên khôi phục tranh Kim Hoàng, nên đã động viên và mong muốn mình giữ lại nghề để truyền lại cho lớp trẻ sau này, để không bị thất truyền về cái dòng tranh của làng nữa.”</blockquote>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Sự động viên của người dân địa phương là nguồn khích lệ lớn đối với người nghệ nhân. Nhưng hơn cả những lời động viên, ông mong muốn có thể xây dựng được một thế hệ kế cận - những người không chỉ yêu thích tranh Kim Hoàng mà còn sẵn sàng học hỏi, thực hành và tiếp tục phát triển dòng tranh trong tương lai.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Ngày hôm nay, trong căn nhà nhỏ ở làng Kim Hoàng, người nghệ nhân vẫn đều đặn làm việc bên những bản khắc gỗ, những tờ giấy đỏ và những hộp màu thủ công. Công việc ấy diễn ra lặng lẽ, không ồn ào, nhưng phía sau là khát vọng gìn giữ một phần di sản văn hóa dân tộc. Bởi với ông Đào Đình Chung, tranh Kim Hoàng không chỉ là một nghề hay một thú chơi nghệ thuật. Đó là ký ức của làng quê, là dấu ấn của cha ông và là một phần bản sắc văn hóa Việt Nam cần được gìn giữ.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Vẫn còn những người yêu di sản, vẫn còn những người trẻ muốn tìm hiểu và tiếp nối, hành trình hồi sinh của tranh Kim Hoàng sẽ vẫn tiếp tục, như sắc đỏ đặc trưng của dòng tranh này - bền bỉ, ấm áp và luôn mang trong mình sức sống của sự tái sinh.</p>
+            </article>
+
+            <article class="journey-continues-box">
+              <p>Sau tất cả, hành trình phục dựng tranh Kim Hoàng chưa bao giờ chỉ là câu chuyện khôi phục những bức tranh cũ. Đó còn là hành trình giữ lại ký ức văn hóa của một vùng đất, nối lại sợi dây truyền thống từng bị đứt gãy và trao nó cho những thế hệ tiếp theo.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="infographic-section" aria-label="Infographic tranh Kim Hoàng">
       <img src="infographic new new.png" alt="Infographic về tranh Kim Hoàng" loading="lazy" />
     </section>
@@ -9536,6 +9833,32 @@
     updateLivingStep();
     addEventListener('scroll', updateLivingStep, { passive: true });
     addEventListener('resize', updateLivingStep);
+
+    function setJourneyStep(i) {
+      const title = $('.journey-continues-title');
+      const boxes = $$('.journey-continues-box');
+      if (!title || !boxes.length) return;
+      title.classList.toggle('is-active', i === 0);
+      boxes.forEach((box, index) => box.classList.toggle('is-active', index === i - 1));
+    }
+    setJourneyStep(0);
+    function updateJourneyStep() {
+      const scrolly = $('.journey-continues-scrolly');
+      const boxes = $$('.journey-continues-box');
+      if (!scrolly || !boxes.length) return;
+      if (innerWidth <= 560) {
+        setJourneyStep(0);
+        boxes.forEach(box => box.classList.add('is-active'));
+        return;
+      }
+      const rect = scrolly.getBoundingClientRect();
+      const maxStep = boxes.length;
+      const progress = Math.max(0, Math.min(1, -rect.top / Math.max(1, rect.height - innerHeight)));
+      setJourneyStep(Math.min(maxStep, Math.floor(progress * (maxStep + 1))));
+    }
+    updateJourneyStep();
+    addEventListener('scroll', updateJourneyStep, { passive: true });
+    addEventListener('resize', updateJourneyStep);
 
     const comp = {
       dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc'],
