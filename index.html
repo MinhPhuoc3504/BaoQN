@@ -1176,6 +1176,25 @@
       border-top: 1px solid #362920;
     }
 
+    .woodblock-card .image-credit {
+      position: absolute;
+      right: .45rem;
+      bottom: 42px;
+      z-index: 4;
+      margin: 0;
+      padding: .16rem .42rem;
+      background: rgba(58, 16, 12, .76);
+      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
+      color: #f8e7c8;
+      font-size: .64rem;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+      pointer-events: none;
+    }
+
     .woodblock-card-1 {
       left: 0;
       top: 0;
@@ -2555,6 +2574,25 @@
       margin: 0;
     }
 
+    .chapter-bg-credit {
+      position: absolute;
+      right: clamp(1rem, 2.4vw, 2rem);
+      bottom: clamp(1rem, 2.4vw, 2rem);
+      z-index: 2;
+      margin: 0;
+      padding: .18rem .45rem;
+      background: rgba(58, 16, 12, .76);
+      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
+      color: #f8e7c8;
+      font-size: .68rem;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+      pointer-events: none;
+    }
+
     .chapter-three .revival-opener {
       place-items: center;
       text-align: center;
@@ -2774,6 +2812,10 @@
       gap: clamp(2rem, 5vw, 5rem);
       align-items: start;
       margin: 0 auto;
+      width: min(1240px, 100%);
+      padding-left: 0;
+      padding-right: 0;
+      box-sizing: border-box;
     }
 
     .red-lab-copy .kicker,
@@ -5025,6 +5067,25 @@
       background: linear-gradient(0deg, rgba(34, 4, 4, .18), transparent 45%);
     }
 
+    .story-art-card .folk-art .image-credit {
+      position: absolute;
+      right: .75rem;
+      bottom: .75rem;
+      z-index: 4;
+      margin: 0;
+      padding: .18rem .45rem;
+      background: rgba(58, 16, 12, .76);
+      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
+      color: #f8e7c8;
+      font-size: .68rem;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
+      pointer-events: none;
+    }
+
     .rooster-photo img {
       object-position: center;
     }
@@ -5578,19 +5639,16 @@
       content: "";
       position: absolute;
       z-index: 0;
-      inset: -1.5rem;
+      inset: 0;
       width: auto;
       height: auto;
       min-width: 0;
       min-height: 0;
       border-radius: 0;
-      background:
-        linear-gradient(90deg, rgba(30, 5, 7, .72) 0%, rgba(74, 12, 13, .5) 46%, rgba(128, 22, 18, .34) 100%),
-        linear-gradient(0deg, rgba(20, 4, 5, .68) 0%, rgba(20, 4, 5, .1) 45%, rgba(20, 4, 5, .28) 100%),
-        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/contain no-repeat;
-      opacity: .95;
-      filter: blur(.08px) saturate(1.18) brightness(1.12);
-      transform: scale(1.5);
+      background: none;
+      opacity: 1;
+      filter: none;
+      transform: none;
       box-shadow: none;
     }
 
@@ -5604,6 +5662,10 @@
 
     .hero-copy {
       z-index: 3
+    }
+
+    .hero-paper.hero-image-stack {
+      display: none;
     }
 
     .hero-image-stack {
@@ -5679,10 +5741,8 @@
       transform: rotate(21deg) translate(10px, 12px);
     }@media(max-width:900px) {
       .hero:before {
-        background:
-          linear-gradient(0deg, rgba(30, 5, 7, .7) 0%, rgba(73, 12, 14, .42) 58%, rgba(73, 12, 14, .52) 100%),
-          url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/cover no-repeat;
-        opacity: .92;
+        background: none;
+        opacity: 1;
       }
 
       .hero-image-stack {
@@ -5706,8 +5766,15 @@
 
     .article-wide {
       width: min(1240px, 100%);
+      box-sizing: border-box;
       padding-left: var(--page-pad);
       padding-right: var(--page-pad)
+    }
+
+    .red-paper-lab > .article-wide,
+    .trial-scrolly > .article-wide {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     .hero {
@@ -6023,10 +6090,9 @@
       }
 
       .hero:before {
-        background:
-          linear-gradient(0deg, rgba(30, 5, 7, .72) 0%, rgba(73, 12, 14, .38) 56%, rgba(73, 12, 14, .5) 100%),
-          url("Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hình bìa.png") center/cover no-repeat;
-        transform: scale(1.12);
+        background: none;
+        filter: none;
+        transform: none;
       }
 
       .hero h1 {
@@ -6197,6 +6263,17 @@
       transform: rotate(-.35deg);
     }
 
+    .day-map-figure {
+      width: min(98%, 1280px);
+      margin: 0;
+      transform: rotate(-.35deg);
+    }
+
+    .day-map-figure .day-map-stage {
+      width: 100%;
+      transform: none;
+    }
+
     .day-map-stage:before {
       content: "";
       position: absolute;
@@ -6214,6 +6291,16 @@
       height: 100%;
       object-fit: cover;
       filter: saturate(.92) contrast(1.04) brightness(.96);
+    }
+
+    .day-map-caption {
+      display: block;
+      margin-top: .45rem;
+      padding-left: .15rem;
+      color: #f8e7c8;
+      font-size: clamp(.68rem, .9vw, .86rem);
+      font-style: italic;
+      line-height: 1.25;
     }
 
     .day-map-overlay {
@@ -6579,6 +6666,7 @@
         padding: 1rem
       }
 
+      .day-map-figure,
       .day-map-stage {
         width: min(100%, 760px);
         transform: none;
@@ -6608,8 +6696,12 @@
         min-height: 54vh
       }
 
+      .day-map-figure,
       .day-map-stage {
         width: 100%;
+      }
+
+      .day-map-stage {
         aspect-ratio: 4/3;
       }
 
@@ -6716,6 +6808,30 @@
       z-index: 1;
       pointer-events: none;
       background: linear-gradient(0deg, rgba(35, 8, 6, .34), transparent 42%);
+    }
+
+    .comparison-section .paper-dongho,
+    .comparison-section .paper-kimhoang {
+      overflow: visible;
+    }
+
+    .comparison-section .paper-dongho .image-credit,
+    .comparison-section .paper-kimhoang .image-credit {
+      position: absolute;
+      right: 0;
+      bottom: -2rem;
+      z-index: 3;
+      margin: 0;
+      padding: .18rem .45rem;
+      background: rgba(58, 16, 12, .76);
+      box-shadow: 0 8px 20px rgba(30, 6, 5, .18);
+      color: #f8e7c8;
+      font-size: .68rem;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1.2;
+      text-transform: none;
     }
 
     .comparison-section .paper-hangtrong {
@@ -7934,6 +8050,59 @@
         line-height: 1.15 !important;
       }
     }
+
+    .hero {
+      min-height: 100svh !important;
+      background: #250909 !important;
+    }
+
+    .hero:before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 0 !important;
+      background-image: url("Gần một thế kỷ sau khi thất truyền, tranh Kim Hoàng - dòng tranh dân gian từng vang danh đất Kinh Kỳ - đang dần hồi sinh nhờ nỗ lực bền bỉ của nghệ nhân Đào Đình Chung. Từ những tư liệu ít ỏi còn .png") !important;
+      background-position: center center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .hero-paper.hero-image-stack {
+      display: none !important;
+    }
+
+    .hero-title-art {
+      position: absolute;
+      z-index: 4;
+      left: clamp(-2rem, -2vw, -.75rem);
+      top: clamp(5rem, 10vh, 7.5rem);
+      width: min(52vw, 1120px);
+      max-height: 56vh;
+      object-fit: contain;
+      object-position: left top;
+      pointer-events: none;
+    }
+
+    @media(max-width:900px) {
+      .hero-title-art {
+        left: clamp(-1.5rem, -3vw, -.75rem);
+        width: min(62vw, 860px);
+        top: clamp(5.5rem, 10vh, 7rem);
+      }
+    }
+
+    @media(max-width:560px) {
+      .hero-title-art {
+        left: -.75rem;
+        top: 5.25rem;
+        width: min(62vw, 640px);
+        max-height: 48vh;
+      }
+    }
   </style>
 </head>
 
@@ -7951,27 +8120,9 @@
   </header>
 
   <main>
-    <section class="hero" id="hero" aria-labelledby="hero-title">
+    <section class="hero" id="hero">
       <div class="hero-grain" aria-hidden="true"></div>
-      <div class="hero-paper hero-image-stack" aria-hidden="true">
-        <img class="hero-img-layer hero-img-yellow" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 3.webp" alt=""
-          loading="eager" />
-        <img class="hero-img-layer hero-img-red" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/hình 4.png" alt=""
-          loading="eager" />
-        <img class="hero-img-layer hero-img-blue" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 4.JPG" alt=""
-          loading="eager" />
-      </div>
-      <div class="hero-copy">
-        <!-- SỬA TIÊU ĐỀ TẠI ĐÂY -->
-        <h1 id="hero-title"><span class="hero-title-reduced">Một thế kỷ<br>thất truyền</span><br><em class="hero-title-reduced hero-title-narrow">và cuộc hồi<br>sinh của</em><br>tranh đỏ<br>Kim Hoàng</h1>
-        <!-- SỬA MÔ TẢ NGẮN DƯỚI TIÊU ĐỀ TẠI ĐÂY -->
-        <p class="deck">Gần một thế kỷ sau khi thất truyền, tranh Kim Hoàng - dòng tranh dân gian từng vang danh đất Kinh Kỳ - đang dần hồi sinh nhờ nỗ lực bền bỉ của nghệ nhân Đào Đình Chung. Từ những tư liệu ít ỏi còn sót lại, ông đã từng bước khôi phục một di sản văn hóa tưởng chừng chỉ còn trong ký ức.</p>
-        <div class="hero-meta">
-          <span>Nội dung: Quang Ngọc, Thu Hiên</span>
-          <span>Hình ảnh: Cẩm Hà, Thu Trang</span>
-          <span>Thiết kế: Quỳnh Như, Bình Minh</span>
-        </div>
-      </div>
+      <div class="hero-copy"></div>
       <a class="scroll-cue" href="#chapter-1">Cuộn để bắt đầu <span aria-hidden="true">↓</span></a>
     </section>
 
@@ -7988,32 +8139,35 @@
       <section class="scrolly map-scrolly" aria-label="Bản đồ hình thành làng Kim Hoàng">
         <div class="map-pin-column">
           <div class="sticky-visual map-visual">
-            <div class="day-map-stage">
-              <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/bản đồ.png"
-                alt="Bản đồ khu vực sông Đáy và làng Kim Hoàng" loading="lazy" />
-              <svg class="day-map-overlay" viewBox="0 0 1366 768" aria-hidden="true">
-                <defs>
-                  <filter id="riverGlow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="5" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-                <path class="river-trace river-glow"
-                  d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
-                <path class="river-trace river-line"
-                  d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
-                <path class="river-current"
-                  d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
-              </svg>
-              <div class="map-focus-box" aria-hidden="true"></div>
-              <div class="trade-route" aria-hidden="true"></div>
-              <div class="red-print print-1" aria-hidden="true"></div>
-              <div class="red-print print-2" aria-hidden="true"></div>
-              <div class="red-print print-3" aria-hidden="true"></div>
-            </div>
+            <figure class="day-map-figure">
+              <div class="day-map-stage">
+                <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/bản đồ.png"
+                  alt="Bản đồ khu vực sông Đáy và làng Kim Hoàng" loading="lazy" />
+                <svg class="day-map-overlay" viewBox="0 0 1366 768" aria-hidden="true">
+                  <defs>
+                    <filter id="riverGlow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <path class="river-trace river-glow"
+                    d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
+                  <path class="river-trace river-line"
+                    d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
+                  <path class="river-current"
+                    d="M397 2 C398 80 392 155 420 226 C447 293 430 338 374 365 C331 386 350 430 404 456 C468 491 435 548 360 582 C294 612 260 658 286 732" />
+                </svg>
+                <div class="map-focus-box" aria-hidden="true"></div>
+                <div class="trade-route" aria-hidden="true"></div>
+                <div class="red-print print-1" aria-hidden="true"></div>
+                <div class="red-print print-2" aria-hidden="true"></div>
+                <div class="red-print print-3" aria-hidden="true"></div>
+              </div>
+              <figcaption class="day-map-caption">Bản đồ Xã Sơn Đồng</figcaption>
+            </figure>
           </div>
         </div>
         <div class="scrolly-copy">
@@ -8061,11 +8215,13 @@
                 <div class="paper-art paper-dongho">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 7.JPG" alt="Tranh Đông Hồ" loading="eager" />
                   <span>Giấy điệp</span>
+                  <span class="image-credit">Ảnh: Art Việt</span>
                 </div>
                 <div class="paper-art paper-kimhoang">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 3.webp" alt="Tranh Kim Hoàng"
                     loading="eager" />
                   <span>Nền đỏ · in nét · tô tay · in nét lần hai</span>
+                  <span class="image-credit">Ảnh: Artnam Gallery</span>
                 </div>
               </div>
               <div class="comparison-copy" id="comparisonCopy">
@@ -8133,6 +8289,7 @@
             <div class="folk-art rooster-photo" role="img" aria-label="Tranh Thần Kê Kim Hoàng">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/hình 4.png" alt="Tranh Thần Kê Kim Hoàng"
                 loading="lazy" />
+              <span class="image-credit">Ảnh: Artnam Gallery</span>
               <button class="hotspot rooster-tail" type="button" aria-label="Ý nghĩa tranh Thần Kê"
                 data-title="Thần Kê Kim Hoàng"
                 data-pop="Bức tranh Gà Kim Hoàng, hay còn được các cụ ngày xưa gọi là Thần Kê, không đơn thuần là hình ảnh một con vật nuôi quen thuộc. Chú gà trong tranh Kim Hoàng mang dáng dấp đại cát, oai phong với cái mào đỏ rực như hoa hướng dương, chiếc đuôi dài cong vút kiêu hãnh phóng khoáng. Trên mình gà thường được điểm xuyết những nét vẽ phượng, vẽ hoa đầy tài hoa. Theo quan niệm dân gian, bức Thần Kê mang năng lượng tâm linh mạnh mẽ, dùng để trấn trạch, xua đuổi tà ma, quỷ dữ và bảo vệ bình an cho gia chủ mỗi dịp năm mới. Người ta thường mua một cặp Thần Kê về dán hai bên cánh cửa chính của ngôi nhà nhằm mục đích canh giữ đất đai, cầu mong một năm mới mưa thuận gió hòa, làm ăn hanh thông.">+</button>
@@ -8144,6 +8301,7 @@
             <div class="folk-art pig-photo" role="img" aria-label="Tranh Lợn rừng">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 10.JPG" alt="Tranh Lợn rừng"
                 loading="lazy" />
+              <span class="image-credit">Ảnh: Artnam Gallery</span>
               <button class="hotspot pig-spiral" type="button" aria-label="Ý nghĩa xoáy âm dương"
                 data-title="LỢN RỪNG"
                 data-pop="Bên cạnh Thần Kê, bức tranh Lợn của Kim Hoàng cũng mang một ngôn ngữ tạo hình độc đáo. Con lợn được khắc họa với những đường cong tròn trịa, uyển chuyển, trên lưng có xoáy âm dương đặc trưng, biểu thị cho sự sinh sôi nảy nở, hòa hợp của đất trời. Nếu như lợn Đông Hồ mang nét hiền lành, tĩnh lặng thì lợn Kim Hoàng lại mang vẻ nghịch ngợm, sống động với chiếc mũi hếch, đôi tai to bản và những nét vẽ râu ria đầy ngẫu hứng bằng mực đen trên nền đỏ. Bức tranh là lời chúc cho sự no đủ, sung túc, chăn nuôi thuận lợi, gia đình êm ấm của người nông dân Việt Nam.">+</button>
@@ -8221,10 +8379,12 @@
           <div class="woodblock" id="woodblock">
             <div class="woodblock-card woodblock-card-1">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 9.jpeg" alt="Bản khắc gỗ" />
+              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div class="woodblock-card woodblock-card-2">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 10.jpeg" alt="Bản khắc gỗ" />
+              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--serif); font-size: 0.85rem; font-weight: 700; color: #a52323; letter-spacing: 0.15em; background: #f1e3c4; padding: 4px 12px; border: 2px solid #a52323; border-radius: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 5;">
@@ -8295,6 +8455,7 @@
         <section class="chapter chapter-three" id="chapter-3">
       <header class="chapter-opener revival-opener">
         <div class="revival-bg" aria-hidden="true"></div>
+        <span class="chapter-bg-credit">Ảnh: Cẩm Hà, Thu Trang</span>
         <div class="revival-copy article-wide">
           <span class="chapter-number">CHƯƠNG 3</span>
           <h2>Đánh thức ký ức</h2>
@@ -8443,6 +8604,7 @@
 
     <section class="chapter chapter-four" id="chapter-4">
       <header class="chapter-opener final-opener">
+        <span class="chapter-bg-credit">Ảnh: Cẩm Hà, Thu Trang</span>
         <div class="final-copy article-wide">
           <span class="chapter-number">CHƯƠNG 4</span>
           <h2>Một di sản được đánh thức</h2>
