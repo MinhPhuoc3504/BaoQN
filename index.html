@@ -4160,7 +4160,12 @@
       pointer-events: none;
     }
 
-    .young-return-bg span {
+    .young-return-side-photos figure {
+      position: relative;
+      margin: 0;
+    }
+
+    .young-return-bg .young-return-photo {
       display: block;
       aspect-ratio: 4 / 3;
       background-size: cover;
@@ -4170,11 +4175,11 @@
       border: 1px solid rgba(255, 229, 180, .22);
     }
 
-    .young-return-bg span:nth-child(1) {
+    .young-return-side-photos figure:nth-child(1) .young-return-photo {
       background-image: url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 7.JPG");
     }
 
-    .young-return-bg span:nth-child(2) {
+    .young-return-side-photos figure:nth-child(2) .young-return-photo {
       background-image: url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 8.JPG");
     }
 
@@ -9410,7 +9415,14 @@
       <div class="young-return-scrolly">
         <div class="young-return-bg" aria-hidden="true">
           <div class="young-return-side-photos">
-            <span></span><span></span>
+            <figure>
+              <span class="young-return-photo"></span>
+              <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
+            </figure>
+            <figure>
+              <span class="young-return-photo"></span>
+              <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
+            </figure>
           </div>
         </div>
         <div class="young-return-flow">
