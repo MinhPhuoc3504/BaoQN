@@ -2771,7 +2771,7 @@
 
     .artist-story-card p {
       margin: 0;
-      color: #f8deb7;
+      color: #741512;
       font-family: var(--serif);
       font-size: clamp(.98rem, 1.12vw, 1.12rem);
       line-height: 1.62;
@@ -8365,11 +8365,13 @@
               <div class="paper-sample">
                 <div class="paper-art paper-dongho">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 7.JPG" alt="Tranh Đông Hồ" loading="eager" />
+                  <span class="media-credit" data-credit-type="image">Ảnh: Cẩm Hà, Thu Trang</span>
                   <span>Giấy điệp</span>
                 </div>
                 <div class="paper-art paper-kimhoang">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 3.webp" alt="Tranh Kim Hoàng"
                     loading="eager" />
+                  <span class="media-credit" data-credit-type="image">Ảnh: Cẩm Hà, Thu Trang</span>
                   <span>Nền đỏ · in nét · tô tay · in nét lần hai</span>
                 </div>
               </div>
@@ -8528,10 +8530,12 @@
           <div class="woodblock" id="woodblock">
             <div class="woodblock-card woodblock-card-1">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 9.jpeg" alt="Bản khắc gỗ" />
+              <span class="media-credit" data-credit-type="image">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div class="woodblock-card woodblock-card-2">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 2/ảnh 10.jpeg" alt="Bản khắc gỗ" />
+              <span class="media-credit" data-credit-type="image">Ảnh: Cẩm Hà, Thu Trang</span>
               <div class="woodblock-caption">Bản khắc gỗ</div>
             </div>
             <div style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-family: var(--serif); font-size: 0.85rem; font-weight: 700; color: #a52323; letter-spacing: 0.15em; background: #f1e3c4; padding: 4px 12px; border: 2px solid #a52323; border-radius: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 5;">
@@ -8610,7 +8614,7 @@
       </header>
 
       <section class="artist-bridge article-wide reveal-on-scroll">
-        <video class="artist-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <video class="artist-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true" data-no-credit="true">
           <source src="7122fcbf-c449-4da1-bda8-5c0aa03fa8d2.mp4" type="video/mp4" />
         </video>
         <figure class="artist-portrait">
@@ -8726,7 +8730,7 @@
 
       <section class="return-reveal reveal-on-scroll" aria-labelledby="return-title">
         <div class="return-hero">
-          <div class="return-video-pin" aria-hidden="true"></div>
+          <div class="return-video-pin" aria-hidden="true" data-no-credit="true"></div>
           <div class="return-copy article-narrow" data-return-step="0">
             <h3 id="return-title">Khoảnh khắc tranh Kim Hoàng trở lại</h3>
             <div class="return-scroll-copy">
@@ -8839,7 +8843,7 @@
     const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
     const IMAGE_CREDIT_TEXT = 'Ảnh: Cẩm Hà, Thu Trang';
     const VIDEO_CREDIT_TEXT = 'Thực hiện: Cẩm Hà, Thu Trang';
-    const VIDEO_AI_NOTE = 'Sản phẩm ứng dụng trí tuệ nhân tạo';
+    const VIDEO_AI_NOTE = '(Sản phẩm có sử dụng trí tuệ nhân tạo)';
 
     function setCreditText(credit, type, media = null) {
       credit.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
@@ -8858,6 +8862,7 @@
     }
 
     function mediaCreditHost(media) {
+      if (media.closest('[data-no-credit="true"]')) return null;
       if (media.closest('.comparison-section, .flood-scrolly')) return null;
       return media.closest([
         'figure',
@@ -8943,7 +8948,7 @@
       }
       if (artistSection && artistStoryCards.length && innerWidth > 900) {
         const rect = artistSection.getBoundingClientRect();
-        const range = artistSection.offsetHeight - innerHeight;
+        const range = Math.max(1, artistSection.offsetHeight - innerHeight * 1.45);
         const p = Math.max(0, Math.min(1, -rect.top / Math.max(1, range)));
         const artistIndex = Math.min(artistStoryCards.length - 1, Math.floor(p * artistStoryCards.length));
         artistStoryCards.forEach((card, index) => {
