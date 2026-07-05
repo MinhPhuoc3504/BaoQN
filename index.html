@@ -3450,21 +3450,32 @@
       display: grid;
       align-items: end;
       justify-items: start;
-      padding: 7rem var(--page-pad) 6rem;
+      padding: 7rem var(--page-pad) 6rem 0;
       color: #fff7df;
       background:
-        linear-gradient(90deg, rgba(36, 7, 8, .9), rgba(93, 14, 18, .46) 46%, rgba(22, 8, 6, .72)),
-        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 10.jpg") center/cover no-repeat;
+        linear-gradient(90deg, rgba(36, 7, 8, .9), rgba(93, 14, 18, .46) 46%, rgba(22, 8, 6, .72));
       isolation: isolate;
       overflow: hidden;
     }
 
+    .chapter-four .final-opener:before {
+      content: "";
+      position: absolute;
+      inset: -12px;
+      z-index: 0;
+      background:
+        linear-gradient(90deg, rgba(36, 7, 8, .9), rgba(93, 14, 18, .46) 46%, rgba(22, 8, 6, .72)),
+        url("Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 10.jpg") center/cover no-repeat;
+      filter: blur(1.5px);
+      transform: scale(1.01);
+    }
+
     .chapter-four .final-opener:after {
-      content: "SỐNG TIẾP";
+      content: "";
       position: absolute;
       right: -.04em;
       bottom: -.15em;
-      z-index: -1;
+      z-index: 1;
       font: 900 clamp(5.5rem, 18vw, 19rem)/.78 var(--sans);
       color: rgba(255, 209, 92, .13);
       letter-spacing: -.08em;
@@ -3473,7 +3484,11 @@
     .chapter-four .final-copy {
       width: min(980px, 100%);
       position: relative;
-      z-index: 1;
+      z-index: 2;
+      justify-self: start;
+      margin-left: 0;
+      margin-right: auto;
+      padding-left: 0;
     }
 
     .chapter-four .final-copy h2 {
@@ -3899,7 +3914,7 @@
     @media(max-width:900px) {
       .chapter-four .final-opener {
         min-height: 92svh;
-        padding: 6rem var(--page-pad) 4rem;
+        padding: 6rem var(--page-pad) 4rem 0;
       }
 
       .experience-grid,
@@ -7632,13 +7647,29 @@
     }
 
     .chapter-four .final-copy {
-      width: min(900px, 100%);
-      max-width: 900px;
+      width: 100% !important;
+      max-width: none !important;
       justify-self: start !important;
       margin-left: 0 !important;
       margin-right: auto !important;
       padding-left: 0 !important;
       padding-right: 0 !important;
+      transform: translateX(0) !important;
+    }
+
+    .chapter-four .final-opener>.final-copy.article-wide {
+      width: 100vw !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding-left: clamp(4rem, 8vw, 8rem) !important;
+      padding-right: 0 !important;
+    }
+
+    .chapter-four .final-copy .chapter-number,
+    .chapter-four .final-copy h2,
+    .chapter-four .final-copy p {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
     }
 
     .chapter-four .final-copy h2 {
@@ -7832,6 +7863,10 @@
         justify-self: start;
         margin-left: 0;
         margin-right: auto;
+      }
+
+      .chapter-four .final-opener>.final-copy.article-wide {
+        padding-left: 1.25rem !important;
       }
 
       .chapter-four .final-copy h2 {
