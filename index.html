@@ -8250,6 +8250,34 @@
         max-height: 48vh;
       }
     }
+
+    .media-credit-host {
+      position: relative;
+    }
+
+    .media-credit,
+    .image-credit {
+      position: absolute !important;
+      top: .75rem !important;
+      right: .75rem !important;
+      bottom: auto !important;
+      z-index: 40 !important;
+      margin: 0 !important;
+      padding: .28rem .52rem !important;
+      border: 1px solid rgba(255, 244, 220, .2);
+      border-radius: 2px;
+      background: rgba(24, 8, 7, .72) !important;
+      box-shadow: 0 10px 26px rgba(20, 5, 4, .24);
+      color: #fff2d2 !important;
+      font: 700 .72rem/1.25 var(--body-font, Arial, sans-serif) !important;
+      letter-spacing: 0 !important;
+      text-transform: none !important;
+      pointer-events: none;
+    }
+
+    .video-modal .media-credit {
+      right: 3.5rem !important;
+    }
   </style>
 </head>
 
@@ -8362,13 +8390,13 @@
                 <div class="paper-art paper-dongho">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 7.JPG" alt="Tranh Đông Hồ" loading="eager" />
                   <span>Giấy điệp</span>
-                  <span class="image-credit">Ảnh: Art Việt</span>
+                  <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
                 </div>
                 <div class="paper-art paper-kimhoang">
                   <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 3.webp" alt="Tranh Kim Hoàng"
                     loading="eager" />
                   <span>Nền đỏ · in nét · tô tay · in nét lần hai</span>
-                  <span class="image-credit">Ảnh: Artnam Gallery</span>
+                  <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
                 </div>
               </div>
               <div class="comparison-copy" id="comparisonCopy">
@@ -8436,7 +8464,7 @@
             <div class="folk-art rooster-photo" role="img" aria-label="Tranh Thần Kê Kim Hoàng">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/hình 4.png" alt="Tranh Thần Kê Kim Hoàng"
                 loading="lazy" />
-              <span class="image-credit">Ảnh: Artnam Gallery</span>
+              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <button class="hotspot rooster-tail" type="button" aria-label="Ý nghĩa tranh Thần Kê"
                 data-title="Thần Kê Kim Hoàng"
                 data-pop="Bức tranh Gà Kim Hoàng, hay còn được các cụ ngày xưa gọi là Thần Kê, không đơn thuần là hình ảnh một con vật nuôi quen thuộc. Chú gà trong tranh Kim Hoàng mang dáng dấp đại cát, oai phong với cái mào đỏ rực như hoa hướng dương, chiếc đuôi dài cong vút kiêu hãnh phóng khoáng. Trên mình gà thường được điểm xuyết những nét vẽ phượng, vẽ hoa đầy tài hoa. Theo quan niệm dân gian, bức Thần Kê mang năng lượng tâm linh mạnh mẽ, dùng để trấn trạch, xua đuổi tà ma, quỷ dữ và bảo vệ bình an cho gia chủ mỗi dịp năm mới. Người ta thường mua một cặp Thần Kê về dán hai bên cánh cửa chính của ngôi nhà nhằm mục đích canh giữ đất đai, cầu mong một năm mới mưa thuận gió hòa, làm ăn hanh thông.">+</button>
@@ -8448,7 +8476,7 @@
             <div class="folk-art pig-photo" role="img" aria-label="Tranh Lợn rừng">
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 10.JPG" alt="Tranh Lợn rừng"
                 loading="lazy" />
-              <span class="image-credit">Ảnh: Artnam Gallery</span>
+              <span class="image-credit">Ảnh: Cẩm Hà, Thu Trang</span>
               <button class="hotspot pig-spiral" type="button" aria-label="Ý nghĩa xoáy âm dương"
                 data-title="LỢN RỪNG"
                 data-pop="Bên cạnh Thần Kê, bức tranh Lợn của Kim Hoàng cũng mang một ngôn ngữ tạo hình độc đáo. Con lợn được khắc họa với những đường cong tròn trịa, uyển chuyển, trên lưng có xoáy âm dương đặc trưng, biểu thị cho sự sinh sôi nảy nở, hòa hợp của đất trời. Nếu như lợn Đông Hồ mang nét hiền lành, tĩnh lặng thì lợn Kim Hoàng lại mang vẻ nghịch ngợm, sống động với chiếc mũi hếch, đôi tai to bản và những nét vẽ râu ria đầy ngẫu hứng bằng mực đen trên nền đỏ. Bức tranh là lời chúc cho sự no đủ, sung túc, chăn nuôi thuận lợi, gia đình êm ấm của người nông dân Việt Nam.">+</button>
@@ -8677,7 +8705,7 @@
             </div>
           </div>
           <div class="paper-lab-stage" aria-label="Video minh họa hành trình phục dựng tranh Kim Hoàng">
-            <video class="paper-lab-video" autoplay muted loop playsinline controls preload="auto">
+            <video class="paper-lab-video" loop playsinline controls preload="auto">
               <source src="podcast-final.mp4" type="video/mp4" />
               Trình duyệt của bạn không hỗ trợ video.
             </video>
@@ -8837,6 +8865,58 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
     const $ = (s, c = document) => c.querySelector(s), $$ = (s, c = document) => [...c.querySelectorAll(s)];
+    const IMAGE_CREDIT_TEXT = 'Ảnh: Cẩm Hà, Thu Trang';
+    const VIDEO_CREDIT_TEXT = 'Thực hiện: Cầm Hà, Thu Trang';
+
+    function directCredit(host, type) {
+      return [...host.children].find(el => {
+        if (el.classList?.contains('media-credit') && el.dataset.creditType === type) return true;
+        return type === 'image' && el.classList?.contains('image-credit');
+      });
+    }
+
+    function mediaCreditHost(media) {
+      return media.closest([
+        'figure',
+        '.folk-art',
+        '.woodblock-card',
+        '.day-map-stage',
+        '.worktable',
+        '.paper-lab-stage',
+        '.trial-visual',
+        '.museum-video-panel',
+        '.artist-bridge',
+        '.chapter-opener',
+        '.infographic-section',
+        '.video-modal'
+      ].join(',')) || media.parentElement;
+    }
+
+    function ensureMediaCredits() {
+      $$('.image-credit').forEach(credit => {
+        credit.textContent = IMAGE_CREDIT_TEXT;
+        credit.parentElement?.classList.add('media-credit-host');
+      });
+
+      $$('img, video').forEach(media => {
+        const type = media.tagName.toLowerCase() === 'video' ? 'video' : 'image';
+        const host = mediaCreditHost(media);
+        if (!host) return;
+        host.classList.add('media-credit-host');
+        const existing = directCredit(host, type);
+        if (existing) {
+          existing.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
+          existing.dataset.creditType = type;
+          return;
+        }
+        const credit = document.createElement('span');
+        credit.className = 'media-credit';
+        credit.dataset.creditType = type;
+        credit.textContent = type === 'video' ? VIDEO_CREDIT_TEXT : IMAGE_CREDIT_TEXT;
+        host.appendChild(credit);
+      });
+    }
+    ensureMediaCredits();
 
     // SỬA THÔNG TIN LIÊN HỆ TẠI ĐÂY.
     const contactData = {
