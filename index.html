@@ -2633,7 +2633,7 @@
       grid-template-columns: minmax(0, 1.04fr) minmax(320px, .96fr);
       gap: clamp(2rem, 5vw, 5rem);
       align-items: start;
-      min-height: 230vh;
+      min-height: 138vh;
       padding-top: clamp(5rem, 10vw, 9rem);
       padding-bottom: clamp(5rem, 10vw, 9rem);
       overflow: hidden;
@@ -2750,7 +2750,7 @@
       border: 1px solid rgba(255, 229, 160, .38);
       border-radius: 6px;
       background:
-        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
+        linear-gradient(180deg, rgba(255, 248, 222, .18), rgba(255, 235, 184, .08)),
         url("Thiết kế chưa có tên (3).png") center center/cover no-repeat;
       box-shadow: 0 20px 46px rgba(24, 3, 3, .24), inset 0 0 0 1px rgba(255, 255, 255, .08);
       color: #fff6df;
@@ -8920,6 +8920,42 @@
     const goldenProgress = $('#goldenProgress');
     const artistSection = $('.artist-bridge');
     const artistStoryCards = $$('.artist-story-card');
+    let artistCardIndex = 0;
+    let artistManualMode = false;
+    let artistWheelCooling = false;
+
+    function setArtistCard(index) {
+      if (!artistStoryCards.length) return;
+      artistCardIndex = Math.max(0, Math.min(artistStoryCards.length - 1, index));
+      artistStoryCards.forEach((card, cardIndex) => {
+        card.classList.toggle('is-active', cardIndex === artistCardIndex);
+        card.classList.toggle('is-before', cardIndex < artistCardIndex);
+      });
+    }
+
+    function artistLockActive() {
+      if (!artistSection || !artistStoryCards.length || innerWidth <= 900) return false;
+      const rect = artistSection.getBoundingClientRect();
+      return rect.top <= 4 && rect.bottom >= innerHeight * .72;
+    }
+
+    window.addEventListener('wheel', event => {
+      if (!artistLockActive()) return;
+      const direction = Math.sign(event.deltaY);
+      if (!direction) return;
+      if (!artistManualMode) {
+        setArtistCard(direction > 0 ? 0 : artistStoryCards.length - 1);
+      }
+      const nextIndex = artistCardIndex + direction;
+      if (nextIndex < 0 || nextIndex >= artistStoryCards.length) return;
+      event.preventDefault();
+      if (artistWheelCooling) return;
+      artistManualMode = true;
+      setArtistCard(nextIndex);
+      artistWheelCooling = true;
+      window.setTimeout(() => { artistWheelCooling = false; }, 280);
+    }, { passive: false });
+
     window.addEventListener('scroll', () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       progress.style.width = `${Math.max(0, Math.min(100, scrollY / max * 100))}%`;
@@ -8948,18 +8984,19 @@
       }
       if (artistSection && artistStoryCards.length && innerWidth > 900) {
         const rect = artistSection.getBoundingClientRect();
-        const range = Math.max(1, artistSection.offsetHeight - innerHeight * 1.45);
+        const range = Math.max(1, artistSection.offsetHeight - innerHeight);
         const p = Math.max(0, Math.min(1, -rect.top / Math.max(1, range)));
         const artistIndex = Math.min(artistStoryCards.length - 1, Math.floor(p * artistStoryCards.length));
-        artistStoryCards.forEach((card, index) => {
-          card.classList.toggle('is-active', index === artistIndex);
-          card.classList.toggle('is-before', index < artistIndex);
-        });
+        const inArtistView = rect.top <= innerHeight * .12 && rect.bottom >= innerHeight * .35;
+        if (artistManualMode && inArtistView) {
+          setArtistCard(artistCardIndex);
+        } else {
+          if (!inArtistView) artistManualMode = false;
+          setArtistCard(artistIndex);
+        }
       } else if (artistStoryCards.length) {
-        artistStoryCards.forEach(card => {
-          card.classList.remove('is-before');
-          card.classList.add('is-active');
-        });
+        artistManualMode = false;
+        setArtistCard(0);
       }
     }, { passive: true });
 
