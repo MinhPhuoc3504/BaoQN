@@ -1116,7 +1116,7 @@
     }
 
     .flood-scrolly {
-      height: 520vh;
+      height: 720vh;
       background: #181c1d
     }
 
@@ -1263,26 +1263,59 @@
 
     .flood-copy {
       position: absolute;
-      left: 27%;
-      top: 34%;
-      width: min(470px, calc(54vw - 2rem));
-      min-height: clamp(9rem, 16vw, 13rem);
+      left: 29%;
+      top: 51%;
+      width: min(620px, calc(52vw - 2rem));
+      min-height: min(42vh, 340px);
+      max-height: min(62vh, 520px);
       transform: translateX(-50%);
       z-index: 12;
+    }
+
+    .flood-heading {
+      position: absolute;
+      z-index: 13;
+      left: 29%;
+      top: calc(51% - min(42vh, 340px) / 2 - 1.05rem);
+      width: min(620px, calc(52vw - 2rem));
+      transform: translate(-50%, -100%);
+      margin: 0;
+      color: #fff4df;
+      font-family: var(--title-font);
+      font-size: clamp(2.2rem, 4.1vw, 4.4rem);
+      line-height: 1;
+      white-space: nowrap;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, .72);
     }
 
     .flood-line {
       position: absolute;
       inset: 0;
       margin: 0;
-      display: grid;
-      place-items: center;
-      font: 700 clamp(1.6rem, 3vw, 3rem)/1.12 var(--serif);
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-height: 100%;
+      overflow: auto;
+      padding: clamp(1.15rem, 1.8vw, 1.65rem);
+      border: 1px solid rgba(255, 234, 178, .55);
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(255, 248, 222, .94), rgba(232, 209, 162, .9)),
+        var(--paper-texture);
+      background-size: cover, 460px auto;
+      box-shadow: 0 22px 64px rgba(0, 0, 0, .28);
+      font: 600 clamp(.84rem, .92vw, 1rem)/1.58 var(--body-font);
+      text-align: left;
       opacity: 0;
       transform: translateY(.8rem);
       transition: opacity .45s ease, transform .45s ease;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(0, 0, 0, 0.9);
+      text-shadow: none;
+    }
+
+    .flood-line p {
+      margin: 0;
+      color: #2b211b;
     }
 
     .flood-line.active {
@@ -1307,27 +1340,31 @@
     }
 
     .flood-sticky[data-step="0"] .flood-water {
-      bottom: -78%
+      bottom: -86%
     }
 
     .flood-sticky[data-step="1"] .flood-water {
-      bottom: -54%
+      bottom: -70%
     }
 
     .flood-sticky[data-step="2"] .flood-water {
-      bottom: -30%
+      bottom: -54%
     }
 
     .flood-sticky[data-step="3"] .flood-water {
+      bottom: -38%
+    }
+
+    .flood-sticky[data-step="4"] .flood-water {
       bottom: -6%
     }
 
-    .flood-sticky[data-step="3"] .woodblock-card-1 {
+    .flood-sticky[data-step="4"] .woodblock-card-1 {
       transform: rotate(-25deg) translate(-90px, -45px);
       opacity: 0;
     }
 
-    .flood-sticky[data-step="3"] .woodblock-card-2 {
+    .flood-sticky[data-step="4"] .woodblock-card-2 {
       transform: rotate(32deg) translate(110px, -60px);
       opacity: 0;
     }
@@ -1998,6 +2035,46 @@
       letter-spacing: .14em;
     }
 
+    .thread-section.thread-memory-section {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      max-width: none;
+      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+      overflow: hidden;
+      background-image:
+        linear-gradient(180deg, rgba(38, 7, 7, .55), rgba(38, 7, 7, .72)),
+        url("Chương 3.png") !important;
+      background-size: cover, cover !important;
+      background-position: center center, center center !important;
+      background-repeat: no-repeat, no-repeat !important;
+      background-blend-mode: multiply, normal !important;
+      color: #fff4df;
+    }
+
+    .thread-memory-card {
+      width: min(880px, 100%);
+      margin: 0 auto;
+      padding: clamp(1.5rem, 3vw, 2.4rem);
+      border: 1px solid rgba(255, 229, 160, .24);
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(48, 11, 8, .2), rgba(48, 11, 8, .34)),
+        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat;
+      background-size: cover, cover;
+      box-shadow: 0 28px 90px rgba(0, 0, 0, .24), inset 0 0 0 1px rgba(255, 255, 255, .08);
+      backdrop-filter: blur(3px) saturate(1.08);
+      color: #fff4df;
+      text-align: center;
+    }
+
+    .thread-memory-card p {
+      margin: 0;
+      font: 700 clamp(1.18rem, 1.55vw, 1.42rem)/1.68 var(--body-font);
+      text-shadow: 0 3px 16px rgba(0, 0, 0, .56);
+    }
+
     .museum-section {
       position: relative;
       overflow: hidden;
@@ -2297,9 +2374,9 @@
       position: relative;
       z-index: 1;
       min-height: inherit;
-      display: grid;
-      place-items: center;
-      padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5vw, 5rem);
+      display: flex;
+      align-items: center;
+      padding: clamp(3.25rem, 6vw, 6rem) clamp(1.25rem, 4.5vw, 4.5rem);
       text-align: left;
       background: #7B2525;
       overflow: hidden;
@@ -2315,7 +2392,7 @@
       margin: 0;
       color: #fff4df;
       font-family: "Times New Roman", Georgia, serif;
-      font-size: clamp(2.4rem, 5vw, 6.4rem);
+      font-size: clamp(2.2rem, 4.3vw, 5.9rem);
       line-height: .95;
       letter-spacing: .02em;
       text-transform: uppercase;
@@ -2323,6 +2400,71 @@
       overflow-wrap: normal;
       word-break: normal;
       hyphens: none;
+    }
+
+    .museum-story-rail {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 560px);
+      display: flex;
+      flex-direction: column;
+      gap: clamp(1.1rem, 1.8vw, 1.55rem);
+    }
+
+    .museum-video-header .museum-story-heading {
+      margin: 0 0 .2rem;
+      max-width: 100%;
+      color: #fff8e7;
+      font-family: var(--title-font);
+      font-size: clamp(1.25rem, 1.8vw, 2.55rem);
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-transform: none;
+      text-shadow: 0 8px 24px rgba(0, 0, 0, .42);
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .museum-video-header .museum-story-heading span {
+      display: block;
+    }
+
+    .museum-video-header .museum-story-heading .museum-heading-small {
+      font-size: .62em;
+      line-height: 1;
+      margin-bottom: .28em;
+    }
+
+    .museum-video-header .museum-story-heading .museum-heading-main {
+      max-width: 100%;
+      white-space: nowrap;
+    }
+
+    .museum-story-cards {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(.75rem, 1.25vw, 1rem);
+    }
+
+    .museum-story-card {
+      width: min(100%, 560px);
+      margin: 0;
+      padding: clamp(1rem, 1.45vw, 1.25rem) clamp(1.05rem, 1.7vw, 1.4rem);
+      color: #fff8e7;
+      background:
+        linear-gradient(180deg, rgba(255, 248, 224, .16), rgba(92, 17, 18, .22)),
+        url("Thiết kế chưa có tên (3).png") center / cover no-repeat;
+      border: 0;
+      border-left: 5px solid #ffd15c;
+      border-radius: 0;
+      box-shadow: 0 18px 38px rgba(24, 5, 4, .22);
+      font: 700 clamp(1rem, 1.2vw, 1.18rem)/1.48 "Times New Roman", Georgia, serif;
+      text-shadow: 0 3px 14px rgba(0, 0, 0, .45);
+    }
+
+    .museum-story-card p {
+      margin: 0;
     }
 
     .museum-video-panel {
@@ -2356,6 +2498,21 @@
 
       .museum-video-header {
         text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .museum-story-rail {
+        align-items: center;
+      }
+
+      .museum-story-heading {
+        max-width: 100%;
+        font-size: clamp(1.2rem, 5.2vw, 2rem);
+      }
+
+      .museum-story-card {
+        text-align: left;
       }
     }
     .chapter-three {
@@ -2409,11 +2566,33 @@
       margin: 0;
     }
 
+    .chapter-three .revival-opener {
+      place-items: center;
+      text-align: center;
+      padding: clamp(5.5rem, 9vh, 7rem) var(--page-pad);
+    }
+
+    .chapter-three .revival-copy {
+      display: grid;
+      justify-items: center;
+      align-self: center;
+      justify-self: center;
+      width: min(900px, 100%);
+      max-width: none;
+      margin: 0 auto;
+      padding: 0;
+    }
+
     .revival-copy h2 {
       font-size: clamp(3.2rem, 11vw, 10rem);
       line-height: .85;
       max-width: 9ch;
       margin: .3rem 0 1.2rem;
+    }
+
+    .chapter-three .revival-copy h2 {
+      margin-right: auto;
+      margin-left: auto;
     }
 
     .revival-copy p {
@@ -2445,7 +2624,8 @@
       display: grid;
       grid-template-columns: minmax(0, 1.04fr) minmax(320px, .96fr);
       gap: clamp(2rem, 5vw, 5rem);
-      align-items: center;
+      align-items: start;
+      min-height: 230vh;
       padding-top: clamp(5rem, 10vw, 9rem);
       padding-bottom: clamp(5rem, 10vw, 9rem);
       overflow: hidden;
@@ -2476,6 +2656,8 @@
       background: #230d0c;
       box-shadow: 0 35px 100px rgba(73, 20, 11, .25);
       transform: rotate(-1deg);
+      position: sticky;
+      top: clamp(5rem, 10vh, 7rem);
     }
 
     .artist-portrait img {
@@ -2504,6 +2686,20 @@
       color: #741512;
     }
 
+    .artist-copy .artist-title {
+      line-height: 1.18;
+      margin-bottom: clamp(1rem, 1.8vw, 1.6rem);
+    }
+
+    .artist-copy .artist-title span {
+      display: block;
+    }
+
+    .artist-copy {
+      position: sticky;
+      top: clamp(5rem, 10vh, 7rem);
+    }
+
     .artist-copy p,
     .red-lab-copy p,
     .trial-copy p,
@@ -2524,8 +2720,60 @@
       font: 700 clamp(1.08rem, 2vw, 1.45rem)/1.45 "Times New Roman", Georgia, serif;
     }
 
+    .artist-story-cards {
+      position: relative;
+      margin: 1.2rem 0 1.4rem;
+      width: min(100%, 560px);
+      min-height: clamp(16rem, 34vh, 22rem);
+      overflow: hidden;
+    }
+
+    .artist-story-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+      padding: clamp(1rem, 1.65vw, 1.35rem) clamp(1rem, 1.85vw, 1.55rem);
+      isolation: isolate;
+      overflow: hidden;
+      border: 1px solid rgba(255, 229, 160, .38);
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(58, 12, 10, .16), rgba(37, 9, 8, .34)),
+        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat;
+      box-shadow: 0 20px 46px rgba(24, 3, 3, .24), inset 0 0 0 1px rgba(255, 255, 255, .08);
+      color: #fff6df;
+      opacity: 0;
+      transform: translateY(32%);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .artist-story-card.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .artist-story-card.is-before {
+      opacity: 0;
+      transform: translateY(-24%);
+    }
+
+    .artist-story-card p {
+      margin: 0;
+      color: #f8deb7;
+      font-family: var(--serif);
+      font-size: clamp(.98rem, 1.12vw, 1.12rem);
+      line-height: 1.62;
+    }
+
     .red-paper-lab {
-      background: radial-gradient(circle at 12% 15%, rgba(255, 204, 83, .26), transparent 28%), linear-gradient(135deg, #9f1b21, #d94a2e 54%, #f3c24d);
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(40, 7, 7, .64), rgba(40, 7, 7, .78)),
+        url("Chương 3.png") center center/cover no-repeat;
       color: #fff8e7;
       min-height: 150svh;
       padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
@@ -2556,6 +2804,82 @@
       line-height: 1;
       overflow-wrap: normal;
       word-break: normal;
+    }
+
+    .red-lab-heading {
+      display: block;
+      margin: 0 0 .8rem;
+      color: #fff8e7;
+      font-family: var(--title-font);
+      font-size: clamp(2.7rem, 5vw, 5.8rem);
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .red-lab-subtitle {
+      margin: 0;
+      max-width: 760px;
+      color: #f8deb7;
+      font-family: var(--body-font);
+      font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .red-lab-story-cards {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(.9rem, 1.35vw, 1.15rem);
+      margin-top: clamp(1.2rem, 2.2vw, 1.8rem);
+    }
+
+    .red-lab-story-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(1.15rem, 1.75vw, 1.55rem);
+      border: 1px solid rgba(255, 229, 160, .32);
+      border-radius: 6px;
+      background: rgba(35, 8, 7, .78);
+      box-shadow: 0 18px 42px rgba(24, 3, 3, .24);
+      color: #fff6df;
+    }
+
+    .red-lab-story-card span {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: .85rem;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      background: #f6c95c;
+      color: #641614;
+      font: 800 .72rem/1 var(--sans);
+      text-transform: uppercase;
+    }
+
+    .red-lab-story-card h4 {
+      margin: 0 0 .75rem;
+      color: #fff8e7;
+      font-family: var(--title-font);
+      font-size: clamp(1.45rem, 2vw, 2.35rem);
+      line-height: 1.08;
+    }
+
+    .red-lab-story-card p {
+      margin: 0;
+      color: #f8deb7;
+      font-family: var(--body-font);
+      font-size: clamp(.92rem, 1vw, 1.03rem);
+      line-height: 1.64;
+    }
+
+    .red-lab-story-card blockquote {
+      margin: .95rem 0 0;
+      padding: .95rem 1rem;
+      border-left: 4px solid #f6c95c;
+      background: rgba(255, 248, 224, .1);
+      color: #fff8e7;
+      font: 700 clamp(1rem, 1.18vw, 1.16rem)/1.5 var(--body-font);
     }
 
     .paper-lab-stage {
@@ -2618,17 +2942,22 @@
     }
 
     .trial-scrolly {
+      position: relative;
       background: #1a1110;
       color: #fff4df;
+      min-height: 760svh;
       padding: clamp(5rem, 8vw, 8rem) var(--page-pad);
     }
 
     .trial-grid {
+      position: sticky;
+      top: clamp(4.5rem, 8vh, 6rem);
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(360px, .9fr);
       gap: clamp(2rem, 5vw, 5rem);
       align-items: start;
       margin: 0 auto;
+      min-height: calc(100svh - 10rem);
     }
 
     .trial-visual {
@@ -2668,12 +2997,30 @@
       color: #ffd15c;
     }
 
-    .trial-step {
+    .trial-step-stack {
       position: relative;
-      margin: 0 0 1rem;
+      min-height: clamp(430px, 58vh, 620px);
+      margin-top: 1.4rem;
+    }
+
+    .trial-step {
+      position: absolute;
+      inset: 0;
+      margin: 0;
       padding: 1.35rem 1.45rem 1.35rem 4.9rem;
       background: rgba(255, 245, 220, .08);
       border: 1px solid rgba(255, 210, 120, .16);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(28px);
+      transition: opacity .5s ease, transform .5s ease;
+      overflow: auto;
+    }
+
+    .trial-step.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
 
     .trial-step span {
@@ -2702,6 +3049,17 @@
       background: linear-gradient(135deg, rgba(181, 31, 39, .45), rgba(255, 209, 92, .14));
       border-color: rgba(255, 209, 92, .48);
       box-shadow: 0 0 0 1px rgba(255, 209, 92, .12), 0 24px 70px rgba(0, 0, 0, .22);
+    }
+
+    .trial-step-triggers {
+      display: grid;
+      gap: 0;
+      margin-top: clamp(2rem, 5vw, 4rem);
+      pointer-events: none;
+    }
+
+    .trial-step-trigger {
+      min-height: 80svh;
     }
 
     .return-reveal {
@@ -2809,8 +3167,38 @@
       .red-lab-inner,
       .trial-grid,
       .return-gallery { grid-template-columns: 1fr; }
+      .trial-scrolly { min-height: auto; }
+      .trial-grid { position: relative; top: auto; min-height: 0; }
+      .trial-step-stack { display: grid; gap: 1rem; min-height: 0; }
+      .trial-step,
+      .trial-step.is-active {
+        position: relative;
+        inset: auto;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+      .trial-step-triggers { display: none; }
       .artist-portrait { transform: none; }
       .artist-portrait img { aspect-ratio: 4/3; }
+      .artist-bridge { min-height: auto; }
+      .artist-portrait,
+      .artist-copy { position: relative; top: auto; }
+      .artist-story-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        min-height: auto;
+        overflow: visible;
+      }
+      .artist-story-card,
+      .artist-story-card.is-active,
+      .artist-story-card.is-before {
+        position: relative;
+        inset: auto;
+        opacity: 1;
+        transform: none;
+      }
       .paper-lab-stage { min-height: 560px; }
       .paper-lab-stage img { width: 86%; }
       .paper-touch { right: 4%; bottom: 8%; }
@@ -3602,15 +3990,22 @@
       }
 
       .flood-scrolly {
-        height: 420vh
+        height: 620vh
       }
 
       .flood-copy {
-        left: 30%;
+        left: 36%;
         right: auto;
-        top: 32%;
-        width: min(440px, calc(62vw - 1rem));
+        top: 42%;
+        width: min(560px, calc(70vw - 1rem));
         transform: translateX(-50%)
+      }
+
+      .flood-heading {
+        left: 36%;
+        top: calc(42% - min(42vh, 340px) / 2 - .85rem);
+        width: min(560px, calc(70vw - 1rem));
+        font-size: clamp(1.8rem, 5vw, 3rem);
       }
 
       /* Woodblock handled by scalable transform rules */
@@ -5527,11 +5922,19 @@
       }
 
       .flood-copy {
-        left: 32%;
+        left: 50%;
         right: auto;
-        top: 32%;
-        width: min(440px, calc(66vw - var(--page-pad)));
+        top: 40%;
+        width: min(560px, calc(100vw - (var(--page-pad) * 2)));
         transform: translateX(-50%)
+      }
+
+      .flood-heading {
+        left: 50%;
+        top: calc(40% - min(42vh, 340px) / 2 - .8rem);
+        width: min(560px, calc(100vw - (var(--page-pad) * 2)));
+        text-align: center;
+        font-size: clamp(1.65rem, 8vw, 2.6rem);
       }
 
       .museum-map {
@@ -6278,7 +6681,7 @@
     }
 
     .golden-age {
-      height: 560vh;
+      height: 650vh;
       position: relative;
       color: #fff7df;
       background-image:
@@ -6311,12 +6714,7 @@
     }
 
     .golden-intro {
-      position: absolute;
-      z-index: 3;
-      left: clamp(1.5rem, 5vw, 5rem);
-      top: 50%;
-      width: min(27vw, 360px);
-      transform: translateY(-50%);
+      display: none;
     }
 
     .golden-intro h3 {
@@ -6336,10 +6734,76 @@
       line-height: 1.55;
     }
 
+    .golden-story-stack {
+      position: absolute;
+      z-index: 4;
+      left: clamp(1.2rem, 4vw, 4.5rem);
+      top: 50%;
+      width: min(34vw, 460px);
+      min-height: clamp(440px, 62vh, 620px);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .golden-story-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.3rem, 2vw, 2rem);
+      border: 1px solid rgba(255, 229, 160, .32);
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, rgba(38, 8, 7, .5), rgba(20, 5, 5, .82)),
+        url("Thiết kế chưa có tên (3).png") center center/cover no-repeat;
+      box-shadow: 0 28px 70px rgba(24, 3, 3, .34), inset 0 0 0 1px rgba(255, 255, 255, .08);
+      opacity: 0;
+      transform: translateY(32%);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .golden-story-card.is-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .golden-story-card.is-before {
+      opacity: 0;
+      transform: translateY(-32%);
+    }
+
+    .golden-story-card span {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 1rem;
+      padding: .45rem .7rem;
+      border-radius: 999px;
+      background: #f6c95c;
+      color: #641614;
+      font: 800 .72rem/1 var(--sans);
+      text-transform: uppercase;
+    }
+
+    .golden-story-card h4 {
+      margin: 0 0 1rem;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.2vw, 4rem);
+      line-height: 1;
+    }
+
+    .golden-story-card p {
+      margin: 0;
+      color: #f8deb7;
+      font-family: var(--body-font);
+      font-size: clamp(.9rem, .98vw, 1rem);
+      line-height: 1.62;
+    }
+
     .golden-viewport {
       position: absolute;
       z-index: 2;
-      inset: 0 0 0 clamp(360px, 38vw, 560px);
+      inset: 0 0 0 clamp(410px, 43vw, 620px);
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -6353,7 +6817,7 @@
       display: flex;
       align-items: center;
       gap: clamp(1.4rem, 3vw, 3rem);
-      padding: 0 clamp(2rem, 8vw, 8rem) 0 0;
+      padding: 0 clamp(2rem, 8vw, 8rem);
       background: none !important;
       transition: transform .12s linear;
       will-change: transform;
@@ -6535,6 +6999,27 @@
         width: min(100%, 720px);
         transform: none;
         margin-bottom: 2rem;
+      }
+
+      .golden-story-stack {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: min(100%, 720px);
+        min-height: 0;
+        transform: none;
+        display: grid;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .golden-story-card,
+      .golden-story-card.is-active,
+      .golden-story-card.is-before {
+        position: relative;
+        inset: auto;
+        opacity: 1;
+        transform: none;
       }
 
       .golden-viewport {
@@ -6864,6 +7349,30 @@
       font-family: var(--title-font) !important;
     }
 
+    .chapter-two .flood-opener {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .chapter-two .flood-opener h2 {
+      max-width: none;
+      white-space: nowrap;
+      font-size: clamp(1.95rem, 7.2vw, 7.5rem);
+    }
+
+    .chapter-three .revival-opener {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .chapter-three .revival-opener h2 {
+      max-width: none;
+      white-space: nowrap;
+      font-size: clamp(1.95rem, 7.2vw, 7.5rem);
+    }
+
     .deck,
     .intro,
     blockquote,
@@ -6936,6 +7445,24 @@
       max-width: 15ch;
     }
 
+    .red-lab-copy .red-lab-heading {
+      max-width: none;
+      color: #fff8e7;
+      font-family: var(--title-font) !important;
+      font-size: clamp(2.7rem, 5vw, 5.8rem) !important;
+      line-height: 1.16 !important;
+    }
+
+    .red-lab-copy .red-lab-subtitle {
+      max-width: 760px;
+      color: #f8deb7;
+      font-family: var(--body-font) !important;
+      font-size: clamp(1.08rem, 1.55vw, 1.35rem) !important;
+      font-style: italic;
+      font-weight: 700;
+      line-height: 1.55 !important;
+    }
+
     .chapter-opener h2,
     .photo-prologue h2,
     .closing h2 {
@@ -6952,6 +7479,44 @@
       line-height: 1.14 !important;
     }
 
+    .artist-copy h3.artist-title {
+      font-family: var(--title-font) !important;
+      font-size: clamp(2rem, 3.35vw, 4rem) !important;
+      max-width: none !important;
+      line-height: 1.32 !important;
+      margin-bottom: clamp(1rem, 1.8vw, 1.6rem) !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+    }
+
+    .artist-copy h3.artist-title span {
+      display: block !important;
+      font-family: var(--title-font) !important;
+      white-space: nowrap !important;
+    }
+
+    .artist-copy .artist-story-cards {
+      position: relative !important;
+      min-height: clamp(16rem, 34vh, 22rem) !important;
+      max-height: none !important;
+      overflow: hidden !important;
+      scroll-snap-type: none;
+    }
+
+    .artist-copy .artist-story-card {
+      position: absolute !important;
+      inset: 0 !important;
+      overflow: hidden !important;
+      scroll-snap-align: none;
+    }
+
+    .artist-copy blockquote {
+      margin: 1rem 0 1.2rem !important;
+      padding: .85rem 1rem !important;
+      font-size: clamp(.86rem, 1vw, 1.02rem) !important;
+      line-height: 1.45 !important;
+    }
+
     .red-lab-copy blockquote,
     .artist-copy blockquote,
     .return-copy blockquote,
@@ -6959,6 +7524,25 @@
       font-family: var(--sans) !important;
       font-weight: 800;
       letter-spacing: 0 !important;
+    }
+
+    @media(max-width:900px) {
+      .artist-copy .artist-story-cards {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        min-height: auto !important;
+        overflow: visible !important;
+      }
+
+      .artist-copy .artist-story-card,
+      .artist-copy .artist-story-card.is-active,
+      .artist-copy .artist-story-card.is-before {
+        position: relative !important;
+        inset: auto !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
     }
 
     .paper-lab-stage {
@@ -7051,8 +7635,41 @@
       font-family: var(--title-font) !important;
       font-size: clamp(3.5rem, 8vw, 8rem) !important;
       line-height: 1.02 !important;
-      margin: 0 0 1.5rem;
+      margin: 0 0 .7rem;
       max-width: 15ch;
+    }
+
+    .chapter-one .gallery-section {
+      background-image:
+        linear-gradient(180deg, rgba(25, 5, 5, .5), rgba(25, 5, 5, .66)),
+        url("Chương 3.png") !important;
+      background-size: cover, cover !important;
+      background-position: center center, center center !important;
+      background-repeat: no-repeat, no-repeat !important;
+      background-blend-mode: multiply, normal !important;
+    }
+
+    .chapter-one .gallery-section .gallery-kicker {
+      display: block;
+      margin-bottom: 1rem;
+      font-style: italic;
+      text-transform: none;
+    }
+
+    .chapter-one .gallery-summary {
+      max-width: 860px;
+      margin: 0 0 clamp(2rem, 4vw, 3rem);
+      padding: clamp(1.1rem, 2vw, 1.55rem);
+      border: 1px solid rgba(245, 196, 93, .34);
+      background: rgba(255, 244, 223, .08);
+      box-shadow: 0 16px 42px rgba(26, 7, 5, .18);
+    }
+
+    .chapter-one .gallery-summary p {
+      margin: 0;
+      color: #fff4df;
+      font-size: clamp(.98rem, 1.14vw, 1.08rem);
+      line-height: 1.72;
     }
 
     .chapter-one .golden-track .golden-card-media {
@@ -7064,6 +7681,10 @@
     }
 
     @media(max-width:900px) {
+      .chapter-one .gallery-section {
+        background-position: center center, center top !important;
+      }
+
       .comparison-layout {
         grid-template-columns: 1fr;
       }
@@ -7189,7 +7810,7 @@
         width: min(68vw, 18rem) !important;
       }
 
-      .red-lab-copy h3 {
+      .red-lab-copy .red-lab-heading {
         max-width: none;
         font-size: clamp(2rem, 9vw, 3rem) !important;
         line-height: 1.15 !important;
@@ -7370,7 +7991,7 @@
             <div class="brush layer-brush" aria-hidden="true"></div>
           </div>
           <div class="step-indicator"><span id="stepNumber">01</span><strong id="stepTitle">Nhuộm giấy</strong>
-            <p id="stepText">Nền giấy được phủ sắc đỏ, hồng điều hoặc cam — lớp màu tạo nên diện mạo của “tranh Đỏ”.</p>
+            <p id="stepText">Nền giấy được phủ sắc đỏ, hồng điều hoặc cam - lớp màu tạo nên diện mạo của “tranh Đỏ”.</p>
           </div>
         </div>
         <div class="process-steps" aria-hidden="true">
@@ -7385,8 +8006,11 @@
 
       <section class="article-wide gallery-section">
        <h3>NHỮNG BỨC TRANH KỂ CHUYỆN</h3>
-        <div class="section-heading"><span class="kicker">Chạm vào chi tiết để đọc ý nghĩa</span>
+        <div class="section-heading gallery-heading"><span class="kicker gallery-kicker">Chạm vào chi tiết để đọc ý nghĩa</span>
 
+        </div>
+        <div class="gallery-summary">
+          <p>Nội dung biểu đạt của tranh Kim Hoàng phản ánh sinh động tư duy kiến tạo, ước vọng và đời sống tinh thần của người dân nông nghiệp lúa nước vùng đồng bằng Bắc Bộ. Hai bức tranh biểu tượng, được xem là đỉnh cao nghệ thuật của dòng tranh này chính là tranh Gà (Thần Kê) và tranh Lợn (Lợn độc, Lợn nái).</p>
         </div>
         <div class="art-grid">
           <figure class="art-card story-art-card rooster-card" tabindex="0" role="button" data-title="Thần Kê"
@@ -7406,11 +8030,8 @@
               <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 1/ảnh 10.JPG" alt="Tranh Lợn rừng"
                 loading="lazy" />
               <button class="hotspot pig-spiral" type="button" aria-label="Ý nghĩa xoáy âm dương"
-                data-title="Xoáy âm dương"
-                data-pop="Xoáy tròn trên thân lợn gợi sự tuần hoàn, hòa hợp và sinh sôi, một lời chúc no đủ quen thuộc trong văn hóa nông nghiệp.">+</button>
-              <button class="hotspot pig-body" type="button" aria-label="Ý nghĩa dáng lợn"
-                data-title="Dáng lợn tròn đầy"
-                data-pop="Thân lợn chắc, đầy và nét in đậm tạo cảm giác sung túc, gửi gắm ước vọng mùa màng, gia đình và tài lộc.">+</button>
+                data-title="LỢN RỪNG"
+                data-pop="Bên cạnh Thần Kê, bức tranh Lợn của Kim Hoàng cũng mang một ngôn ngữ tạo hình độc đáo. Con lợn được khắc họa với những đường cong tròn trịa, uyển chuyển, trên lưng có xoáy âm dương đặc trưng, biểu thị cho sự sinh sôi nảy nở, hòa hợp của đất trời. Nếu như lợn Đông Hồ mang nét hiền lành, tĩnh lặng thì lợn Kim Hoàng lại mang vẻ nghịch ngợm, sống động với chiếc mũi hếch, đôi tai to bản và những nét vẽ râu ria đầy ngẫu hứng bằng mực đen trên nền đỏ. Bức tranh là lời chúc cho sự no đủ, sung túc, chăn nuôi thuận lợi, gia đình êm ấm của người nông dân Việt Nam.">+</button>
             </div>
             <figcaption><strong>Lợn rừng</strong></figcaption>
           </figure>
@@ -7419,11 +8040,17 @@
 
       <section class="golden-age" id="golden-age" aria-label="Thời kỳ hoàng kim của làng tranh">
         <div class="golden-sticky">
-          <div class="golden-intro">
-            <span class="kicker">THỜI KỲ HOÀNG KIM</span>
-            <h3>Một mùa tranh đỏ đi qua sáu nhịp nghề</h3>
-            <p>Từ thớ gỗ đầu tiên đến phiên chợ Tết, mỗi công đoạn là một mắt xích trong đời sống của làng tranh Kim
-              Hoàng.</p>
+          <div class="golden-story-stack" aria-label="Câu chuyện thời kỳ hoàng kim">
+            <article class="golden-story-card is-active">
+              <span>THỜI KỲ HOÀNG KIM</span>
+              <h4>Một công xưởng nghệ thuật ven đô</h4>
+              <p>Từ nửa cuối thế kỷ 18 đến hết thế kỷ 19, làng Kim Hoàng là một công xưởng nghệ thuật khổng lồ bừng sáng cả một vùng ven đô Thăng Long. Không khí làm nghề bắt đầu nhộn nhịp từ độ tháng Tám âm lịch kéo dài cho đến tận tháng Chạp. Cả làng khi ấy không phân biệt già trẻ, trai gái, ai nấy đều tham gia vào các công đoạn của quy trình làm tranh đỏ. Người khỏe tay thì đảm nhận việc xẻ gỗ, khắc ván mộc; người khéo léo, tỉ mỉ thì hòa màu, nhuộm giấy, phơi giấy; những bậc nghệ nhân có hoa tay, tâm hồn khoáng đạt thì chịu trách nhiệm in nét và phóng bút tô màu, đề chữ.</p>
+            </article>
+            <article class="golden-story-card">
+              <span>PHIÊN CHỢ TẾT</span>
+              <h4>Sắc đỏ tỏa đi khắp chợ quê</h4>
+              <p>Thị trường tiêu thụ của tranh Kim Hoàng vô cùng rộng lớn. Cứ vào độ cận Tết, các thương lái từ khắp các tỉnh thành Bắc Kỳ, từ Thăng Long - Kẻ Chợ cho đến các vùng nông thôn hẻo lánh đều đổ xô về làng Kim Hoàng để cất tranh. Tranh làm ra đến đâu bán hết đến đấy. Những gánh tranh đỏ rực theo chân người đi bộ, theo những chuyến đò dọc dòng sông Đáy tỏa đi khắp các phiên chợ quê. Sắc đỏ rực rỡ của giấy hồng điều, giấy vàng chanh từ những bức tranh Kim Hoàng treo san sát tại các sạp chợ đã trở thành tín hiệu báo Tết sớm nhất, mang niềm vui, niềm hy vọng về sự đổi đời, may mắn đến với cuộc sống còn nhiều lam lũ của người dân thời bấy giờ.</p>
+            </article>
           </div>
           <div class="golden-viewport">
             <div class="golden-track" id="goldenTrack">
@@ -7490,14 +8117,27 @@
             </div>
           </div>
           <div class="flood-water" id="floodWater"><span></span><span></span><span></span></div>
+          <h3 class="flood-heading">Trận lũ năm 1915</h3>
           <div class="flood-copy">
-            <p class="flood-line" data-flood="0">Khúc đê Liên Mạc bị vỡ.</p>
-            <p class="flood-line" data-flood="1">Nước tràn vào vùng ven sông Đáy.</p>
-            <p class="flood-line" data-flood="2">Những bản khắc cổ bị cuốn trôi hoặc ngâm mục.</p>
-            <p class="flood-line" data-flood="3">Khi ván in mất đi, quy trình truyền nghề cũng đứt gãy.</p>
+            <article class="flood-line" data-flood="0">
+              <p>Thế nhưng, lịch sử luôn ẩn chứa những khúc ngoặt tàn khốc. Đối với làng tranh Kim Hoàng, sự suy tàn không diễn ra từ từ mà ập đến như một định mệnh nghiệt ngã của thiên tai. Năm Ất Mão 1915, một trận lũ lụt lịch sử đã xảy ra tại vùng đồng bằng Bắc Bộ. Khúc đê Liên Mạc bị vỡ, dòng nước hung dữ của sông Hồng tràn vào cuốn phăng đi hoa màu, nhà cửa và của cải của hàng ngàn hộ dân ven sông Đáy (Theo Lịch sử đê điều Việt Nam, NXB Nông nghiệp, 1994).</p>
+            </article>
+            <article class="flood-line" data-flood="1">
+              <p>Làng Kim Hoàng nằm ngay trong vùng rốn lũ chịu thiệt hại nặng nề. Nước lũ dâng cao ngập trắng các mái nhà, cuốn trôi đi biết bao tài sản tích cóp nhiều đời của người dân. Đối với làng nghề, mất mát lớn nhất và đau đớn nhất chính là phần lớn các bản khắc gỗ cổ - “linh hồn” và tài sản quý giá nhất của dòng tranh Kim Hoàng - đã bị dòng nước lũ cuốn trôi hoặc bị ngâm nước mục nát hoàn toàn. Sau khi cơn lũ đi qua, làng quê xơ xác, tiêu điều, người dân phải chật vật chạy lo từng bữa ăn, không còn tâm trí và nguồn lực để khôi phục lại những ván khuôn đã mất. Một số ít gia đình may mắn thu vén, giữ lại được vài ván khắc in nhưng số lượng quá ít ỏi, không đủ để duy trì quy mô một làng nghề.</p>
+            </article>
+            <article class="flood-line" data-flood="2">
+              <p>Việc mất đi các bản khắc gỗ cổ là đòn chí mạng giáng vào sự sinh tồn của tranh Kim Hoàng. Khác với các nghề thủ công khác có thể phục hồi dựa trên công cụ thông thường, nghề in tranh dân gian phụ thuộc hoàn toàn vào tính chuẩn xác và giá trị mỹ thuật độc bản của ván khắc mộc. Những ván khắc này vốn được các thế hệ nghệ nhân tiền bối đục đẽo công phu trên gỗ thị, gỗ mít mộc mạc nhưng bền bỉ, lưu giữ những đường nét tinh hoa được chuẩn hóa qua hàng thế kỷ.</p>
+            </article>
+            <article class="flood-line" data-flood="3">
+              <p>Khi ván in mất đi, quy trình truyền nghề trong các gia đình nghệ nhân bị đứt gãy. Các thế hệ thợ trẻ sau năm 1915 không còn công cụ để thực hành, không còn mẫu chuẩn để soi chiếu và học tập. Dù một số nhà cố gắng khắc lại ván mới dựa trên trí nhớ hoặc những tờ tranh cũ còn sót lại, nhưng do điều kiện kinh tế suy sụp, kỹ thuật đục khắc không còn giữ được độ tinh xảo như xưa. Những nét khắc dần trở nên thô kệch, mất đi cái thần thái phóng khoáng, kiêu hãnh của dòng tranh đỏ thuở trước.</p>
+            </article>
+            <article class="flood-line" data-flood="4">
+              <p>Cùng với sự mất mát về công cụ lao động, bối cảnh lịch sử nửa đầu thế kỷ XX tiếp tục đẩy tranh Kim Hoàng vào hố sâu của sự lãng quên. Cuộc khủng hoảng kinh tế toàn cầu những năm 1930 và đặc biệt là nạn đói khủng khiếp năm Ất Dậu 1945 đã biến làng Kim Hoàng thành một vùng đất xơ xác, nghèo đói kém. Trong ranh giới sinh tử của cái đói, người dân không còn nhu cầu mua tranh về treo Tết. “Cơm không có ăn, áo không có mặc, ai còn tâm trí đâu mà chơi tranh”, lời kể lại của các cụ cao niên trong làng như một minh chứng đau xót cho thời kỳ này.</p>
+            </article>
           </div>
         </div>
         <div class="flood-steps">
+          <div></div>
           <div></div>
           <div></div>
           <div></div>
@@ -7506,36 +8146,28 @@
         </div>
       </section>
 
-      <section class="thread-section article-wide">
-        <div class="thread-layout">
-          <div class="section-heading thread-heading"><span class="kicker">SỰ ĐỨT GÃY</span>
-            <h3>Một sợi truyền nghề bị cắt ngang</h3>
-            <p>Sau trận lũ, thứ mất đi không chỉ là vài bản khắc. Một hệ thống tri thức truyền miệng, truyền tay và truyền qua ký ức làng nghề bị đứt đoạn.</p>
-          </div>
-          <div class="thread-timeline" id="threadTimeline">
-            <div class="thread-node thread-node-before">
-              <span>Trước 1915</span>
-              <strong>Nghề còn trong tay người thợ</strong>
-              <p>Ván in, mẫu tranh, cách pha màu và nhịp làm tranh Tết vẫn được truyền giữa các thế hệ.</p>
-            </div>
-            <div class="thread-break-stage" aria-hidden="true">
-              <span class="thread-left"></span>
-              <span class="thread-break">×</span>
-              <span class="thread-right"></span>
-              <b>1915</b>
-            </div>
-            <div class="thread-node thread-node-after">
-              <span>Sau lũ</span>
-              <strong>Thiếu ván, thiếu mẫu, thiếu người truyền dạy</strong>
-              <p>Khi bản khắc và người giữ nghề thưa dần, tranh Kim Hoàng chỉ còn hiện lên qua ký ức rời rạc.</p>
-            </div>
-          </div>
+      <section class="thread-section thread-memory-section">
+        <div class="thread-memory-card">
+          <p>Nghề làm tranh đỏ Kim Hoàng chính thức bị đứt gãy hoàn toàn từ mốc lịch sử 1945. Các nghệ nhân cuối cùng của làng hoặc qua đời vì tuổi già, vì nạn đói; hoặc phải bỏ nghề, đốt bỏ những ván khuôn còn sót lại để lấy củi, chuyển sang làm đủ thứ nghề lao động chân tay khác để kiếm sống qua ngày. Trong suốt hơn 70 năm sau đó, cái tên “tranh đỏ Kim Hoàng” dần biến mất khỏi trí nhớ của người dân địa phương. Lớp trẻ sinh ra trong làng lớn lên chỉ biết đến đồng ruộng, nhà máy, tuyệt nhiên không biết rằng tổ tiên mình từng sáng tạo nên một dòng văn hóa nghệ thuật rực rỡ đến thế.</p>
         </div>
       </section>
 
-      <section class="museum-section museum-video-section" aria-labelledby="museum-video-title">
+      <section class="museum-section museum-video-section" aria-labelledby="museum-story-title">
         <header class="museum-video-header">
-          <h3 id="museum-video-title">CHỈ CÒN LẠI TRONG BẢO TÀNG</h3>
+          <div class="museum-story-rail">
+            <h3 id="museum-story-title" class="museum-story-heading"><span class="museum-heading-small">Chỉ còn lại</span><span class="museum-heading-main">những hiện vật trong bảo tàng</span></h3>
+            <div class="museum-story-cards">
+              <article class="museum-story-card">
+                <p>Trong suốt nhiều thập kỷ thất truyền, tư liệu về tranh Kim Hoàng chỉ còn tồn tại dưới dạng những mảnh vỡ ký ức vô cùng ít ỏi. Dòng tranh này may mắn không bị xóa sổ hoàn toàn khỏi lịch sử mỹ thuật thế giới nhờ công lao của các nhà sưu tầm người Pháp và các chuyên gia văn hóa Việt Nam đầu thế kỷ XX.</p>
+              </article>
+              <article class="museum-story-card">
+                <p>Một số bức tranh Kim Hoàng nguyên bản tiêu biểu như tranh Gà, tranh Lợn đã được sưu tầm và lưu giữ cẩn thận tại Bảo tàng Mỹ thuật Việt Nam, Bảo tàng Lịch sử Quốc gia và đặc biệt là bộ sưu tập tranh dân gian của Viện Viễn Đông Bác cổ (EFEO) tại Paris, Pháp (Theo Catalogue Tranh dân gian Việt Nam, Maurice Durand, 1960).</p>
+              </article>
+              <article class="museum-story-card">
+                <p>Đó là những chứng tích vật chất duy nhất chứng minh cho sự tồn tại của một dòng tranh đỏ huyền thoại. Chúng nằm lặng lẽ sau những lớp kính bảo tàng, như một tiếng vọng yếu ớt từ quá khứ, thách thức thời gian và sự vô tình của người đời, chờ đợi một ngày được đánh thức để trở về với quê hương.</p>
+              </article>
+            </div>
+          </div>
         </header>
         <div class="museum-video-panel" aria-hidden="true">
           <video class="museum-bg-video" autoplay muted loop playsinline preload="metadata">
@@ -7563,21 +8195,63 @@
           <figcaption>Nghệ nhân Đào Đình Chung trong không gian tranh đỏ Kim Hoàng.</figcaption>
         </figure>
         <div class="artist-copy">
-          <span class="kicker">NGƯỜI NGHỆ NHÂN CỦA LÀNG KIM HOÀNG</span>
-          <h3>Chiếc cầu nối giữa ký ức làng và hành trình phục dựng.</h3>
-          <p>Hành trình hồi sinh bắt đầu năm 2014, khi Thạc sĩ Nguyễn Thị Thu Hòa tìm về làng Kim Hoàng và gặp ông Đào Đình Chung, một người con của Vân Canh yêu văn hóa truyền thống nhưng lúc ấy chưa từng cầm dao khắc gỗ hay cọ vẽ tranh.</p>
-          <blockquote>“Là người sinh ra và lớn lên ở làng Kim Hoàng, từ nhỏ tôi đã được nghe nhiều về dòng tranh đỏ nổi tiếng của quê hương.”</blockquote>
-          <button class="media-button" id="openVideo" type="button">Xem quy trình in tranh</button>
+          <h3 class="artist-title"><span>Người nghệ nhân</span><span>của làng Kim Hoàng</span></h3>
+          <div class="artist-story-cards">
+            <article class="artist-story-card is-active">
+              <p>Hành trình hồi sinh của tranh Kim Hoàng bắt đầu vào năm 2014, đánh dấu bằng một cuộc gặp bất ngờ. Người đứng ra khởi xướng dự án phục dựng là nhà nghiên cứu, Thạc sĩ Nguyễn Thị Thu Hòa (Giám đốc Bảo tàng Gốm sứ Hà Nội).</p>
+            </article>
+            <article class="artist-story-card">
+              <p>Với niềm đam mê cháy bỏng dành cho tranh dân gian, bà Thu Hòa đã lặn lội về làng Kim Hoàng để tìm kiếm những manh mối còn sót lại. Tại đây, bà đã tìm thấy ông Đào Đình Chung - một người con của làng cổ Vân Canh, yêu văn hóa truyền thống nhưng lúc bấy giờ chưa từng một lần cầm dao khắc gỗ hay cọ vẽ tranh.</p>
+            </article>
+            <article class="artist-story-card">
+              <p>Bản thân sinh ra và lớn lên ở làng, ông Chung vốn dĩ đã mang trong mình những mảnh ghép ký ức mơ hồ về thời vàng son đã mất của quê hương. Trong cuộc phỏng vấn thực tế, ông Chung xúc động kể lại:</p>
+            </article>
+            <article class="artist-story-card">
+              <p>Mặc dù vậy, dòng tranh ấy đã lùi quá sâu vào dĩ vãng. Trận lũ năm 1915 và nạn đói năm 1945 đã xóa sạch những dấu vết thực hành nghề tại địa phương. Là thế hệ đi sau, ông Chung thừa nhận bản thân không thể nắm được những tư liệu lịch sử quá sâu xa. Chính vì vậy, khi dự án phục dựng khởi động vào năm 2014, ông Chung đã trở thành chiếc gạch nối quan trọng, đại diện cho người dân làng Kim Hoàng bắt tay cùng bà Thu Hòa đi tìm lại linh hồn di sản.</p>
+            </article>
+          </div>
+          <blockquote>“Là người sinh ra và lớn lên ở làng Kim Hoàng, từ nhỏ tôi đã được nghe nhiều về dòng tranh đỏ nổi tiếng của quê hương. Dù đã thất truyền từ lâu, những hình ảnh như tranh gà, tranh lợn vẫn khiến tôi luôn trăn trở và muốn tìm cách khôi phục lại dòng tranh này.”</blockquote>
         </div>
       </section>
 
       <section class="red-paper-lab reveal-on-scroll" aria-labelledby="red-lab-title">
         <div class="red-lab-inner article-wide">
           <div class="red-lab-copy">
-            <span class="kicker">ĐI TÌM MÀU ĐỎ ĐÃ MẤT</span>
-            <h3 id="red-lab-title">Không chỉ là một màu nền, đó là linh hồn của tranh Kim Hoàng.</h3>
-            <p>Từ những bức tranh gà, tranh lợn còn lưu giữ trong bảo tàng, ông Chung lần theo ký ức của các bậc cao niên để phục dựng lại cách pha màu, xử lý màu và quét màu lên giấy dó trước khi đem phơi.</p>
-            <blockquote>“Tôi tìm đến các cụ cao niên để hỏi về cách nhuộm giấy làm tranh.”</blockquote>
+            <h3 id="red-lab-title" class="red-lab-heading">ĐI TÌM MÀU ĐỎ ĐÃ MẤT</h3>
+            <p class="red-lab-subtitle">Không chỉ là một màu nền, đó là linh hồn của tranh Kim Hoàng.</p>
+            <div class="red-lab-story-cards">
+              <article class="red-lab-story-card">
+                <span>Con số không</span>
+                <h4>Khó khăn đầu tiên là thiếu tư liệu thực tế.</h4>
+                <p>Bắt đầu từ con số không tròn trĩnh, khó khăn chồng chất khó khăn bủa vây lấy người nghệ nhân tay ngang. Cái khó đầu tiên và lớn nhất chính là sự thiếu thốn tư liệu thực tế và bản khắc mộc. Phần lớn tư liệu liên quan đã bị thất lạc, khiến việc tái hiện diện mạo nguyên bản của dòng tranh gặp nhiều trở ngại.</p>
+              </article>
+              <article class="red-lab-story-card">
+                <span>Đầu mối bảo tàng</span>
+                <h4>Những bức tranh cổ trở thành manh mối để lần lại hình hài Kim Hoàng.</h4>
+                <p>Nhớ lại những ngày đầu nghiên cứu, ông Chung cho biết một số bức tranh cổ như tranh gà và tranh lợn vẫn còn được lưu giữ tại Bảo tàng Lịch sử Quốc gia Việt Nam và Bảo tàng Mỹ thuật Việt Nam. Trong bối cảnh nguồn tư liệu vô cùng hạn chế, những hiện vật còn sót lại trở thành đầu mối quan trọng để ông và các cộng sự từng bước giải mã đặc điểm tạo hình, màu sắc và kỹ thuật của dòng tranh.</p>
+              </article>
+              <article class="red-lab-story-card">
+                <span>Chất liệu giấy màu</span>
+                <h4>Tìm lại tranh cổ mới chỉ là bước khởi đầu.</h4>
+                <p>Thử thách lớn hơn nằm ở việc phục dựng chất liệu giấy màu, yếu tố tạo nên bản sắc riêng biệt của tranh Kim Hoàng. Khác với tranh Đông Hồ thường được in trên nền giấy trắng, tranh Kim Hoàng nổi bật với những tờ giấy đỏ, hồng điều, vàng chanh hoặc cam rực rỡ. Chính sắc nền ấy đã tạo nên vẻ đẹp đặc trưng cho dòng tranh này.</p>
+              </article>
+              <article class="red-lab-story-card">
+                <span>Ký ức cao niên</span>
+                <h4>Từ bảo tàng, ông Chung trở về hỏi ký ức làng.</h4>
+                <p>Để tìm lại màu giấy nguyên bản, ông Chung đã dành nhiều tháng trời thử nghiệm. Không chỉ nghiên cứu các hiện vật còn lại, ông còn tìm gặp những bậc cao niên trong vùng để hỏi han, đối chiếu những ký ức ít ỏi về nghề tranh xưa.</p>
+                <blockquote>“Tôi tìm đến các cụ cao niên để hỏi về cách nhuộm giấy làm tranh. Từ những thông tin còn lưu giữ trong ký ức của các cụ, tôi dần hiểu được cách pha màu, xử lý màu và quét màu lên nền giấy gió trước khi đem phơi, từ đó từng bước phục dựng lại chất liệu giấy truyền thống của tranh Kim Hoàng.”</blockquote>
+              </article>
+              <article class="red-lab-story-card">
+                <span>Thử nghiệm màu</span>
+                <h4>Màu phải đều, thắm, bền và in được trên mộc bản.</h4>
+                <p>Theo ông, nhuộm giấy là công đoạn đòi hỏi sự tỉ mỉ và kiên nhẫn đặc biệt. Màu phải lên đều, đạt được độ thắm cần thiết nhưng không được loang lổ; đồng thời phải đủ độ bền và tương thích với kỹ thuật in mộc bản. Chỉ cần sai lệch một khâu nhỏ, chất lượng của bức tranh sẽ không còn giống với nguyên bản.</p>
+              </article>
+              <article class="red-lab-story-card">
+                <span>Sắc đỏ trở lại</span>
+                <h4>Tìm lại sắc đỏ là tìm lại một phần linh hồn của dòng tranh.</h4>
+                <p>Sau nhiều lần thử nghiệm và điều chỉnh công thức pha màu, ông dần tái tạo được sắc giấy đặc trưng của tranh Kim Hoàng. Ông chia sẻ: “Đến nay, tôi đã phục dựng được chất liệu màu giấy của tranh Kim Hoàng với độ tương đồng rất cao so với màu sắc truyền thống.” Thành công ấy tạo nền tảng để tranh Kim Hoàng có thể hồi sinh và tiếp tục hiện diện trong đời sống văn hóa đương đại.</p>
+              </article>
+            </div>
           </div>
           <div class="paper-lab-stage" aria-label="Video minh họa hành trình phục dựng tranh Kim Hoàng">
             <video class="paper-lab-video" autoplay muted loop playsinline preload="metadata">
@@ -7604,13 +8278,31 @@
           <div class="trial-copy">
             <span class="kicker">NHỮNG LẦN LÀM LẠI TỪ ĐẦU</span>
             <h3 id="trial-title">Không có công thức chuẩn, mỗi bản in là một lần thử.</h3>
-            <article class="trial-step"><span>01</span><h4>Thiếu tư liệu</h4><p>Bản khắc cổ gần như không còn, nghệ nhân xưa không còn ai truyền nghề, ghi chép kỹ thuật rất ít ỏi.</p></article>
-            <article class="trial-step"><span>02</span><h4>Không sao chép Đông Hồ</h4><p>Những hiểu biết về tranh Đông Hồ chỉ giúp tham chiếu. Tranh Kim Hoàng có kỹ thuật in riêng, đòi hỏi cách căn chỉnh khác.</p></article>
-            <article class="trial-step"><span>03</span><h4>In nét lần 1</h4><p>Phần nét chính được in trước lên nền giấy màu, tạo khung hình cho toàn bộ bức tranh.</p></article>
-            <article class="trial-step"><span>04</span><h4>Tô màu thủ công</h4><p>Màu được phóng bút bằng tay; mỗi bức tranh giữ lại dấu tay của người làm.</p></article>
-            <article class="trial-step key-step"><span>05</span><h4>In nét lần 2</h4><p>Khi lớp màu đã khô, bản nét được dập thêm một lần nữa để làm nổi hình ảnh và hoàn thiện tác phẩm.</p></article>
-            <article class="trial-step"><span>06</span><h4>Mực đen từ tro lá</h4><p>Với tranh lợn, màu đen đặc trưng được phục dựng từ tro than lá cây thay vì mực công nghiệp.</p></article>
+            <div class="trial-step-stack" id="trialStepStack">
+              <article class="trial-step is-active"><span>01</span><h4>Thử thách lớn nhất</h4><p>Nếu việc tìm lại sắc đỏ đặc trưng của giấy Kim Hoàng là cánh cửa đầu tiên dẫn vào hành trình phục dựng, thì việc khôi phục kỹ thuật chế tác tranh mới thực sự là thử thách lớn nhất đối với nghệ nhân Đào Đình Chung.</p></article>
+              <article class="trial-step"><span>02</span><h4>Bắt đầu từ con số không</h4><p>Những bản khắc mộc cổ gần như không còn, các nghệ nhân xưa đã không còn ai để truyền nghề, còn tư liệu ghi chép về kỹ thuật làm tranh thì vô cùng ít ỏi. Điều đó đồng nghĩa với việc ông gần như phải bắt đầu từ con số không.</p></article>
+              <article class="trial-step"><span>03</span><h4>Tìm đến họa sĩ mỹ thuật</h4><p>Để tìm ra hướng đi, ông chủ động tìm đến các họa sĩ mỹ thuật, những người có kinh nghiệm về tạo hình và kỹ thuật in tranh dân gian. Họ giúp ông hiểu thêm về cách khắc ván, cách phối màu và các nguyên lý cơ bản của tranh mộc bản.</p></article>
+              <article class="trial-step"><span>04</span><h4>Không thể sao chép dòng tranh khác</h4><p>Càng nghiên cứu sâu, ông càng nhận ra rằng tranh Kim Hoàng không thể được phục dựng bằng cách sao chép kỹ thuật của bất kỳ dòng tranh nào khác. Ông kể rằng lúc đầu những gì ông biết chủ yếu là kỹ thuật in của tranh Đông Hồ, nên quá trình tìm ra cách in đúng của tranh Kim Hoàng gặp rất nhiều khó khăn.</p></article>
+              <article class="trial-step"><span>05</span><h4>Khác biệt với Đông Hồ</h4><p>Tranh Đông Hồ sử dụng phương pháp in quen thuộc với hệ thống căn chỉnh tương đối rõ ràng, giúp người làm tranh dễ xác định vị trí của từng lần in. Trong khi đó, tranh Kim Hoàng sở hữu kỹ thuật in ngửa đặc biệt, đòi hỏi độ chính xác rất cao và gần như không còn tài liệu hướng dẫn.</p></article>
+              <article class="trial-step"><span>06</span><h4>Mỗi lần thử là một cuộc đánh cược</h4><p>Có những bản khắc mất nhiều ngày mới hoàn thành nhưng khi in ra lại không đạt yêu cầu. Có những chi tiết tưởng như rất nhỏ nhưng chỉ cần lệch đi một chút cũng làm hỏng toàn bộ bố cục. Hết lần này đến lần khác, ông lại sửa chữa, điều chỉnh rồi làm lại từ đầu.</p></article>
+              <article class="trial-step"><span>07</span><h4>Nhận ra quy trình riêng</h4><p>Sau nhiều lần nghiên cứu và đối chiếu với các hiện vật còn lưu giữ trong bảo tàng, ông đi đến kết luận rằng tranh Kim Hoàng phải được hoàn thiện theo một trình tự khác biệt: in phần nét chính lên giấy màu, tô màu thủ công, chờ lớp màu khô rồi in nét thêm một lần nữa.</p></article>
+              <article class="trial-step key-step"><span>08</span><h4>In nét hai lần</h4><p>Ông giải thích: “Khi phục dựng bức tranh Gà, tôi nhận ra tranh Kim Hoàng phải được thực hiện theo một quy trình riêng. Trước hết là in nét từ bản khắc, sau đó mới tô màu. Khi lớp màu đã khô hoàn toàn, bức tranh sẽ được in nét thêm một lần nữa để hoàn thiện.”</p></article>
+              <article class="trial-step"><span>09</span><h4>Mực đen từ tro lá</h4><p>Ngay cả màu mực cũng phải được phục dựng theo phương pháp truyền thống. Với tranh lợn Kim Hoàng, màu đen đặc trưng không đến từ mực công nghiệp hiện đại mà được tạo ra từ tro than lá cây, rồi xử lý thành chất liệu màu để in trên nền giấy đỏ.</p></article>
+              <article class="trial-step"><span>10</span><h4>Kiên nhẫn bắt đầu lại</h4><p>Từ màu giấy, bản khắc, kỹ thuật in cho đến chất liệu màu, mỗi công đoạn đều được xây dựng từ hàng chục, thậm chí hàng trăm lần thử nghiệm. Đằng sau mỗi bức tranh hoàn chỉnh là vô số tờ giấy hỏng, những bản in chưa đạt yêu cầu và những lần kiên nhẫn bắt đầu lại từ đầu.</p></article>
+            </div>
           </div>
+        </div>
+        <div class="trial-step-triggers" aria-hidden="true">
+          <div class="trial-step-trigger" data-trial-step="0"></div>
+          <div class="trial-step-trigger" data-trial-step="1"></div>
+          <div class="trial-step-trigger" data-trial-step="2"></div>
+          <div class="trial-step-trigger" data-trial-step="3"></div>
+          <div class="trial-step-trigger" data-trial-step="4"></div>
+          <div class="trial-step-trigger" data-trial-step="5"></div>
+          <div class="trial-step-trigger" data-trial-step="6"></div>
+          <div class="trial-step-trigger" data-trial-step="7"></div>
+          <div class="trial-step-trigger" data-trial-step="8"></div>
+          <div class="trial-step-trigger" data-trial-step="9"></div>
         </div>
       </section>
 
@@ -7828,6 +8520,8 @@
     const golden = $('#goldenTrack');
     const goldenSection = $('.golden-age');
     const goldenProgress = $('#goldenProgress');
+    const artistSection = $('.artist-bridge');
+    const artistStoryCards = $$('.artist-story-card');
     window.addEventListener('scroll', () => {
       const max = document.documentElement.scrollHeight - innerHeight;
       progress.style.width = `${Math.max(0, Math.min(100, scrollY / max * 100))}%`;
@@ -7840,9 +8534,34 @@
         const travel = Math.max(0, golden.scrollWidth - (viewport?.clientWidth || innerWidth));
         golden.style.transform = `translateX(${-travel * p}px)`;
         if (goldenProgress) goldenProgress.style.width = `${p * 100}%`;
+        const storyCards = $$('.golden-story-card');
+        const storyIndex = Math.min(storyCards.length - 1, Math.floor(p * storyCards.length));
+        storyCards.forEach((card, index) => {
+          card.classList.toggle('is-active', index === storyIndex);
+          card.classList.toggle('is-before', index < storyIndex);
+        });
       } else if (golden) {
         golden.style.transform = 'none';
         if (goldenProgress) goldenProgress.style.width = '0';
+        $$('.golden-story-card').forEach(card => {
+          card.classList.remove('is-before');
+          card.classList.add('is-active');
+        });
+      }
+      if (artistSection && artistStoryCards.length && innerWidth > 900) {
+        const rect = artistSection.getBoundingClientRect();
+        const range = artistSection.offsetHeight - innerHeight;
+        const p = Math.max(0, Math.min(1, -rect.top / Math.max(1, range)));
+        const artistIndex = Math.min(artistStoryCards.length - 1, Math.floor(p * artistStoryCards.length));
+        artistStoryCards.forEach((card, index) => {
+          card.classList.toggle('is-active', index === artistIndex);
+          card.classList.toggle('is-before', index < artistIndex);
+        });
+      } else if (artistStoryCards.length) {
+        artistStoryCards.forEach(card => {
+          card.classList.remove('is-before');
+          card.classList.add('is-active');
+        });
       }
     }, { passive: true });
 
@@ -7860,7 +8579,9 @@
         }
       });
     }, { threshold: .55 });
-    $$('.story-card,.process-steps div,.flood-steps div,#threadTimeline').forEach(el => observer.observe(el));
+    $$('.story-card,.process-steps div,.flood-steps div,#threadTimeline').forEach(el => {
+      if (el) observer.observe(el);
+    });
 
     const processSteps = [
       ['01', 'Nhuộm giấy', 'Nền giấy được phủ sắc đỏ, hồng điều hoặc cam — lớp màu tạo nên diện mạo của “tranh Đỏ”.'],
@@ -7884,6 +8605,19 @@
       $$('.flood-line').forEach((x, n) => x.classList.toggle('active', n === step));
     }
     setFlood(0);
+
+    function setTrialStep(i) {
+      const steps = $$('.trial-step');
+      const step = Math.max(0, Math.min(i, steps.length - 1));
+      steps.forEach((el, index) => el.classList.toggle('is-active', index === step));
+    }
+    setTrialStep(0);
+    const trialObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setTrialStep(+entry.target.dataset.trialStep);
+      });
+    }, { threshold: .55 });
+    $$('.trial-step-trigger').forEach(el => trialObserver.observe(el));
 
     const comp = {
       dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc'],
