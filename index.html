@@ -3865,15 +3865,81 @@
     }
 
     .living-section {
+      padding: 0;
       background:
         linear-gradient(90deg, rgba(35, 8, 7, .74), rgba(35, 8, 7, .42) 48%, rgba(35, 8, 7, .68)),
         url("Chương 3.png") center center/cover no-repeat;
       color: #fff8e7;
+      overflow: clip;
+      isolation: isolate;
+    }
+
+    .living-scrolly {
+      position: relative;
+      min-height: 640svh;
+    }
+
+    .living-pin {
+      position: sticky;
+      top: 0;
+      min-height: 100svh;
+      padding: clamp(5rem, 9vw, 8rem) var(--page-pad);
+      display: grid;
+      align-items: center;
     }
 
     .living-copy h3,
     .living-copy p {
       color: #fff8e7;
+    }
+
+    .living-copy {
+      position: relative;
+    }
+
+    .living-copy h3 {
+      max-width: 11ch;
+    }
+
+    .living-scroll-copy {
+      position: relative;
+      display: grid;
+      align-items: center;
+      min-height: clamp(390px, 52vh, 620px);
+    }
+
+    .living-copy-step {
+      grid-area: 1 / 1;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(1.2rem);
+      transition: opacity .45s ease, transform .45s ease;
+      pointer-events: none;
+      max-width: 68ch;
+    }
+
+    .living-copy-step.is-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .living-step-triggers {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      display: grid;
+      grid-template-rows: repeat(7, 1fr);
+      pointer-events: none;
+    }
+
+    .living-step-trigger {
+      min-height: 86svh;
+    }
+
+    .living-section .product-photo {
+      position: sticky;
+      top: clamp(4.5rem, 8vw, 7rem);
     }
 
     .product-cards {
@@ -8008,6 +8074,52 @@
         line-height: 1.14 !important;
         max-width: 16ch;
       }
+
+      .living-scrolly {
+        min-height: 700svh;
+      }
+
+      .living-pin {
+        padding: 5.25rem var(--page-pad) 2.75rem;
+      }
+
+      .living-section .living-grid {
+        position: relative;
+        min-height: calc(100svh - 8rem);
+        align-content: center;
+        overflow: hidden;
+      }
+
+      .living-section .product-photo {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        opacity: .24;
+        overflow: hidden;
+      }
+
+      .living-section .living-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .living-section .product-photo img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
+      }
+
+      .living-section .product-photo figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(33, 15, 13, .78);
+      }
+
+      .living-scroll-copy {
+        min-height: clamp(430px, 63vh, 660px);
+      }
     }
 
     @media(max-width:560px) {
@@ -8069,6 +8181,29 @@
       filter: none !important;
       transform: none !important;
       box-shadow: none !important;
+    }
+
+    .closing {
+      background:
+        linear-gradient(0deg, rgba(41, 8, 7, .62), rgba(41, 8, 7, .24)),
+        url("Chương 3.png") center center/cover no-repeat !important;
+    }
+
+    .closing-wall {
+      display: none !important;
+    }
+
+    .infographic-section {
+      background: #f5ead2;
+      padding: clamp(2rem, 5vw, 4rem) var(--page-pad);
+    }
+
+    .infographic-section img {
+      display: block;
+      width: min(100%, 1400px);
+      height: auto;
+      margin: 0 auto;
+      box-shadow: 0 24px 70px rgba(48, 17, 12, .18);
     }
 
     .hero-paper.hero-image-stack {
@@ -8613,23 +8748,37 @@
       </header>
 
       <section class="living-section reveal-on-scroll" aria-labelledby="living-title">
-        <div class="living-grid article-wide">
-          <div class="living-copy">
-            <span class="kicker">TRANH TRONG ĐỜI SỐNG MỚI</span>
-            <h3 id="living-title">Tranh Kim Hoàng không còn là ký ức của quá khứ.</h3>
-            <p>Các hình tượng như Thần Kê, lợn đàn và họa tiết dân gian không chỉ còn nằm trên tranh treo tường. Chúng xuất hiện trên móc khóa, sổ tay, bưu thiếp, túi vải, áo thun, sản phẩm lưu niệm, bao bì và quà tặng văn hóa.</p>
-            <p>Khi giá trị truyền thống kết nối với thẩm mỹ đương đại, tranh Kim Hoàng trở thành nguồn cảm hứng sáng tạo cho hiện tại và tương lai.</p>
-            <div class="product-cards" aria-label="Các hướng ứng dụng tranh Kim Hoàng">
-              <article><strong>Móc khóa</strong><span>sản phẩm phục vụ đời sống hàng ngày</span></article>
-              <article><strong>Sổ tay, bưu thiếp</strong><span>Sản phẩm lưu niệm dành cho du khách.</span></article>
-              <article><strong>Túi vải, áo thun</strong><span>các vật dụng quen thuộc</span></article>
-              <article><strong>Bao bì, quà tặng văn hóa</strong><span>Các sản phẩm thủ công mang đậm bản sắc Việt.</span></article>
+        <div class="living-scrolly">
+          <div class="living-pin">
+            <div class="living-grid article-wide">
+              <div class="living-copy" data-living-step="0">
+                <span class="kicker">LỚP HỌC DI SẢN</span>
+                <h3 id="living-title">Ngôi nhà kể chuyện tranh Kim Hoàng</h3>
+                <div class="living-scroll-copy">
+                  <p class="living-copy-step is-active" data-living-step="0">Có thể nói, chính ngôi nhà của nghệ nhân Đào Đình Chung tại làng Kim Hoàng là nơi dòng tranh dân gian này được kể câu chuyện của mình một cách trọn vẹn nhất.</p>
+                  <p class="living-copy-step" data-living-step="1">Sau nhiều năm phục dựng và quảng bá, căn nhà nhỏ của ông đã dần trở thành một điểm đến văn hóa quen thuộc đối với những người yêu di sản. Từ các nhà nghiên cứu, sinh viên, học sinh cho đến du khách quốc tế, ngày càng có nhiều người tìm về làng Kim Hoàng để tận mắt chứng kiến quy trình làm tranh và lắng nghe câu chuyện về hành trình hồi sinh của một dòng tranh từng đứng trước nguy cơ biến mất.</p>
+                  <p class="living-copy-step" data-living-step="2">Không gian ấy không phải là một bảo tàng theo nghĩa thông thường. Thay vì những hiện vật nằm sau lớp kính, du khách được trực tiếp cầm trên tay giấy gió, quan sát các bản khắc mộc, tìm hiểu quy trình nhuộm giấy và trải nghiệm những công đoạn cơ bản trong quá trình làm tranh. Với ông Chung, đó là cách hiệu quả nhất để mọi người hiểu rằng đằng sau mỗi bức tranh là cả một kho tàng tri thức dân gian và công sức lao động của người nghệ nhân.</p>
+                  <p class="living-copy-step" data-living-step="3">Trong những buổi trò chuyện với khách tham quan, ông luôn dành nhiều thời gian để giới thiệu những nét riêng làm nên bản sắc của tranh Kim Hoàng. Theo ông, dù cùng thuộc hệ thống tranh dân gian Việt Nam, mỗi dòng tranh lại mang những đặc điểm riêng về chất liệu, kỹ thuật và tư duy thẩm mỹ.</p>
+                  <p class="living-copy-step" data-living-step="4">Thông qua những buổi giới thiệu trực tiếp như vậy, nhiều du khách lần đầu tiên được hiểu rõ hơn về giá trị độc đáo của tranh Kim Hoàng. Không ít người bất ngờ khi biết rằng chỉ riêng công đoạn nhuộm giấy nền cũng có thể mất nhiều ngày chuẩn bị, hay để hoàn thiện một bức tranh đúng kỹ thuật truyền thống, người nghệ nhân phải trải qua nhiều công đoạn tỉ mỉ và công phu. Mỗi tờ giấy, mỗi bản khắc hay mỗi lần in thử đều là kết quả của thời gian, kinh nghiệm và tâm huyết.</p>
+                  <p class="living-copy-step" data-living-step="5">Đằng sau câu chuyện vui ấy là sự trân quý của người nghệ nhân đối với từng công đoạn làm nghề. Mỗi tờ giấy đỏ đều phải trải qua quá trình pha màu, nhuộm, phơi và xử lý thủ công; mỗi bản in thành công đều là kết quả của nhiều lần thử nghiệm. Chính vì thế, ông mong người trẻ không chỉ đến để trải nghiệm cho biết, mà còn hiểu được giá trị của sự kiên nhẫn, tỉ mỉ và tinh thần gìn giữ di sản văn hóa truyền thống.</p>
+                  <p class="living-copy-step" data-living-step="6">Ngày nay, không gian của nghệ nhân Đào Đình Chung không chỉ là nơi làm tranh mà còn trở thành một “lớp học di sản” đặc biệt. Tại đây, những câu chuyện về tranh Kim Hoàng được kể lại mỗi ngày, những kỹ thuật từng có nguy cơ thất truyền được truyền đạt cho thế hệ mới, và tình yêu đối với văn hóa dân gian được nuôi dưỡng qua từng lần trải nghiệm. Đó cũng chính là cách mà tranh Kim Hoàng đang tiếp tục sống, không chỉ trên những bức tranh được treo trên tường, mà còn trong nhận thức và tình cảm của những người tìm đến với nó hôm nay.</p>
+                </div>
+              </div>
+              <figure class="product-photo">
+                <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 1.JPG" alt="Biển hiệu Tranh Đỏ Kim Hoàng tại nhà nghệ nhân Đào Đình Chung" loading="lazy" />
+                <figcaption>Hình 1. Ngôi nhà của nghệ nhân Đào Đình Chung tại làng Kim Hoàng, nơi đón khách tham quan và giới thiệu quy trình làm tranh.</figcaption>
+              </figure>
             </div>
           </div>
-          <figure class="product-photo">
-            <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Chương 4/chương 4 - ảnh 9.JPG" alt="Sản phẩm ứng dụng họa tiết tranh Kim Hoàng trong hộp quà" loading="lazy" />
-            <figcaption>Không ít nhà thiết kế trẻ và các đơn vị sáng tạo văn hóa cũng bắt đầu khai thác các giá trị thẩm mỹ của tranh Kim Hoàng.</figcaption>
-          </figure>
+          <div class="living-step-triggers" aria-hidden="true">
+            <div class="living-step-trigger" data-living-step="0"></div>
+            <div class="living-step-trigger" data-living-step="1"></div>
+            <div class="living-step-trigger" data-living-step="2"></div>
+            <div class="living-step-trigger" data-living-step="3"></div>
+            <div class="living-step-trigger" data-living-step="4"></div>
+            <div class="living-step-trigger" data-living-step="5"></div>
+            <div class="living-step-trigger" data-living-step="6"></div>
+          </div>
         </div>
       </section>
     </section>
@@ -8641,6 +8790,10 @@
         <h2>Sắc đỏ không còn chỉ nằm trong ký ức.</h2>
         <p>Di sản sống khi tiếp tục được làm ra, được kể lại và được trao vào tay một thế hệ mới.</p>
       </div>
+    </section>
+
+    <section class="infographic-section" aria-label="Infographic tranh Kim Hoàng">
+      <img src="infographic new new.png" alt="Infographic về tranh Kim Hoàng" loading="lazy" />
     </section>
   </main>
 
@@ -8813,6 +8966,22 @@
       });
     }, { threshold: .55 });
     $$('.return-step-trigger').forEach(el => returnObserver.observe(el));
+
+    function setLivingStep(i) {
+      const steps = $$('.living-copy-step');
+      if (!steps.length) return;
+      const step = Math.max(0, Math.min(i, steps.length - 1));
+      const livingCopy = $('.living-copy[data-living-step]');
+      if (livingCopy) livingCopy.dataset.livingStep = String(step);
+      steps.forEach((el, index) => el.classList.toggle('is-active', index === step));
+    }
+    setLivingStep(0);
+    const livingObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setLivingStep(+entry.target.dataset.livingStep);
+      });
+    }, { threshold: .55 });
+    $$('.living-step-trigger').forEach(el => livingObserver.observe(el));
 
     const comp = {
       dongho: ['Đông Hồ', 'các mảng màu được in từ nhiều bản khắc'],
