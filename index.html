@@ -2799,22 +2799,22 @@
       box-sizing: border-box;
     }
 
-    .red-lab-copy {
-      max-height: calc(100svh - 10rem);
+    .red-lab-scroll {
+      max-height: max(18rem, calc(100svh - 24rem));
       overflow-y: auto;
       overscroll-behavior: contain;
       padding-right: .8rem;
     }
 
-    .red-lab-copy::-webkit-scrollbar {
+    .red-lab-scroll::-webkit-scrollbar {
       width: 8px;
     }
 
-    .red-lab-copy::-webkit-scrollbar-track {
+    .red-lab-scroll::-webkit-scrollbar-track {
       background: rgba(255, 248, 231, .08);
     }
 
-    .red-lab-copy::-webkit-scrollbar-thumb {
+    .red-lab-scroll::-webkit-scrollbar-thumb {
       border-radius: 999px;
       background: rgba(255, 209, 92, .45);
     }
@@ -3299,7 +3299,7 @@
         opacity: 1;
         transform: none;
       }
-      .red-lab-copy {
+      .red-lab-scroll {
         max-height: none;
         overflow: visible;
         overscroll-behavior: auto;
@@ -9218,38 +9218,40 @@
           <div class="red-lab-copy">
             <h3 id="red-lab-title" class="red-lab-heading">ĐI TÌM MÀU ĐỎ ĐÃ MẤT</h3>
             <p class="red-lab-subtitle">Không chỉ là một màu nền, đó là linh hồn của tranh Kim Hoàng.</p>
-            <div class="red-lab-story-cards">
-              <article class="red-lab-story-card">
-                <span>Con số không</span>
-                <h4>Khó khăn đầu tiên là thiếu tư liệu thực tế.</h4>
-                <p>Bắt đầu từ con số không tròn trĩnh, khó khăn chồng chất khó khăn bủa vây lấy người nghệ nhân tay ngang. Cái khó đầu tiên và lớn nhất chính là sự thiếu thốn tư liệu thực tế và bản khắc mộc. Phần lớn tư liệu liên quan đã bị thất lạc, khiến việc tái hiện diện mạo nguyên bản của dòng tranh gặp nhiều trở ngại.</p>
-              </article>
-              <article class="red-lab-story-card">
-                <span>Đầu mối bảo tàng</span>
-                <h4>Những bức tranh cổ trở thành manh mối để lần lại hình hài Kim Hoàng.</h4>
-                <p>Nhớ lại những ngày đầu nghiên cứu, ông Chung cho biết một số bức tranh cổ như tranh gà và tranh lợn vẫn còn được lưu giữ tại Bảo tàng Lịch sử Quốc gia Việt Nam và Bảo tàng Mỹ thuật Việt Nam. Trong bối cảnh nguồn tư liệu vô cùng hạn chế, những hiện vật còn sót lại trở thành đầu mối quan trọng để ông và các cộng sự từng bước giải mã đặc điểm tạo hình, màu sắc và kỹ thuật của dòng tranh.</p>
-              </article>
-              <article class="red-lab-story-card">
-                <span>Chất liệu giấy màu</span>
-                <h4>Tìm lại tranh cổ mới chỉ là bước khởi đầu.</h4>
-                <p>Thử thách lớn hơn nằm ở việc phục dựng chất liệu giấy màu, yếu tố tạo nên bản sắc riêng biệt của tranh Kim Hoàng. Khác với tranh Đông Hồ thường được in trên nền giấy trắng, tranh Kim Hoàng nổi bật với những tờ giấy đỏ, hồng điều, vàng chanh hoặc cam rực rỡ. Chính sắc nền ấy đã tạo nên vẻ đẹp đặc trưng cho dòng tranh này.</p>
-              </article>
-              <article class="red-lab-story-card">
-                <span>Ký ức cao niên</span>
-                <h4>Từ bảo tàng, ông Chung trở về hỏi ký ức làng.</h4>
-                <p>Để tìm lại màu giấy nguyên bản, ông Chung đã dành nhiều tháng trời thử nghiệm. Không chỉ nghiên cứu các hiện vật còn lại, ông còn tìm gặp những bậc cao niên trong vùng để hỏi han, đối chiếu những ký ức ít ỏi về nghề tranh xưa.</p>
-                <blockquote>“Tôi tìm đến các cụ cao niên để hỏi về cách nhuộm giấy làm tranh. Từ những thông tin còn lưu giữ trong ký ức của các cụ, tôi dần hiểu được cách pha màu, xử lý màu và quét màu lên nền giấy gió trước khi đem phơi, từ đó từng bước phục dựng lại chất liệu giấy truyền thống của tranh Kim Hoàng.”</blockquote>
-              </article>
-              <article class="red-lab-story-card">
-                <span>Thử nghiệm màu</span>
-                <h4>Màu phải đều, thắm, bền và in được trên mộc bản.</h4>
-                <p>Theo ông, nhuộm giấy là công đoạn đòi hỏi sự tỉ mỉ và kiên nhẫn đặc biệt. Màu phải lên đều, đạt được độ thắm cần thiết nhưng không được loang lổ; đồng thời phải đủ độ bền và tương thích với kỹ thuật in mộc bản. Chỉ cần sai lệch một khâu nhỏ, chất lượng của bức tranh sẽ không còn giống với nguyên bản.</p>
-              </article>
-              <article class="red-lab-story-card">
-                <span>Sắc đỏ trở lại</span>
-                <h4>Tìm lại sắc đỏ là tìm lại một phần linh hồn của dòng tranh.</h4>
-                <p>Sau nhiều lần thử nghiệm và điều chỉnh công thức pha màu, ông dần tái tạo được sắc giấy đặc trưng của tranh Kim Hoàng. Ông chia sẻ: “Đến nay, tôi đã phục dựng được chất liệu màu giấy của tranh Kim Hoàng với độ tương đồng rất cao so với màu sắc truyền thống.” Thành công ấy tạo nền tảng để tranh Kim Hoàng có thể hồi sinh và tiếp tục hiện diện trong đời sống văn hóa đương đại.</p>
-              </article>
+            <div class="red-lab-scroll">
+              <div class="red-lab-story-cards">
+                <article class="red-lab-story-card">
+                  <span>Con số không</span>
+                  <h4>Khó khăn đầu tiên là thiếu tư liệu thực tế.</h4>
+                  <p>Bắt đầu từ con số không tròn trĩnh, khó khăn chồng chất khó khăn bủa vây lấy người nghệ nhân tay ngang. Cái khó đầu tiên và lớn nhất chính là sự thiếu thốn tư liệu thực tế và bản khắc mộc. Phần lớn tư liệu liên quan đã bị thất lạc, khiến việc tái hiện diện mạo nguyên bản của dòng tranh gặp nhiều trở ngại.</p>
+                </article>
+                <article class="red-lab-story-card">
+                  <span>Đầu mối bảo tàng</span>
+                  <h4>Những bức tranh cổ trở thành manh mối để lần lại hình hài Kim Hoàng.</h4>
+                  <p>Nhớ lại những ngày đầu nghiên cứu, ông Chung cho biết một số bức tranh cổ như tranh gà và tranh lợn vẫn còn được lưu giữ tại Bảo tàng Lịch sử Quốc gia Việt Nam và Bảo tàng Mỹ thuật Việt Nam. Trong bối cảnh nguồn tư liệu vô cùng hạn chế, những hiện vật còn sót lại trở thành đầu mối quan trọng để ông và các cộng sự từng bước giải mã đặc điểm tạo hình, màu sắc và kỹ thuật của dòng tranh.</p>
+                </article>
+                <article class="red-lab-story-card">
+                  <span>Chất liệu giấy màu</span>
+                  <h4>Tìm lại tranh cổ mới chỉ là bước khởi đầu.</h4>
+                  <p>Thử thách lớn hơn nằm ở việc phục dựng chất liệu giấy màu, yếu tố tạo nên bản sắc riêng biệt của tranh Kim Hoàng. Khác với tranh Đông Hồ thường được in trên nền giấy trắng, tranh Kim Hoàng nổi bật với những tờ giấy đỏ, hồng điều, vàng chanh hoặc cam rực rỡ. Chính sắc nền ấy đã tạo nên vẻ đẹp đặc trưng cho dòng tranh này.</p>
+                </article>
+                <article class="red-lab-story-card">
+                  <span>Ký ức cao niên</span>
+                  <h4>Từ bảo tàng, ông Chung trở về hỏi ký ức làng.</h4>
+                  <p>Để tìm lại màu giấy nguyên bản, ông Chung đã dành nhiều tháng trời thử nghiệm. Không chỉ nghiên cứu các hiện vật còn lại, ông còn tìm gặp những bậc cao niên trong vùng để hỏi han, đối chiếu những ký ức ít ỏi về nghề tranh xưa.</p>
+                  <blockquote>“Tôi tìm đến các cụ cao niên để hỏi về cách nhuộm giấy làm tranh. Từ những thông tin còn lưu giữ trong ký ức của các cụ, tôi dần hiểu được cách pha màu, xử lý màu và quét màu lên nền giấy gió trước khi đem phơi, từ đó từng bước phục dựng lại chất liệu giấy truyền thống của tranh Kim Hoàng.”</blockquote>
+                </article>
+                <article class="red-lab-story-card">
+                  <span>Thử nghiệm màu</span>
+                  <h4>Màu phải đều, thắm, bền và in được trên mộc bản.</h4>
+                  <p>Theo ông, nhuộm giấy là công đoạn đòi hỏi sự tỉ mỉ và kiên nhẫn đặc biệt. Màu phải lên đều, đạt được độ thắm cần thiết nhưng không được loang lổ; đồng thời phải đủ độ bền và tương thích với kỹ thuật in mộc bản. Chỉ cần sai lệch một khâu nhỏ, chất lượng của bức tranh sẽ không còn giống với nguyên bản.</p>
+                </article>
+                <article class="red-lab-story-card">
+                  <span>Sắc đỏ trở lại</span>
+                  <h4>Tìm lại sắc đỏ là tìm lại một phần linh hồn của dòng tranh.</h4>
+                  <p>Sau nhiều lần thử nghiệm và điều chỉnh công thức pha màu, ông dần tái tạo được sắc giấy đặc trưng của tranh Kim Hoàng. Ông chia sẻ: “Đến nay, tôi đã phục dựng được chất liệu màu giấy của tranh Kim Hoàng với độ tương đồng rất cao so với màu sắc truyền thống.” Thành công ấy tạo nền tảng để tranh Kim Hoàng có thể hồi sinh và tiếp tục hiện diện trong đời sống văn hóa đương đại.</p>
+                </article>
+              </div>
             </div>
           </div>
           <div class="paper-lab-stage" aria-label="Video minh họa hành trình phục dựng tranh Kim Hoàng">
