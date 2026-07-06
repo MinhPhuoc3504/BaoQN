@@ -4192,6 +4192,11 @@
       margin: 0;
     }
 
+    .young-return-side-photos figure:has(video),
+    .young-return-side-photos video {
+      pointer-events: auto;
+    }
+
     .young-return-bg .young-return-photo {
       display: block;
       width: 100%;
@@ -4215,6 +4220,7 @@
       margin-left: var(--page-pad);
       margin-top: -100svh;
       padding: 12svh 0 24svh;
+      pointer-events: none;
     }
 
     .young-return-card {
@@ -4230,6 +4236,7 @@
       border: 1px solid rgba(255, 223, 170, .22);
       box-shadow: 0 28px 90px rgba(15, 4, 3, .34);
       backdrop-filter: blur(3px);
+      pointer-events: auto;
     }
 
     .young-return-card h2 {
@@ -4290,6 +4297,29 @@
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
+    }
+
+    .young-return-note-card {
+      min-height: auto;
+      padding-top: 4svh;
+    }
+
+    .young-return-note-card > div {
+      width: min(36vw, 500px);
+      margin: 0 auto;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      text-align: center;
+    }
+
+    .young-return-note-card p {
+      color: #ffe9ba;
+      font-size: clamp(.95rem, 1.15vw, 1.08rem);
+      font-weight: 700;
+      line-height: 1.55;
     }
 
     .journey-continues-page {
@@ -8642,6 +8672,15 @@
         padding: 0;
       }
 
+      .young-return-note-card {
+        padding-top: 4svh;
+      }
+
+      .young-return-note-card > div {
+        width: 100%;
+        padding: 0;
+      }
+
       .young-return-card h2 {
         max-width: 16ch;
         font-size: clamp(2rem, 8vw, 3.4rem) !important;
@@ -9472,8 +9511,8 @@
               <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
             </figure>
             <figure>
-              <video class="young-return-photo" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/Chương 5.mp4" autoplay muted loop playsinline data-no-credit="true"></video>
-              <figcaption class="media-credit" data-credit-type="video">Thực hiện: Cẩm Hà, Thu Trang<br>Sản phẩm có sử dụng trí tuệ nhân tạo</figcaption>
+              <video class="young-return-photo" src="Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/Chương 5.mp4" controls loop playsinline preload="metadata" data-no-credit="true"></video>
+              <figcaption class="media-credit" data-credit-type="video">Thực hiện: Cẩm Hà, Thu Trang<br><em>(Sản phẩm có sử dụng trí tuệ nhân tạo)</em></figcaption>
             </figure>
           </div>
         </div>
@@ -9551,7 +9590,7 @@
             <div>
               <figure>
                 <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/ba.jpg" alt="Ứng dụng sáng tạo từ tranh Kim Hoàng" loading="lazy" data-no-credit="true" />
-                <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
+                <figcaption class="media-credit" data-credit-type="image">Ảnh: Fan page Tranh Kim Hoàng</figcaption>
               </figure>
             </div>
           </article>
@@ -9560,7 +9599,7 @@
             <div>
               <figure>
                 <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/hai.jpg" alt="Sản phẩm sáng tạo lấy cảm hứng từ tranh Kim Hoàng" loading="lazy" data-no-credit="true" />
-                <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
+                <figcaption class="media-credit" data-credit-type="image">Ảnh: Fan page Tranh Kim Hoàng</figcaption>
               </figure>
             </div>
           </article>
@@ -9569,8 +9608,14 @@
             <div>
               <figure>
                 <img src="Ảnh web kim hoàng/Ảnh web kim hoàng/Hero image/mot.jpg" alt="Thiết kế đương đại lấy cảm hứng từ tranh Kim Hoàng" loading="lazy" data-no-credit="true" />
-                <figcaption class="image-credit">Ảnh: Cẩm Hà, Thu Trang</figcaption>
+                <figcaption class="media-credit" data-credit-type="image">Ảnh: Fan page Tranh Kim Hoàng</figcaption>
               </figure>
+            </div>
+          </article>
+
+          <article class="young-return-card young-return-note-card">
+            <div>
+              <p>Tranh Kim Hoàng được ứng dụng vào các sản phẩm trong đời sống hiện tại</p>
             </div>
           </article>
         </div>
