@@ -2799,6 +2799,26 @@
       box-sizing: border-box;
     }
 
+    .red-lab-copy {
+      max-height: calc(100svh - 10rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding-right: .8rem;
+    }
+
+    .red-lab-copy::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .red-lab-copy::-webkit-scrollbar-track {
+      background: rgba(255, 248, 231, .08);
+    }
+
+    .red-lab-copy::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: rgba(255, 209, 92, .45);
+    }
+
     .red-lab-copy .kicker,
     .trial-copy .kicker,
     .return-copy .kicker {
@@ -3278,6 +3298,12 @@
         inset: auto;
         opacity: 1;
         transform: none;
+      }
+      .red-lab-copy {
+        max-height: none;
+        overflow: visible;
+        overscroll-behavior: auto;
+        padding-right: 0;
       }
       .paper-lab-stage { min-height: 560px; }
       .paper-lab-stage img { width: 86%; }
